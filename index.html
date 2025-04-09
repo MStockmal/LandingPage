@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>M:1895 Landing Page</title>
+  <style>
+    /* Basic reset and full viewport settings */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+    /* Fullscreen container for the backgrounds */
+    .reveal-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+    /* Realtime Lockport map as the full-screen background */
+    .background-map {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    /* Fantasy map overlay with a feathered CSS mask reveal effect */
+    .reveal-overlay-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      /* CSS Custom Properties for the mask coordinates and radius */
+      --x: 50%;
+      --y: 50%;
+      --r: 0px; /* radius is 0 by default */
+      /* The radial gradient mask:
+           - From the center up to var(--r) the mask is fully transparent.
+           - From var(--r) to calc(var(--r) + 20px), the mask transitions with a feathering effect.
+           - Beyond calc(var(--r) + 40px), the mask is fully opaque.
+      */
+      -webkit-mask-image: radial-gradient(circle at var(--x) var(--y), transparent var(--r), rgba(0, 0, 0, 0.5) calc(var(--r) + 20px), black calc(var(--r) + 40px));
+      mask-image: radial-gradient(circle at var(--x) var(--y), transparent var(--r), rgba(0, 0, 0, 0.5) calc(var(--r) + 20px), black calc(var(--r) + 40px));
+      transition: -webkit-mask-image 0.3s ease-out, mask-image 0.3s ease-out;
+    }
+    .reveal-overlay-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* Large, centered logo styling */
+    .logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      width: 50vw;      /* Adjusts the logo to span a significant portion of the viewport */
+      max-width: 600px; /* You can change this maximum size as needed */
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal-container">
+    <!-- Fullscreen realtime Lockport map (background) -->
+    <img src="./GriddedOverheadMap222.png" alt="Realtime Lockport Map" class="background-map">
+    
+    <!-- Fantasy map overlay; the mask will reveal the realtime Lockport map -->
+    <div class="reveal-overlay-container">
+      <img src="./GriddedOverheadMap223.png" alt="Fantasy Map">
+    </div>
+    
+    <!-- Large, centered logo -->
+    <img src="./logosilo.png" alt="M:1895 Logo" class="logo">
+  </div>
+
+  <script>
+    // Select the necessary elements
+    const revealContainer = document.querySelector(".reveal-container");
+    const overlay = document.querySelector(".reveal-overlay-container");
+
+    // Update the mask center on mouse movement.
+    revealContainer.addEventListener("mousemove", function(e) {
+      const containerRect = revealContainer.getBoundingClientRect();
+      const mouseX = e.clientX - containerRect.left;
+      const mouseY = e.clientY - containerRect.top;
+      
+      // Set the custom properties to reposition the transparent "spotlight"
+      overlay.style.setProperty('--x', mouseX + 'px');
+      overlay.style.setProperty('--y', mouseY + 'px');
+    });
+
+    // When the mouse enters, expand the spotlight size (radius becomes 100px)
+    revealContainer.addEventListener("mouseenter", function() {
+      overlay.style.setProperty('--r', '100px');
+    });
+
+    // When the mouse leaves, collapse the spotlight (radius returns to 0)
+    revealContainer.addEventListener("mouseleave", function() {
+      overlay.style.setProperty('--r', '0px');
+    });
+  </script>
+</body>
+</html>
