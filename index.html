@@ -112,8 +112,8 @@
         }
         #modalImage { /* Old single image display */
             width: 100%;
-            max-width: 400px; 
-            object-fit: contain; 
+            max-width: 400px;
+            object-fit: contain;
             margin-top: 15px;
             border: 2px solid #8B4513;
             border-radius: 5px;
@@ -136,7 +136,7 @@
             background-color: #A0522D;
         }
         .intro-text {
-            background-color: rgba(253, 245, 230, 0.8); 
+            background-color: rgba(253, 245, 230, 0.8);
             padding: 20px;
             margin: 20px;
             border-radius: 8px;
@@ -144,8 +144,8 @@
             text-align: justify;
         }
         .custom-marker-icon {
-            background-color: #8B4513; 
-            border: 2px solid #D2B48C; 
+            background-color: #8B4513;
+            border: 2px solid #D2B48C;
             border-radius: 50%;
             width: 20px !important;
             height: 20px !important;
@@ -160,16 +160,16 @@
         /* New Animation Styles */
         .image-animation-container {
             position: relative;
-            width: 100%; 
-            max-width: 400px; 
-            aspect-ratio: 2 / 3; 
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 2 / 3;
             margin-top: 15px;
             border: 2px solid #8B4513;
             border-radius: 5px;
-            display: block; 
+            display: block;
             margin-left: auto;
             margin-right: auto;
-            overflow: hidden; 
+            overflow: hidden;
         }
         .animated-image {
             position: absolute;
@@ -177,7 +177,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain; 
+            object-fit: contain;
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
@@ -217,6 +217,7 @@
             <img id="modalImagePresent" src="" alt="Present Day View" class="animated-image">
             <img id="modalImage1895" src="" alt="1895 Steampunk View" class="animated-image">
             <img id="modalImageCharacter" src="" alt="1895 Character View" class="animated-image">
+            <img id="modalImageCharacterAnimated" src="" alt="1895 Character Animated View" class="animated-image">
           </div>
           <img id="modalImage" src="" alt="Location Image" style="display: block;">
           <div class="image-toggle-buttons mt-2" style="display: block;">
@@ -243,7 +244,8 @@
         lat: 41.585086,
         lon: -88.060179,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Midwest+SOARRING",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Midwest+SOARRING"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Midwest+SOARRING",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 2,
@@ -256,7 +258,8 @@
         lon: -88.057832,
         imagePresentDayUrl: "https://i.postimg.cc/GhHHY1J9/Public-Landing-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/Gh5TSphk/Public-Landing-Victorian.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/Vs3djV7R/IMCanal-Public-Landing.jpg"
+        image1895CharacterUrl: "https://i.postimg.cc/Vs3djV7R/IMCanal-Public-Landing.jpg",
+        imageCharacterAnimatedUrl: "https://i.postimg.cc/fWgPJdv4/Public-Landing.gif"
     },
     {
         id: 3,
@@ -269,7 +272,8 @@
         lon: -88.058441,
         imagePresentDayUrl: "https://i.postimg.cc/Bvc6sZs7/Lock-Mule-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/ZK76tcjv/Victorian-Lock-Mule.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/xd0QvvDg/Milo-Lock-Mule.jpg"
+        image1895CharacterUrl: "https://i.postimg.cc/xd0QvvDg/Milo-Lock-Mule.jpg",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 4,
@@ -282,7 +286,8 @@
         lon: -88.059031,
         imagePresentDayUrl: "https://i.postimg.cc/j5MSw8Dz/Illinois-State-Museum-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/MTSQbrZN/Victorian-Illinois-State-Museum.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/5NLjpSTM/Hiram-Norton-Illinois-State-Museum.jpg"
+        image1895CharacterUrl: "https://i.postimg.cc/5NLjpSTM/Hiram-Norton-Illinois-State-Museum.jpg",
+        imageCharacterAnimatedUrl: "https://i.postimg.cc/d0mX1S5n/Norton-Illninois.gif"
     },
     {
         id: 5,
@@ -294,7 +299,8 @@
         lat: 41.567308,
         lon: -88.070872,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Legacy+Adventure+Park",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Legacy+Adventure+Park"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Legacy+Adventure+Park",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 6,
@@ -307,7 +313,8 @@
         lon: -88.057646,
         imagePresentDayUrl: "https://i.postimg.cc/KjsjV9FZ/Realtopia-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/mDY7vW6T/Victorian-Realtopia.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/3xQYRMts/John-Sears-Realtopia.jpg" 
+        image1895CharacterUrl: "https://i.postimg.cc/3xQYRMts/John-Sears-Realtopia.jpg",
+        imageCharacterAnimatedUrl: "https://i.postimg.cc/rmwhpy0F/Sears-Realtopia.gif"
     },
     {
         id: 7,
@@ -320,7 +327,8 @@
         lon: -88.056401,
         imagePresentDayUrl: "https://i.postimg.cc/d3XQnLm3/Coyle-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/Wz9qVNmc/Victorian-Coyle-Law.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/5yFW4pL9/Jim-Stepenson-Coyle-Law.jpg"
+        image1895CharacterUrl: "https://i.postimg.cc/5yFW4pL9/Jim-Stepenson-Coyle-Law.jpg",
+        imageCharacterAnimatedUrl: "https://i.postimg.cc/0yShgNmT/CoyleLAw.gif"
     },
     {
         id: 8,
@@ -332,7 +340,8 @@
         lat: 41.589084,
         lon: -88.05684,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Amazing+Fantasy",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Amazing+Fantasy"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Amazing+Fantasy",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 9,
@@ -345,7 +354,8 @@
         lon: -88.057371,
         imagePresentDayUrl: "https://i.postimg.cc/SsdJLSvY/Will-County-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/TwMrN30k/Victorian-Will-County.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/jS6Kn89L/William-Gooding-Will-County-Historical.jpg"
+        image1895CharacterUrl: "https://i.postimg.cc/jS6Kn89L/William-Gooding-Will-County-Historical.jpg",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 10,
@@ -358,7 +368,8 @@
         lon: -88.058217,
         imagePresentDayUrl: "https://i.postimg.cc/qq7gjPPb/Taco-Heaven-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/Fzh0mC23/Victorian-Taco-Heaven.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/tgSg7SZF/Another-Calling-Taco-Heaven.jpg"
+        image1895CharacterUrl: "https://i.postimg.cc/tgSg7SZF/Another-Calling-Taco-Heaven.jpg",
+        imageCharacterAnimatedUrl: "https://i.postimg.cc/KYNqF3YH/Taco-Heaven.gif"
     },
     {
         id: 11,
@@ -371,7 +382,8 @@
         lon: -88.058089,
         imagePresentDayUrl: "https://i.postimg.cc/Y2yStsK7/Ember-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/d3QZgky9/Victorian-Ember-Tap.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/ZRXKxWLR/Boyer-Ember-Tap.jpg"
+        image1895CharacterUrl: "https://i.postimg.cc/ZRXKxWLR/Boyer-Ember-Tap.jpg",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 12,
@@ -384,7 +396,8 @@
         lon: -88.060179,
         imagePresentDayUrl: "https://i.postimg.cc/RVyqLbXd/Nicola-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/66hdzwv0/Victorian-Nicola.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/2jq1LDxy/Ichabod-Nicola-Heavenly-Bakery.jpg"
+        image1895CharacterUrl: "https://i.postimg.cc/2jq1LDxy/Ichabod-Nicola-Heavenly-Bakery.jpg",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 13,
@@ -397,7 +410,8 @@
         lon: -88.057832,
         imagePresentDayUrl: "https://i.postimg.cc/Y0jq11FT/Gaylord-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/PxQ86zPx/Victorian-Gaylord.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/fRsyP0QS/Gaylord-Gaylord-Building.jpg"
+        image1895CharacterUrl: "https://i.postimg.cc/fRsyP0QS/Gaylord-Gaylord-Building.jpg",
+        imageCharacterAnimatedUrl: "https://i.postimg.cc/7YdjQzC1/Gaylord-Building.gif"
     },
     {
         id: 14,
@@ -410,7 +424,8 @@
         lon: -88.057595,
         imagePresentDayUrl: "https://i.postimg.cc/VLxLC0kH/Chris-Rose-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/286BwWmk/Victorian-Chris-Rose.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/LXJ8PtLw/Chris-Rose-Investigation.jpg"
+        image1895CharacterUrl: "https://i.postimg.cc/LXJ8PtLw/Chris-Rose-Investigation.jpg",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 15,
@@ -423,7 +438,8 @@
         lon: -88.057572,
         imagePresentDayUrl: "https://i.postimg.cc/RV6ZhL4H/Cornolo-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/XNxCd8R1/Victorian-Cornolo.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/RFYzx23b/John-Lamb-Cornolo.jpg"
+        image1895CharacterUrl: "https://i.postimg.cc/RFYzx23b/John-Lamb-Cornolo.jpg",
+        imageCharacterAnimatedUrl: "https://i.postimg.cc/Vs7xnpmV/Cornolo-Travel.gif"
     },
     {
         id: 16,
@@ -436,7 +452,8 @@
         lon: -88.057835,
         imagePresentDayUrl: "https://i.postimg.cc/vBYmmRZY/Krema-Coffee-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/BvDFFG32/Victorian-Krema-Coffee.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/rFrqMyNG/Runyon-Krema.jpg"
+        image1895CharacterUrl: "https://i.postimg.cc/rFrqMyNG/Runyon-Krema.jpg",
+        imageCharacterAnimatedUrl: "https://i.postimg.cc/c4p5cNjX/Krema-Coffee.gif"
     },
     {
         id: 17,
@@ -448,7 +465,8 @@
         lat: 41.582804,
         lon: -88.060958,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Sopranos+Pizzeria",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Sopranos+Pizzeria"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Sopranos+Pizzeria",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 18,
@@ -461,7 +479,8 @@
         lon: -88.056071,
         imagePresentDayUrl: "https://i.postimg.cc/2jH1V5WP/White-Oak-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/rsgxpCkb/Victorian-White-Oak.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/wBTvq8v6/Boyer-White-Oak.jpg"
+        image1895CharacterUrl: "https://i.postimg.cc/wBTvq8v6/Boyer-White-Oak.jpg",
+        imageCharacterAnimatedUrl: "https://i.postimg.cc/yNBQwy7R/White-Oak-Library.gif"
     },
     {
         id: 19,
@@ -474,7 +493,8 @@
         lon: -88.05743,
         imagePresentDayUrl: "https://i.postimg.cc/R0zFjJrn/Marchio-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/MKK1F408/Victorian-Marchio.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/nh1rfcnR/Francis-Tully-Marchio.jpg"
+        image1895CharacterUrl: "https://i.postimg.cc/nh1rfcnR/Francis-Tully-Marchio.jpg",
+        imageCharacterAnimatedUrl: "https://i.postimg.cc/KvRdNfYv/Manchiro-Tile.gif"
     },
     {
         id: 20,
@@ -487,7 +507,8 @@
         lon: -88.056245,
         imagePresentDayUrl: "https://i.postimg.cc/6pZqjLPX/Mangia-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/kg2Knbh1/Victorian-Mangia.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/C5DMPwv4/Caneva-Mangia.jpg"
+        image1895CharacterUrl: "https://i.postimg.cc/C5DMPwv4/Caneva-Mangia.jpg",
+        imageCharacterAnimatedUrl: "https://i.postimg.cc/bNDBbv6Z/Mangia-Pizzo.gif"
     },
     {
         id: 21,
@@ -500,7 +521,8 @@
         lon: -88.057165,
         imagePresentDayUrl: "https://i.postimg.cc/fRYWjW3W/Canal-Trail-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/qv66fdzW/Victorian-Canal-Trail.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/YSbHbvt7/John-Lane-Canal-Trail.jpg"
+        image1895CharacterUrl: "https://i.postimg.cc/YSbHbvt7/John-Lane-Canal-Trail.jpg",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 22,
@@ -513,7 +535,8 @@
         lon: -88.058058,
         imagePresentDayUrl: "https://i.postimg.cc/1zPmWx6G/Biteable-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/YScGMyF0/Victorian-Biteable.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/4nkkmtQ6/Jax-Biteable-Blissful.jpg"
+        image1895CharacterUrl: "https://i.postimg.cc/4nkkmtQ6/Jax-Biteable-Blissful.jpg",
+        imageCharacterAnimatedUrl: "https://i.postimg.cc/vZ52qNwM/Biteable-Blissful.gif"
     },
     {
         id: 23,
@@ -525,7 +548,8 @@
         lat: 41.588614,
         lon: -88.057602,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Ameri-Cutz",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Ameri-Cutz"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Ameri-Cutz",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 24,
@@ -537,7 +561,8 @@
         lat: 41.587107,
         lon: -88.058307,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Mamma+Onesti's",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Mamma+Onesti's"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Mamma+Onesti's",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 25,
@@ -549,7 +574,8 @@
         lat: 41.589631,
         lon: -88.057953,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Capital+Barber",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Capital+Barber"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Capital+Barber",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 26,
@@ -561,7 +587,8 @@
         lat: 41.590021,
         lon: -88.057413,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Dawn's+Barber+Shop",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Dawn's+Barber+Shop"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Dawn's+Barber+Shop",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 27,
@@ -573,7 +600,8 @@
         lat: 41.588422,
         lon: -88.057681,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Thimbles",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Thimbles"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Thimbles",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 28,
@@ -585,7 +613,8 @@
         lat: 41.582146,
         lon: -88.061155,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Tattoo+City",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Tattoo+City"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Tattoo+City",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 29,
@@ -597,7 +626,8 @@
         lat: 41.588968,
         lon: -88.057934,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Rainbow+Council",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Rainbow+Council"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Rainbow+Council",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 30,
@@ -609,7 +639,8 @@
         lat: 41.587814,
         lon: -88.058427,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Genuine+Barbers",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Genuine+Barbers"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Genuine+Barbers",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 31,
@@ -621,7 +652,8 @@
         lat: 41.588678,
         lon: -88.057566,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Vegan+Café",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Vegan+Café"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Vegan+Café",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 32,
@@ -633,7 +665,8 @@
         lat: 41.586453,
         lon: -88.058352,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Submarine+City",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Submarine+City"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Submarine+City",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 33,
@@ -642,10 +675,11 @@
         address: "200 W 8th St, Lockport, IL",
         hours: "Thu: Noon - 5:00pm, Fri: Noon - 5:00pm, Sat: Noon - 5:00pm, Sun: Noon - 3:00pm",
         description: "Robert Carr’s beginnings were typical for the majority of people in Lockport’s dark days: poverty, a broken home, and hopelessness. Robert, however, had an atypical brain and used it to rise above his circumstances. \nGraduating at the top of his High School class, Carr was given a scholarship to attend the University by the Lockport’s Woman’s Club. Again graduating at the top of his class, Carr went on to make a fortune in trade transactions by discovering a secure way to protect people’s money from highwaymen. \nHe built a thriving business called Mercantile Amalgamated and, going against the grain of the day, paid his employees fairly. In 1883, he lost his fortune through a security breach, but in true Carr form, the man rebuilt Mercantile Amalgamated and the company became stronger than ever. \nRobert’s proudest achievement was not in business, though. Remembering the generosity of the Lockport Woman’s Club, Carr built an academy in Lockport called the Midwest Academy of Excellence that provided higher education free of charge to young men and woman with potential and tenacity, yet no means to pay the University’s tuition costs.",
-        lat: 41.590891, 
-        lon: -88.057832, 
+        lat: 41.590891,
+        lon: -88.057832,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Gallery+7",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Gallery+7"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Gallery+7",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 34,
@@ -657,7 +691,8 @@
         lat: 41.588769,
         lon: -88.055947,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Mint+Salon",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Mint+Salon"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Mint+Salon",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 35,
@@ -669,7 +704,8 @@
         lat: 41.588672,
         lon: -88.055681,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Blue+Collar+Supply",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Blue+Collar+Supply"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Blue+Collar+Supply",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 36,
@@ -681,7 +717,8 @@
         lat: 41.586764,
         lon: -88.058453,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+State+Street+Restaurant",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+State+Street+Restaurant"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+State+Street+Restaurant",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 37,
@@ -693,7 +730,8 @@
         lat: 41.589108,
         lon: -88.056932,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Victory+Leather",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Victory+Leather"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Victory+Leather",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 38,
@@ -705,7 +743,8 @@
         lat: 41.589449,
         lon: -88.05504,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+City+Hall",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+City+Hall"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+City+Hall",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 39,
@@ -717,7 +756,8 @@
         lat: 41.588026,
         lon: -88.058309,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Beanie's+Candy",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Beanie's+Candy"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Beanie's+Candy",
+        imageCharacterAnimatedUrl: null
     },
     {
         id: 40,
@@ -729,36 +769,31 @@
         lat: 41.587514,
         lon: -88.058138,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Nik+&+Ivy",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Nik+&+Ivy"
+        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Nik+&+Ivy",
+        imageCharacterAnimatedUrl: null
     }
 ];
 
         // --- MAP INITIALIZATION ---
         const map = L.map('map').setView([41.5870, -88.0565], 15);
 
-        // Base OpenStreetMap layer
-        const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Mission 1895 Lockport Tour'
         }).addTo(map);
 
-        // Fantasy Map Overlay from MapWarper
-        const fantasyMapUrl = 'https://mapwarper.net/maps/tile/91451/{z}/{x}/{y}.png'; // Map ID 91451
+        const fantasyMapUrl = 'https://mapwarper.net/maps/tile/91451/{z}/{x}/{y}.png';
         const fantasyMapLayer = L.tileLayer(fantasyMapUrl, {
             attribution: 'Fantasy Map Overlay &copy; <a href="https://mapwarper.net/maps/91451" target="_blank">MapWarper</a>',
-            opacity: 0.7, // Adjust as needed for visibility
-            minZoom: 13,  // Optional: Adjust to appropriate zoom levels for your fantasy map
-            maxZoom: 19,  // Optional: Adjust to appropriate zoom levels
-            tms: false    // Standard XYZ tiles (MapWarper usually does not require TMS flipping for Leaflet)
-        });
-        fantasyMapLayer.addTo(map); // Add it directly to the map to be visible
+            opacity: 0.7,
+            minZoom: 13,
+            maxZoom: 19,
+            tms: false
+        }).addTo(map);
         
-        // Error handling for the fantasy map layer
         fantasyMapLayer.on('tileerror', function(event) {
             console.error('Fantasy map tile failed to load:', event.tile, event.url);
-            // You could add a user notification here if desired
         });
-
 
         // --- MODAL GLOBALS ---
         const modal = document.getElementById('detailsModal');
@@ -776,18 +811,16 @@
         const modalImagePresent = document.getElementById('modalImagePresent');
         const modalImage1895 = document.getElementById('modalImage1895');
         const modalImageCharacter = document.getElementById('modalImageCharacter');
+        const modalImageCharacterAnimated = document.getElementById('modalImageCharacterAnimated'); // New image element
         const oldImageButtonsContainer = document.querySelector('.image-toggle-buttons');
-
 
         let currentModalLocation = null;
 
         // --- ANIMATION GLOBALS ---
         let currentImageIndex = 0;
-        const animationImages = [modalImagePresent, modalImage1895, modalImageCharacter];
+        let animationImages = [modalImagePresent, modalImage1895, modalImageCharacter, modalImageCharacterAnimated]; // Added new animated GIF
         let animationInterval = null;
 
-
-        // --- ADD MARKERS TO MAP ---
         locationsData.forEach(location => {
             const customIcon = L.divIcon({
                 className: 'custom-marker-icon',
@@ -807,31 +840,31 @@
             marker.bindPopup(popupContent);
         });
 
-        // --- ANIMATION FUNCTIONS ---
         function startImageAnimation() {
-            const allSourcesValid = animationImages.every(img => img && img.src && !img.src.includes('placehold.co') && img.src.startsWith('http'));
-            if (!currentModalLocation || !allSourcesValid) {
-                if(animationInterval) clearInterval(animationInterval);
-                animationInterval = null; 
+            // Filter out images that don't have a valid src, especially the animated one if not present
+            const validAnimationImages = animationImages.filter(imgElement => imgElement && imgElement.src && !imgElement.src.includes('placehold.co') && imgElement.src.startsWith('http'));
+
+            if (!currentModalLocation || validAnimationImages.length === 0) {
+                if (animationInterval) clearInterval(animationInterval);
+                animationInterval = null;
                 return;
             }
 
-            animationImages.forEach((img, index) => {
+            validAnimationImages.forEach((img) => {
                 img.classList.remove('active');
             });
             currentImageIndex = 0;
-            animationImages[currentImageIndex].classList.add('active');
+            validAnimationImages[currentImageIndex].classList.add('active');
 
             if (animationInterval) clearInterval(animationInterval);
 
             animationInterval = setInterval(() => {
-                animationImages[currentImageIndex].classList.remove('active');
-                currentImageIndex = (currentImageIndex + 1) % animationImages.length;
-                animationImages[currentImageIndex].classList.add('active');
-            }, 3000); 
+                validAnimationImages[currentImageIndex].classList.remove('active');
+                currentImageIndex = (currentImageIndex + 1) % validAnimationImages.length;
+                validAnimationImages[currentImageIndex].classList.add('active');
+            }, 3000);
         }
 
-        // --- MODAL FUNCTIONS ---
         function showDetails(locationId) {
             currentModalLocation = locationsData.find(loc => loc.id === locationId);
             if (!currentModalLocation) return;
@@ -842,13 +875,18 @@
             modalHours.textContent = currentModalLocation.hours;
             modalDescription.innerHTML = currentModalLocation.description.replace(/\\n/g, '<br>');
             
-            const hasAllNewImages = currentModalLocation.imagePresentDayUrl && 
+            const hasBaseNewImages = currentModalLocation.imagePresentDayUrl && 
                                    currentModalLocation.image1895SteampunkUrl && 
                                    currentModalLocation.image1895CharacterUrl &&
                                    !currentModalLocation.imagePresentDayUrl.includes('placehold.co') && 
                                    currentModalLocation.imagePresentDayUrl.startsWith('http');
 
-            if (hasAllNewImages) {
+            // Determine if the animated character GIF should be part of the new animation sequence
+            const hasAnimatedCharacterGif = currentModalLocation.imageCharacterAnimatedUrl && 
+                                            !currentModalLocation.imageCharacterAnimatedUrl.includes('placehold.co') &&
+                                            currentModalLocation.imageCharacterAnimatedUrl.startsWith('http');
+
+            if (hasBaseNewImages) {
                 animationContainer.style.display = 'block';
                 oldModalImage.style.display = 'none'; 
                 oldImageButtonsContainer.style.display = 'none'; 
@@ -860,12 +898,25 @@
                 modalImageCharacter.src = currentModalLocation.image1895CharacterUrl;
                 modalImageCharacter.alt = `1895 Character view of ${currentModalLocation.locationName}`;
                 
-                [modalImagePresent, modalImage1895, modalImageCharacter].forEach(img => {
-                    img.onerror = function() { 
-                        this.src = 'https://placehold.co/400x600/CCCCCC/FFF?text=Image+Not+Found'; 
-                        if(animationInterval) clearInterval(animationInterval);
-                        animationInterval = null;
-                     };
+                // Update animationImages array based on whether the animated GIF is available
+                animationImages = [modalImagePresent, modalImage1895, modalImageCharacter]; // Base images
+
+                if (hasAnimatedCharacterGif) {
+                    modalImageCharacterAnimated.src = currentModalLocation.imageCharacterAnimatedUrl;
+                    modalImageCharacterAnimated.alt = `1895 Character animated view of ${currentModalLocation.locationName}`;
+                    animationImages.push(modalImageCharacterAnimated); // Add GIF to the sequence
+                } else {
+                    modalImageCharacterAnimated.src = ""; // Clear src if no animated GIF
+                }
+                
+                animationImages.forEach(img => { // Iterate over the potentially modified animationImages array
+                    if (img && img.src) { // Check if img and img.src are defined
+                        img.onerror = function() { 
+                            this.src = 'https://placehold.co/400x600/CCCCCC/FFF?text=Image+Not+Found'; 
+                            if(animationInterval) clearInterval(animationInterval);
+                            animationInterval = null;
+                        };
+                    }
                 });
                 startImageAnimation();
             } else {
@@ -900,6 +951,10 @@
             if (animationInterval) clearInterval(animationInterval);
             animationInterval = null;
             currentModalLocation = null;
+            // Reset all animated image elements to avoid showing old images briefly
+            [modalImagePresent, modalImage1895, modalImageCharacter, modalImageCharacterAnimated].forEach(img => {
+                if(img) img.src = ""; 
+            });
         }
 
         function toggleImage(type, steampunkSrc, realSrc) {
