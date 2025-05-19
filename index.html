@@ -112,7 +112,8 @@
         }
         #modalImage { /* Old single image display */
             width: 100%;
-            max-width: 400px;
+            max-width: 400px; 
+            object-fit: contain; 
             margin-top: 15px;
             border: 2px solid #8B4513;
             border-radius: 5px;
@@ -135,7 +136,7 @@
             background-color: #A0522D;
         }
         .intro-text {
-            background-color: rgba(253, 245, 230, 0.8); /* Semi-transparent Old Lace */
+            background-color: rgba(253, 245, 230, 0.8); 
             padding: 20px;
             margin: 20px;
             border-radius: 8px;
@@ -143,8 +144,8 @@
             text-align: justify;
         }
         .custom-marker-icon {
-            background-color: #8B4513; /* SaddleBrown */
-            border: 2px solid #D2B48C; /* Tan border */
+            background-color: #8B4513; 
+            border: 2px solid #D2B48C; 
             border-radius: 50%;
             width: 20px !important;
             height: 20px !important;
@@ -159,16 +160,16 @@
         /* New Animation Styles */
         .image-animation-container {
             position: relative;
-            width: 100%;
-            max-width: 400px;
-            height: 300px; /* Adjust as needed, make sure it fits your images */
+            width: 100%; 
+            max-width: 400px; 
+            aspect-ratio: 2 / 3; 
             margin-top: 15px;
             border: 2px solid #8B4513;
             border-radius: 5px;
-            display: block; /* Controlled by JS */
+            display: block; 
             margin-left: auto;
             margin-right: auto;
-            overflow: hidden;
+            overflow: hidden; 
         }
         .animated-image {
             position: absolute;
@@ -176,7 +177,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; 
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
@@ -231,7 +232,7 @@
      crossorigin=""></script>
 
     <script>
-        // --- DATA: LOCATIONS ---
+        // --- DATA: LOCATIONS (Updated with new image URLs) ---
         const locationsData = [
     {
         id: 1,
@@ -242,7 +243,6 @@
         description: "After the Sentinel buried the evil Crystal in the earth, neutralizing its influence, he reflected on how his people, the Mound Builders, had let such an evil into their society. \nHis people believed they were above creation and no longer needed their physical forms. They believed in a higher form of consciousness as the next evolutionary step to greatness and found a way to leave the body and exist ethereally.\nPlaying God is what The Sentinel called it. He believed God’s creatures were meant to be as created…connected to the earth and to the Creator.\nThe vast majority of the Mound Builders left their physical bodies behind and ignored the protestations of The Sentinel. He was told to stay behind and keep watch over their physical bodies, but it really was an empty gesture.\nThose who transformed themselves into pure consciousness did not know it, but without a purpose other than for themselves, their minds drifted then decayed into nothingness and were lost forever.\nWith his people, the knowledge they carried, and their culture all gone, The Sentinel was filled with grief. There was no one left. His only purpose now was to stand guard over the buried Crystal; the physical manifestation of the evil that destroyed everything he ever knew or loved.",
         lat: 41.5819,
         lon: -88.0586,
-        // Retaining original placeholders as no new images provided for this ID in the RTF
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Midwest+SOARRING",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Midwest+SOARRING"
     },
@@ -255,9 +255,9 @@
         description: "A canal linking the Illinois River to Lake Michigan was first envisioned by Jacques Marquette and Louis Joliet who traveled through the Des Plaines River Valley in 1672. By 1836, after years of planning, the first shovel broke ground in the creation of this great inland waterway and soon Midwest produce would be able to reach world markets. But before fortunes were made, hard labor had to be endured.\nIrish, Germans, and Scandinavians were among the groups that constructed the I&M Canal. Rock and tough soil along the ninety-six-mile canal was broken and moved entirely by hand. The workers lived in rude shanties, and many died of diseases, including cholera and dysentery. During the summer months, the men feared contracting malaria. Workers argued that hard liquor would protect them from disease and demanded that they be supplied with whiskey in order to work. In many cases canal workers were paid a dollar and a gill of whiskey per week. Whether the libation saved lives or not is unknown, but what is clear is that many thousands died in the construction of the canal.  \nFather John Raho, a missionary to the Irish community on the Illinois and Michigan Canal, wrote to his bishop, \"So many die that there is hardly any time to give Extreme Unction to everybody. We run night and day to assist the sick.\"\nWhat the workers didn’t know was the evil that was lurking below their feet. As they broke the soil to open a channel for the canal, they would soon unleash an evil that was never meant to see the light of day.",
         lat: 41.5917,
         lon: -88.0565,
-        imagePresentDayUrl: "https://i.postimg.cc/xcVfDhZS/Public-Landing-Real.jpg",
-        image1895SteampunkUrl: "https://i.postimg.cc/QHcMFh7t/Public-Landing-Victorian.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/z3FzN0Yb/IMCanal-Public-Landing.jpg"
+        imagePresentDayUrl: "https://i.postimg.cc/GhHHY1J9/Public-Landing-Real.jpg",
+        image1895SteampunkUrl: "https://i.postimg.cc/Gh5TSphk/Public-Landing-Victorian.jpg",
+        image1895CharacterUrl: "https://i.postimg.cc/Vs3djV7R/IMCanal-Public-Landing.jpg"
     },
     {
         id: 3,
@@ -268,9 +268,9 @@
         description: "Milo Perkins, an immigrant laborer from Ireland, began working on the Canal in 1839. Like one of thousands, Perkins worked long hours cutting through the wilderness with nothing more than hand tools. It was Perkins’ misfortune, however, to land the ill-fated stroke with his pick axe and uncover the Crystal so long ago buried by the Sentinel. It was immediately apparent to Perkins that what he uncovered was of great worth, so he took it back to Camp Dellwood and hid it in his tent. What he didn’t know was that it was the source of great evil and wrought destruction, not only on those who possessed it, but to the community they lived in as well.\nAt the time, Camp Dellwood was not yet the place of evil and despair that it would later become. It wasn’t until Milo brought the Crystal into the encampment that the slide into desolation began. While Perkins knew the Crystal had power and could be sold for profit, he found it difficult to part with it and kept it for many years. The destructive powers of the Crystal took everything from Milo: health, family, friends, and what little money he had. In the end, Milo bet and lost the Crystal in a desperate card game to Edward Talcott. Upon winning the Crystal, Talcott took the evil talisman back to Downtown Lockport and kept it in the Canal Commissioner’s office where he served as the Assistant to William Gooding, the Canal Commissioner. Soon after, Talcott died in a tragic accident along the Canal while inspecting the Lock; he slipped and fell between two barges and was crushed between them.\nIt was at this time that the Crystal came into William Gooding’s possession. With the Crystal now seated in Lockport’s power center, the evil began its nefarious work on the City itself.",
         lat: 41.5836,
         lon: -88.0569,
-        imagePresentDayUrl: "https://i.postimg.cc/WDzjwvd0/Lock-Mule-Real.jpg",
-        image1895SteampunkUrl: "https://i.postimg.cc/Cz8Rbb3w/Victorian-Lock-Mule.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/K1sCFgYg/Milo-Lock-Mule.jpg"
+        imagePresentDayUrl: "https://i.postimg.cc/Bvc6sZs7/Lock-Mule-Real.jpg",
+        image1895SteampunkUrl: "https://i.postimg.cc/ZK76tcjv/Victorian-Lock-Mule.jpg",
+        image1895CharacterUrl: "https://i.postimg.cc/xd0QvvDg/Milo-Lock-Mule.jpg"
     },
     {
         id: 4,
@@ -281,9 +281,9 @@
         description: "Before Hiram Norton, farmers sold their grain directly to the public. Rolling their wagons into town, sacks of grain with their family name on it would be sold or traded through a one on one transaction with locals.  Norton’s idea of a grain elevator was revolutionary. Building the largest limestone building in the State of Illinois, the Norton Grain Elevator was a first. Farmers came up to a scale house, had their grain weighed, then deposited it into a common hopper. Farmers were then issued “chits” while middlemen bickered and bartered over the price of grain, and, as such, the Chicago Board of Trade was born.\nFor the first time, men who never dirtied their hands with the soil made fortunes from farmers. It was not all one sided, of course. With the grain elevator and the Canal, farmers could reach markets as far away as New Orleans and New York. Everyone made their money.  \nNorton, like many of the other men of vision in Lockport, started off as a man who could both enrich himself and those around them. But as the years passed, and the evil influence of the Crystal spread throughout the City, men of means began to suffer a change of heart. A plutocracy was formed, a city run only by the rich. Selfish gain became the order of the day. By 1895, Norton Industries, a business empire that had its hand in every aspect of daily life, from foodstuffs to manufactured goods, controlled the markets. It was not to last however; when the Panic of 1896 hit, the foundation of Norton’s empire crumbled, and he would lose all.",
         lat: 41.5860,
         lon: -88.0590,
-        imagePresentDayUrl: "https://i.postimg.cc/2bBDg7F6/Illinois-State-Museum-Real.jpg",
-        image1895SteampunkUrl: "https://i.postimg.cc/2q0yCGZ7/Victorian-Illinois-State-Museum.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/jLqsSPR8/Hiram-Norton-Illinois-State-Museum.jpg"
+        imagePresentDayUrl: "https://i.postimg.cc/j5MSw8Dz/Illinois-State-Museum-Real.jpg",
+        image1895SteampunkUrl: "https://i.postimg.cc/MTSQbrZN/Victorian-Illinois-State-Museum.jpg",
+        image1895CharacterUrl: "https://i.postimg.cc/5NLjpSTM/Hiram-Norton-Illinois-State-Museum.jpg"
     },
     {
         id: 5,
@@ -306,9 +306,9 @@
         description: "Sears started out his business career selling pharmaceuticals with questionable value. Early on he traveled through Camp Dellwood in a red vardo wagon selling ointments and powders to workers with the promise of strength and prosperity. Sears later set up an opulent shop on State Street where he sold his wares to the gentry. His greatest fortune came through the sale of an oil created from the glands of the Agkistrodon Contortrix Mokeson which he claimed promoted vivacity. \nWith the monies he amassed, Sears tried his hand as a land speculator and bought most of the land south of Lockport, including the lands where Camp Dellwood had been for many years. Sears demanded high rents from the transient workers and employed an effective system of strong arm tactics to exact money from those who lived there. Having the cooperation of the factory moguls, who would not hire any man from the camp behind on rent to Sears, a feudal system was firmly in place by 1895.\nSears eventually sold Dellwood and moved on from Lockport to start the city of Kenilworth.",
         lat: 41.5849,
         lon: -88.0569,
-        imagePresentDayUrl: "https://i.postimg.cc/bSkqS9sM/Realtopia-Real.jpg",
-        image1895SteampunkUrl: "https://i.postimg.cc/FdKfS846/Victorian-Realtopia.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/mtj0Xnfj/John-Sears-Realtopia.jpg"
+        imagePresentDayUrl: "https://i.postimg.cc/KjsjV9FZ/Realtopia-Real.jpg",
+        image1895SteampunkUrl: "https://i.postimg.cc/mDY7vW6T/Victorian-Realtopia.jpg",
+        image1895CharacterUrl: "https://i.postimg.cc/3xQYRMts/John-Sears-Realtopia.jpg" 
     },
     {
         id: 7,
@@ -319,9 +319,9 @@
         description: "Without a doubt, the most brilliant man that Lockport never heard of.  Stephenson was the son of a local photographer who left for Europe at the age of 15 to study the science of physics. A brilliant prodigy who received advanced degrees from all of the major European Universities, he returned to Lockport only to fall into the debt of Charles Boyer when he lost a game of high stakes rummy. Boyer, seeing Stephenson’s potential to make him money as an inventor, built a secret laboratory for him on the third floor of his home.  Boyer told Stephenson he could work off his debt by providing him with at least one, good patent.  It was in this laboratory that Stephenson cracked the problem of time travel.  \nAfter a number of successful experiments with the fourth dimension, Stephenson was woken late one night by the Chrono-Keeper, Lorna. She explained that she was part of an organization that monitored disruptions in the timeline and to protect it from any accidental or intentional paradox. Lorna told him he had a choice to make: voluntarily destroy all evidence of his experiments and accompany her to the Chrono-Keepers compound for a debriefing or, she would destroy the lab and take him to the compound by force.\n”That’s hardly a choice,” he observed. But as Stephenson looked about the attic laboratory he was being held prisoner in, he decided at least it was a chance to escape. With no apparent modesty, Lorna removed her time harness from under her clothes and had Stephenson slide it over his head. As she adjusted the dial on the harness, he asked, “So this has the power to send both of us through time and space to your compound?”\n”Yes, as long as we are in close proximity.” Then Lorna pressed two buttons simultaneously and the suit began to create a tremendous power surge around the two of them. At that very moment, Lorna gave a Stephenson a violent push across the room and the last thing the startled scientist heard before disappearing was Lorna saying, “But I am not going with you.”\nLorna was about to violate the Chrono-Keeper’s cardinal rule: never interfere with the timeline.",
         lat: 41.5887,
         lon: -88.0545,
-        imagePresentDayUrl: "https://i.postimg.cc/LgtM84WF/Coyle-Real.jpg",
-        image1895SteampunkUrl: "https://i.postimg.cc/1Vq3cZYv/Victorian-Coyle-Law.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/zH5cpCx4/Jim-Stepenson-Coyle-Law.jpg"
+        imagePresentDayUrl: "https://i.postimg.cc/d3XQnLm3/Coyle-Real.jpg",
+        image1895SteampunkUrl: "https://i.postimg.cc/Wz9qVNmc/Victorian-Coyle-Law.jpg",
+        image1895CharacterUrl: "https://i.postimg.cc/5yFW4pL9/Jim-Stepenson-Coyle-Law.jpg"
     },
     {
         id: 8,
@@ -344,9 +344,9 @@
         description: "Gooding, like many men of his time, was self-taught. Having learned the trade of engineering while working on the Erie Canal, he came to Illinois and was hired to oversee the entire I&M Canal project. \nGooding proved to be a brilliant engineer as well as an honest, competent manager. After the Canal was completed, Gooding was appointed to the position of Canal Commissioner. The Commissioner position had many responsibilities, including the sale of land along the entire length of the Canal and oversight of all financial transactions made on the Public Landing. The Public Landing was the area where commercial goods were loaded and unloaded and many millions of dollars traded hands here. \nWith the untimely death of Edward Talcott, the wicked influence of the Crystal passed onto Gooding. With its presence in the seat of Lockport’s power center, it followed that the negative effects of the Crystal began to creep throughout the City of Lockport. The Evil eventually enveloped the community in a fog of contention and discord and plunged the once great city into darkness. Gooding became a wealthy tyrant in the process, skimming money from the Landing and working with the local plutocracy, of whom he was the chief, to subvert all to their will. \nIt was said that William recognized the dark spirit plaguing Lockport coincided with his possession of the Crystal, but, beyond reason, he kept the stone in his office for decades. Even after the tragic loss of his family in an airship accident, the wizened Mr. Gooding, a shell of his former self, refused to part with the evil talisman.",
         lat: 41.5872,
         lon: -88.0568,
-        imagePresentDayUrl: "https://i.postimg.cc/BL8S40sJ/Will-County-Real.jpg",
-        image1895SteampunkUrl: "https://i.postimg.cc/gwsXndfR/Victorian-Will-County.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/v4mCpvGs/William-Gooding-Will-County-Historical.jpg"
+        imagePresentDayUrl: "https://i.postimg.cc/SsdJLSvY/Will-County-Real.jpg",
+        image1895SteampunkUrl: "https://i.postimg.cc/TwMrN30k/Victorian-Will-County.jpg",
+        image1895CharacterUrl: "https://i.postimg.cc/jS6Kn89L/William-Gooding-Will-County-Historical.jpg"
     },
     {
         id: 10,
@@ -357,9 +357,9 @@
         description: "As an enforcer for the Chrono Keepers, Lorna’s duty was very specific. Somewhere, someone here in Lockport had stumbled upon the dangerous secret of time travel. She was to find the person responsible for the time incursion and put a stop to them. Either they would be convinced to join the Chrono-Keepers or be eliminated. \nAfter having done dozens of these missions, she had developed her own system of infiltration. This time, however, something felt different; something she couldn’t put her finger on. There was more than someone flirting with time travel here: she sensed something deeper and more personal.\nAs she stood in the world of 1895, Lorna thought she heard a voice in the distance. She felt pulled in a direction that wasn’t about her mission. There was a current, a tide of emotion that dragged her deeper into the city. Lorna was drawn by this feeling into Camp Dellwood. \nThough appalled at the horrid living conditions in the Camp, she was more surprised at the people she came across. There didn’t seem to be a friendly face among the entire settlement. There was a startling lack of concern for one’s fellow human beings. No one showed any sign of caring for another, not even the simplest gesture. Poverty she was familiar with, but this feeling that anyone here could commit an atrocious crime at any minute, was not something she had experienced before. But she knew that somewhere in here was an answer. Then she saw him: a man speaking passionately to an apathetic crowd. His sense of purpose stood in stark contrast to anyone else she met in Camp Dellwood.",
         lat: 41.5843,
         lon: -88.0569,
-        imagePresentDayUrl: "https://i.postimg.cc/cgVsJb4w/Taco-Heaven-Real.jpg",
-        image1895SteampunkUrl: "https://i.postimg.cc/FdnYVpFH/Victorian-Taco-Heaven.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/bGnPBRRv/Another-Calling-Taco-Heaven.jpg"
+        imagePresentDayUrl: "https://i.postimg.cc/qq7gjPPb/Taco-Heaven-Real.jpg",
+        image1895SteampunkUrl: "https://i.postimg.cc/Fzh0mC23/Victorian-Taco-Heaven.jpg",
+        image1895CharacterUrl: "https://i.postimg.cc/tgSg7SZF/Another-Calling-Taco-Heaven.jpg"
     },
     {
         id: 11,
@@ -370,9 +370,9 @@
         description: "Mr. Boyer was instrumental in the formation of Lockport. While serving as a legislator in Springfield, he spoke at the State Assembly on behalf of the I&M Canal project and also for the location of Lockport as its headquarters. Once the I&M was approved, Mr. Boyer left politics and moved to Lockport to help supervise the building of the Canal. \nThere was some scandal involving an opulent home that was built across from the Canal Commissioner Headquarters by a man named Edward Talcott. Talcott served William Gooding as the assistant Canal Commissioner. Much gossip and grumbling came about because of the size of Talcott’s home, built on an assistant’s salary, and he was constantly harangued by the local newspaper editor, Styx McDonald, because of it. After Talcott’s untimely death, Boyer bought the home from his widow.  \nThe Boyer house, as it would be known to Lockport, was a peculiar home. His wife, the beautiful and spirited Elizabeth Runyon Boyer, used the first floor as a social salon, but strange lights and sounds often emanated from the home’s third floor windows. Charles out-lived his wife, and his children moved from Lockport, so when Mr. Boyer died, he left the home to the Lockport Woman’s Club. The ladies, knowing full well of the third floor’s bizarre reputation, hoped to uncover its secrets, but alas, all they found was a hodge-podge of mechanical parts purposefully destroyed. \nEventually the home was turned into the public library and was knocked down years later to be replaced by the modern library building. A large stone from the original home’s fence is all that remains and can be found on the north east corner of the property.",
         lat: 41.5850,
         lon: -88.0569,
-        imagePresentDayUrl: "https://i.postimg.cc/rzxTJgwZ/Ember-Real.jpg",
-        image1895SteampunkUrl: "https://i.postimg.cc/ftFb9b53/Victorian-Ember-Tap.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/TLq6RYFM/Boyer-Ember-Tap.jpg"
+        imagePresentDayUrl: "https://i.postimg.cc/Y2yStsK7/Ember-Real.jpg",
+        image1895SteampunkUrl: "https://i.postimg.cc/d3QZgky9/Victorian-Ember-Tap.jpg",
+        image1895CharacterUrl: "https://i.postimg.cc/ZRXKxWLR/Boyer-Ember-Tap.jpg"
     },
     {
         id: 12,
@@ -383,9 +383,9 @@
         description: "Considered a man of truth, Ichabod Codding was a sought after advisor and consultant to the rich and poor alike. His word was considered the authority on everything from theology to politics.\nBut as the Crystal’s evil spread through the community, he became a shunned and ridiculed figure, and no one wanted to hear the truth he preached. However, this didn’t stop Ichabod from speaking out.\nOver the years, he traveled the length of Lockport, speaking passionately about the evil that permeated the City and the need for people to repent. As he stood in Camp Dellwood one day, speaking for the thousandth time about ridding the City of corruption, he saw a stranger.\nIchabod knew in an instant that she was not from Dellwood or anywhere else in Lockport proper. She had a military look but wore an unfamiliar uniform. He stopped speaking, and no one noticed…except her. She walked toward him with boldness and asked him what he knew.\n“I know much,” he said. Lorna smiled slightly, “I believe you do.” When Lorna asked him if there was an event, a single cause for the despair in the city, Ichabod was astonished; this was the first time in his memory that anyone even cared to ask. \nGrabbing her hand, he drew her in. “Young lady, this is a city so drenched in evil, it no longer even knows it needs saving.” Then he said, “Let me tell you of the Crystal....”",
         lat: 41.5819,
         lon: -88.0586,
-        imagePresentDayUrl: "https://i.postimg.cc/N58ggbh2/Nicola-Real.jpg",
-        image1895SteampunkUrl: "https://i.postimg.cc/K4Rkv6Qk/Victorian-Nicola.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/V58f22pP/Ichabod-Nicola-Heavenly-Bakery.jpg"
+        imagePresentDayUrl: "https://i.postimg.cc/RVyqLbXd/Nicola-Real.jpg",
+        image1895SteampunkUrl: "https://i.postimg.cc/66hdzwv0/Victorian-Nicola.jpg",
+        image1895CharacterUrl: "https://i.postimg.cc/2jq1LDxy/Ichabod-Nicola-Heavenly-Bakery.jpg"
     },
     {
         id: 13,
@@ -396,9 +396,9 @@
         description: "After the completion of the I&M Canal in 1849, the limestone building that was constructed to house men and tools was no longer needed by the Commissioners. They sold it to George Gaylord. Gaylord added a classic three story Italianate structure to the east end of the building, which stood on one end of the Public Landing directly opposite of Hiram Norton’s monolithic grain elevator. \nAt first, Gaylord used the building for his office and as a dry goods store, but when he installed a grain elevator, he became Norton’s chief rival in the wholesale grain business. This move sparked the Lockport Commodities War of 1870. \nStarting with small skirmishes and vandalism by the two men’s hired hands, it soon elevated to the threat of all-out war with mercenary troops facing each other on the dolomite prairie located west of the City. Just as combat was about to be engaged by a thousand Joliet Toughs, hired as mercenaries by the House of Norton, against the hired Dellwood Guns of the House of Gaylord, a diplomatic intervention by Elizabeth Runyon Boyer saved the day.  \nThe Belle of Lockport courageously stood between the opposing armies and called the two rivals to task. Compromises were agreed upon, and the grain business in Lockport continued with little more than the two captains of industry staring grimly at each other from their office windows.",
         lat: 41.5917,
         lon: -88.0565,
-        imagePresentDayUrl: "https://i.postimg.cc/tnQjbn2z/Gaylord-Real.jpg",
-        image1895SteampunkUrl: "https://i.postimg.cc/G892tDPw/Victorian-Gaylord.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/HVSTcnxT/Gaylord-Gaylord-Building.jpg"
+        imagePresentDayUrl: "https://i.postimg.cc/Y0jq11FT/Gaylord-Real.jpg",
+        image1895SteampunkUrl: "https://i.postimg.cc/PxQ86zPx/Victorian-Gaylord.jpg",
+        image1895CharacterUrl: "https://i.postimg.cc/fRsyP0QS/Gaylord-Gaylord-Building.jpg"
     },
     {
         id: 14,
@@ -409,9 +409,9 @@
         description: "Lorna was torn by the information she had learned from Codding, but she knew it was important. She also knew that eradicating evil in a city wasn’t her job. She didn’t hear the voice again or feel any push to do anything with the information she learned from the preacher, so she thought it best to continue with her mission. Lorna set off to find the time traveler in Lockport. \nAs a veteran in locating such inventors, she traveled through Lockport asking questions in a way that didn’t draw attention. Lorna had exceptional social skills that allowed her to wander freely in the various strata of society. She traded wits in the parlors of the wealthy and drank in the watering holes of the poor, all the time endearing herself to those she interacted with; all the time gathering information to uncover the identity the local time traveler. Eventually, she heard tale of an eccentric inventor who returned to Lockport after studying abroad. Just as he was about to open a workshop in the city, he, for the most part, disappeared. Some said he was in the employ of the richest man in Lockport: Charles Boyer.\nLorna focused on ingratiating herself to the upper class, and it didn’t take long for Lorna’s presence in Lockport to become known to Mrs. Boyer. Gossip of a fascinating person traveling through Lockport was the sort of chatter that Mrs. Boyer lived for. She sent an invitation to Lorna to attend one of her exclusive parties at her luxurious home.\nDuring a long evening in Mrs. Boyer’s salon, where the rich of Lockport engaged in their favorite pastime, lively conversation and gossip, Lorna found an opportunity to slip away and explore the house. She made her way to the third floor, and upon opening a door with the words “KEEP OUT” emblazoned across it, found what she was looking for.",
         lat: 41.5865,
         lon: -88.0568,
-        imagePresentDayUrl: "https://i.postimg.cc/hf0BFjx9/Chris-Rose-Real.jpg",
-        image1895SteampunkUrl: "https://i.postimg.cc/XXRJNppm/Victorian-Chris-Rose.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/47TGkh8Q/Chris-Rose-Investigation.jpg"
+        imagePresentDayUrl: "https://i.postimg.cc/VLxLC0kH/Chris-Rose-Real.jpg",
+        image1895SteampunkUrl: "https://i.postimg.cc/286BwWmk/Victorian-Chris-Rose.jpg",
+        image1895CharacterUrl: "https://i.postimg.cc/LXJ8PtLw/Chris-Rose-Investigation.jpg"
     },
     {
         id: 15,
@@ -422,9 +422,9 @@
         description: "A favorite character around Lockport, John Lamb was best known for his strange wood carvings. His legacy, however, was to be in the preservation of the original Illinois and Michigan Canal\nOnce the new and improved Sanitary and Shipping Canal was built, the old I&M was soon forgotten and over time became  a pit for refuse. Most of the stone that lined the old canal wall was pilfered by locals to build limestone fences and other home construction projects.\nLamb, who liked to whittle along the banks of the old canal, was distressed at the fading of the old waterway. With the help of other like-minded individuals, Lamb began a cleanup of the waterway and even started a local festival called “Old Canal Days” which continues to this day in Lockport. \nThe remnants of the I&M Canal that can still be seen running along the west side of Downtown, including Lock #1, are the direct result of Mr. Lamb’s efforts to preserve it. \nJohn also served as a professor of history at the Midwest Academy of Excellence where he had the particular quirk of carving while he lectured.",
         lat: 41.5866,
         lon: -88.0568,
-        imagePresentDayUrl: "https://i.postimg.cc/fJsNgX3z/Cornolo-Real.jpg",
-        image1895SteampunkUrl: "https://i.postimg.cc/c6gCNQ4f/Victorian-Cornolo.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/7GSRgsng/John-Lamb-Cornolo.jpg"
+        imagePresentDayUrl: "https://i.postimg.cc/RV6ZhL4H/Cornolo-Real.jpg",
+        image1895SteampunkUrl: "https://i.postimg.cc/XNxCd8R1/Victorian-Cornolo.jpg",
+        image1895CharacterUrl: "https://i.postimg.cc/RFYzx23b/John-Lamb-Cornolo.jpg"
     },
     {
         id: 16,
@@ -435,9 +435,9 @@
         description: "The very first white man to settle in the Lockport area was Armstead Runyon in 1830. Paying with much sweat and blood, Runyon staked his claim and carved out an area of the wilderness immediately north of present day Lockport. He called the new settlement Runyontown. A number of other early arrivals followed suit and built homes in the clearing and even nominated Armstead to be their mayor (as well as Constable, Superintendent of Resources, Chief of Indian Affairs, and Wolf Catcher).  \nAll was well in the newly formed hamlet until investors for the proposed I&M Canal decided on the same location for their headquarters. Not wanting to deal with any existing municipality, the investors lobbied legislators in Springfield to recognize a new city, called Lockport, to supplant Runyontown. They were successful and the new city was platted overtop Ruynontown as if it never existed. Protests by Armstead fell on deaf ears, and the new city bosses proceeded to plow Runyontown under.  \nThe new city officials offered to keep Mr. Runyon on as Wolf Catcher, but he declined position. Eventually, he picked up and moved further west to California leaving behind his daughter who, despite his objection, married Charles Boyer, one of the Illinois legislators who approved the formation of Lockport.",
         lat: 41.5854,
         lon: -88.0569,
-        imagePresentDayUrl: "https://i.postimg.cc/v1KyPNnk/Krema-Coffee-Real.jpg",
-        image1895SteampunkUrl: "https://i.postimg.cc/gwzr9Qn0/Victorian-Krema-Coffee.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/QHh2q3PV/Runyon-Krema.jpg"
+        imagePresentDayUrl: "https://i.postimg.cc/vBYmmRZY/Krema-Coffee-Real.jpg",
+        image1895SteampunkUrl: "https://i.postimg.cc/BvDFFG32/Victorian-Krema-Coffee.jpg",
+        image1895CharacterUrl: "https://i.postimg.cc/rFrqMyNG/Runyon-Krema.jpg"
     },
     {
         id: 17,
@@ -460,9 +460,9 @@
         description: "Poet, biographer, playwright, and novelist, Dorothy Dow was Lockport’s wordsmith. Her long running plays were performed in sold-out theatres from New York to St. Louis. Her most famous, “Souvenir De La Malmaison,” won her critical acclaim in the “high-brow” community, but Ms. Dow preferred to live a gregarious, bohemian lifestyle. She could easily flit between the intellectual salons of the City and the gambling tents of Camp Dellwood. \nDr. James E. Fitzgerald, a noted Chicago obstetrician, saw her perform at a poetry reading in Lockport’s Nik & Ivy Ale House and immediately became obsessed with Dorothy. He pursued her hand in marriage for many years, but as she preferred the care-free life, refused a ring and instead chose to simply enjoy his company. However, on a moonlit night in Istanbul overlooking the Bosphorus from the rooftop of the Sultanahmet Hotel, Dorothy finally succumbed to Mr. Fitzgerald’s relentless pursuit. Having accepted his hand in marriage, the two lived happily to the end of their days. \nMrs. Fitzgerald continued her writing career under her maiden name of Dow. Her complete works can be found in the Newberry Library of Chicago.",
         lat: 41.5909,
         lon: -88.0545,
-        imagePresentDayUrl: "https://i.postimg.cc/fk9zPDBK/White-Oak-Real.jpg",
-        image1895SteampunkUrl: "https://i.postimg.cc/wRy7fN3c/Victorian-White-Oak.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/HrRHzNXK/Boyer-White-Oak.jpg"
+        imagePresentDayUrl: "https://i.postimg.cc/2jH1V5WP/White-Oak-Real.jpg",
+        image1895SteampunkUrl: "https://i.postimg.cc/rsgxpCkb/Victorian-White-Oak.jpg",
+        image1895CharacterUrl: "https://i.postimg.cc/wBTvq8v6/Boyer-White-Oak.jpg"
     },
     {
         id: 19,
@@ -473,9 +473,9 @@
         description: "Though trained as a pipefitter, Francis Tully was best known for his work as an amateur paleontologist. While digging in the coal shales on the banks of Mazon Creek in 1855, Tully uncovered a prehistoric marine animal that had yet to be discovered by science. On one end, the creature had terrifying jaws, and on the other, an entirely second head with a long snout like an elephant.  \nTully kept the strange specimen in his Lockport home for many years. When the Field Museum was founded in 1893 during the Columbian Exposition, Tully brought his find to the curator of fossil invertebrates, E.S. Richardson, for an opinion.  \nRichardson, nor any of his colleges, had seen anything like it before. “We weren’t even sure what phylum to classify it in,” he told the press. After much debate, the great minds of the paleontological world bestowed the name Tullimonstrum Gegarium on the fossil. Most people, however, choose to call the creature by its common name; the Tully Monster. \nThe Illinois State Legislature designated Tullimonstrum Gregarium as the State fossil in 1895.",
         lat: 41.5857,
         lon: -88.0570,
-        imagePresentDayUrl: "https://i.postimg.cc/PC2TDx5t/Marchio-Real.jpg",
-        image1895SteampunkUrl: "https://i.postimg.cc/6Tg77M1H/Victorian-Marchio.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/21Vr4Ybh/Francis-Tully-Marchio.jpg"
+        imagePresentDayUrl: "https://i.postimg.cc/R0zFjJrn/Marchio-Real.jpg",
+        image1895SteampunkUrl: "https://i.postimg.cc/MKK1F408/Victorian-Marchio.jpg",
+        image1895CharacterUrl: "https://i.postimg.cc/nh1rfcnR/Francis-Tully-Marchio.jpg"
     },
     {
         id: 20,
@@ -486,9 +486,9 @@
         description: "Known in Lockport as the Music Man, Ernesto was the award winning conductor of the Lockport International Philharmonic. Ernesto and LIP traveled across the European continent performing any one of his 60 original scores to great renown. Ernesto, a skilled clarinet player, also mesmerized audiences with his intoxicating solos. What brought him the most joy was being the Director of Music at the Lockport Township High School. Caneva was renowned for his ability to draw forth hidden musical talents from students and turn them into first class musicians.  During festivals, Ernesto led the high school marching band through the streets of Downtown in heart-pounding, symphonic harmonies until the City Bosses cut funding for events due to political squabbling. With Lockport closed off the band, Ernesto took his students to Washington and performed at the Nation’s 4th of July celebration, leading the way in our nation’s Centennial Celebration. \nErnesto also had a reputation of being a bit of a lady’s man who could swoon women, not only with his instrument, but with his intoxicating voice as well.",
         lat: 41.5884,
         lon: -88.0539,
-        imagePresentDayUrl: "https://i.postimg.cc/DS27msFj/Mangia-Real.jpg",
-        image1895SteampunkUrl: "https://i.postimg.cc/HrCVzVmX/Victorian-Mangia.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/5Q4MjWWH/Caneva-Mangia.jpg"
+        imagePresentDayUrl: "https://i.postimg.cc/6pZqjLPX/Mangia-Real.jpg",
+        image1895SteampunkUrl: "https://i.postimg.cc/kg2Knbh1/Victorian-Mangia.jpg",
+        image1895CharacterUrl: "https://i.postimg.cc/C5DMPwv4/Caneva-Mangia.jpg"
     },
     {
         id: 21,
@@ -499,9 +499,9 @@
         description: "Mr. Lane was an early settler in Lockport. One of the startling aspects of the area that greeted the first pioneers was the abrupt change in landscape: heavy, old growth woods grew on the east side of the Des Plaines River, while nothing but open prairie stretched to the horizon on the west side. It was clear that the soil and climate of northern Illinois were ideal for farming, but the obstacle faced by the early planters was breaking through the tough Midwestern sod.\nBesides being a farmer, John Lane was also an innovative blacksmith. Cutting and shaping metal from saw blades, he was able to build the first steel plow. It was an innovation that would transform farming because, for the first time, vulnerable wooden blades would be replaced by no-nonsense steel. This invention greatly increased farm productivity and with the construction of the I&M Canal, Midwest farmers would be able to load their grains on barges for distant ports. They soon became the bread basket for the nation.       \nJohn Lane, being a selfless man, built his steel plows and gave them to his neighbors free of charge. His generosity was played upon, however, by a visitor named John Peer, who always wore a strange yellow and green suit. Inquiring about the free plows, Mr. Lane was providing to local farmers, Peer presented himself as new arrival in Lockport interested in starting a farmstead. Through this deception, he acquired one of Lane’s plows. Mr. Peer took the invention, patented the design, and built an industrial empire selling the plow under his name.",
         lat: 41.5864,
         lon: -88.0570,
-        imagePresentDayUrl: "https://i.postimg.cc/jDdrRbQB/Canal-Trail-Real.jpg",
-        image1895SteampunkUrl: "https://i.postimg.cc/QFsd5wgq/Victorian-Canal-Trail.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/jWwmjdW3/John-Lane-Canal-Trail.jpg"
+        imagePresentDayUrl: "https://i.postimg.cc/fRYWjW3W/Canal-Trail-Real.jpg",
+        image1895SteampunkUrl: "https://i.postimg.cc/qv66fdzW/Victorian-Canal-Trail.jpg",
+        image1895CharacterUrl: "https://i.postimg.cc/YSbHbvt7/John-Lane-Canal-Trail.jpg"
     },
     {
         id: 22,
@@ -512,11 +512,10 @@
         description: "Jax was a Chrono-Keeper enforcer of the highest level. An unwavering believer in the mission of the Keepers, Jax was a “by the book” soldier who did his job with efficiency and precision. When Stephenson arrived at the Compound without Lorna, the bewildered scientist could offer no explanation as to why she pushed him away choosing not to return with him, the Keepers called Jax to go in for an extraction.  \nIn truth, Jax had a weak spot for Lorna. Her impulsive, often emotional personality oddly attracted him. As a naturally reserved man, Jax never shared his affection with her and kept his thoughts to himself. He eagerly suited up for a time-jump to Lockport and to help Lorna in whatever situation she found herself in.\nBecause Chrono-Keepers all have tracking chips, Jax easily caught up with Lorna at the Airship Café in Lockport.  Lorna anticipated the Keepers would send an Enforcer and she already had a phony story ready about a suspected second time traveler was the reason she stayed behind. When Lorna saw Jax walk into the Cafe, she was relieved. She knew she could level with Jax.\n“I can’t tell you exactly what is going on, Jax,” she said. “Because I don’t know what is going on.”She explained how there was a Dark Force holding the city hostage and that she was somehow connected to it. \n“Lorna,” said Jax. “You don’t have an evil bone in your body.”\n“The connection feels more of a calling to irradiate it,” she explained.\n”If you were anyone else, I would drag you back to the Compound by your collar,” he said then stared out the window and sipped his coffee.",
         lat: 41.5838,
         lon: -88.0570,
-        imagePresentDayUrl: "https://i.postimg.cc/sM6CXNTx/Biteable-Real.jpg",
-        image1895SteampunkUrl: "https://i.postimg.cc/ZWcKLHVz/Victorian-Biteable.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/XB8DPrhq/Jax-Biteable-Blissful.jpg"
+        imagePresentDayUrl: "https://i.postimg.cc/1zPmWx6G/Biteable-Real.jpg",
+        image1895SteampunkUrl: "https://i.postimg.cc/YScGMyF0/Victorian-Biteable.jpg",
+        image1895CharacterUrl: "https://i.postimg.cc/4nkkmtQ6/Jax-Biteable-Blissful.jpg"
     },
-    // ... (Continue for IDs 23-40, keeping placeholders if no new images match)
     {
         id: 23,
         characterName: "H. G. Lawrence: Army of the Republic Air Corp",
@@ -751,17 +750,14 @@
         const modalHours = document.getElementById('modalHours');
         const modalDescription = document.getElementById('modalDescription');
         
-        // Old image elements
-        const oldModalImage = document.getElementById('modalImage');
+        const oldModalImage = document.getElementById('modalImage'); 
         const steampunkBtn = document.getElementById('steampunkBtn');
         const realBtn = document.getElementById('realBtn');
         
-        // New animation elements
         const animationContainer = document.getElementById('imageAnimationContainer');
         const modalImagePresent = document.getElementById('modalImagePresent');
         const modalImage1895 = document.getElementById('modalImage1895');
         const modalImageCharacter = document.getElementById('modalImageCharacter');
-        const oldImageDisplayContainer = document.getElementById('modalImage'); // The img tag itself
         const oldImageButtonsContainer = document.querySelector('.image-toggle-buttons');
 
 
@@ -795,8 +791,10 @@
 
         // --- ANIMATION FUNCTIONS ---
         function startImageAnimation() {
-            if (!currentModalLocation || !animationImages.every(img => img && img.src)) { // Ensure images and sources are set
+            const allSourcesValid = animationImages.every(img => img && img.src && !img.src.includes('placehold.co') && img.src.startsWith('http'));
+            if (!currentModalLocation || !allSourcesValid) {
                 if(animationInterval) clearInterval(animationInterval);
+                animationInterval = null; 
                 return;
             }
 
@@ -812,7 +810,7 @@
                 animationImages[currentImageIndex].classList.remove('active');
                 currentImageIndex = (currentImageIndex + 1) % animationImages.length;
                 animationImages[currentImageIndex].classList.add('active');
-            }, 3000); // Change image every 3 seconds
+            }, 3000); 
         }
 
         // --- MODAL FUNCTIONS ---
@@ -829,12 +827,13 @@
             const hasAllNewImages = currentModalLocation.imagePresentDayUrl && 
                                    currentModalLocation.image1895SteampunkUrl && 
                                    currentModalLocation.image1895CharacterUrl &&
-                                   !currentModalLocation.imagePresentDayUrl.includes('placehold.co');
+                                   !currentModalLocation.imagePresentDayUrl.includes('placehold.co') && 
+                                   currentModalLocation.imagePresentDayUrl.startsWith('http');
 
             if (hasAllNewImages) {
                 animationContainer.style.display = 'block';
-                oldImageDisplayContainer.style.display = 'none';
-                oldImageButtonsContainer.style.display = 'none';
+                oldModalImage.style.display = 'none'; 
+                oldImageButtonsContainer.style.display = 'none'; 
 
                 modalImagePresent.src = currentModalLocation.imagePresentDayUrl;
                 modalImagePresent.alt = `Present day view of ${currentModalLocation.locationName}`;
@@ -843,26 +842,37 @@
                 modalImageCharacter.src = currentModalLocation.image1895CharacterUrl;
                 modalImageCharacter.alt = `1895 Character view of ${currentModalLocation.locationName}`;
                 
-                // Error handling for new images
                 [modalImagePresent, modalImage1895, modalImageCharacter].forEach(img => {
-                    img.onerror = function() { this.src = 'https://placehold.co/400x300/CCCCCC/FFF?text=Image+Not+Found'; };
+                    img.onerror = function() { 
+                        this.src = 'https://placehold.co/400x600/CCCCCC/FFF?text=Image+Not+Found'; 
+                        if(animationInterval) clearInterval(animationInterval);
+                        animationInterval = null;
+                     };
                 });
-
                 startImageAnimation();
             } else {
                 animationContainer.style.display = 'none';
-                oldImageDisplayContainer.style.display = 'block';
-                oldImageButtonsContainer.style.display = 'block';
+                oldModalImage.style.display = 'block'; 
+                oldImageButtonsContainer.style.display = 'block'; 
                 if (animationInterval) clearInterval(animationInterval);
+                animationInterval = null;
 
+                let steampunkSource = currentModalLocation.imageSteampunkUrl; 
+                let realSource = currentModalLocation.imageRealUrl; 
 
-                // Fallback to old image display logic
-                oldModalImage.src = currentModalLocation.imageSteampunkUrl || 'https://placehold.co/400x300/CCCCCC/FFF?text=Image+Not+Available';
+                if (!steampunkSource || steampunkSource.includes('placehold.co')) {
+                    steampunkSource = currentModalLocation.image1895SteampunkUrl || 'https://placehold.co/400x300/CCCCCC/FFF?text=Steampunk+Not+Available';
+                }
+                if (!realSource || realSource.includes('placehold.co')) {
+                     realSource = currentModalLocation.imagePresentDayUrl || 'https://placehold.co/400x300/CCCCCC/FFF?text=Real+Not+Available';
+                }
+                
+                oldModalImage.src = steampunkSource;
                 oldModalImage.alt = `Steampunk view of ${currentModalLocation.locationName}`;
                 oldModalImage.onerror = function() { this.src = 'https://placehold.co/400x300/CCCCCC/FFF?text=Image+Not+Found'; };
                 
-                steampunkBtn.onclick = () => toggleImage('steampunk'); // Ensure this is the old toggleImage
-                realBtn.onclick = () => toggleImage('real');
+                steampunkBtn.onclick = () => toggleImage('steampunk', steampunkSource, realSource);
+                realBtn.onclick = () => toggleImage('real', steampunkSource, realSource);
             }
             modal.style.display = "block";
         }
@@ -870,21 +880,27 @@
         function closeModal() {
             modal.style.display = "none";
             if (animationInterval) clearInterval(animationInterval);
+            animationInterval = null;
             currentModalLocation = null;
         }
 
-        // Old toggleImage function for fallback
-        function toggleImage(type) {
+        function toggleImage(type, steampunkSrc, realSrc) {
             if (!currentModalLocation) return;
-            // This function now specifically controls the 'oldModalImage'
+            
+            let targetSrc = '';
+            let altText = '';
+
             if (type === 'steampunk') {
-                oldModalImage.src = (currentModalLocation.imageSteampunkUrl || currentModalLocation.image1895SteampunkUrl || 'https://placehold.co/400x300/CCCCCC/FFF?text=Steampunk+Not+Found').replace(/\\n/g, '');
-                oldModalImage.alt = `Steampunk view of ${currentModalLocation.locationName}`;
+                targetSrc = steampunkSrc || currentModalLocation.imageSteampunkUrl || currentModalLocation.image1895SteampunkUrl || 'https://placehold.co/400x300/CCCCCC/FFF?text=Steampunk+Not+Found';
+                altText = `Steampunk view of ${currentModalLocation.locationName}`;
             } else if (type === 'real') {
-                oldModalImage.src = (currentModalLocation.imageRealUrl || currentModalLocation.imagePresentDayUrl || 'https://placehold.co/400x300/CCCCCC/FFF?text=Real+Not+Found').replace(/\\n/g, '');
-                oldModalImage.alt = `Real view of ${currentModalLocation.locationName}`;
+                targetSrc = realSrc || currentModalLocation.imageRealUrl || currentModalLocation.imagePresentDayUrl || 'https://placehold.co/400x300/CCCCCC/FFF?text=Real+Not+Found';
+                altText = `Real view of ${currentModalLocation.locationName}`;
             }
-             oldModalImage.onerror = function() { this.src = 'https://placehold.co/400x300/CCCCCC/FFF?text=Image+Not+Found'; };
+            
+            oldModalImage.src = targetSrc.replace(/\\n/g, '');
+            oldModalImage.alt = altText;
+            oldModalImage.onerror = function() { this.src = 'https://placehold.co/400x300/CCCCCC/FFF?text=Image+Not+Found'; };
         }
 
         window.onclick = function(event) {
