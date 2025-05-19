@@ -162,7 +162,7 @@
             position: relative;
             width: 100%;
             max-width: 400px;
-            aspect-ratio: 2 / 3;
+            aspect-ratio: 2 / 3; /* Or your preferred aspect ratio */
             margin-top: 15px;
             border: 2px solid #8B4513;
             border-radius: 5px;
@@ -233,6 +233,7 @@
      crossorigin=""></script>
 
     <script>
+        // Data for each location including coordinates, descriptions, and image URLs
         const locationsData = [
     {
         id: 1,
@@ -245,7 +246,7 @@
         lon: -88.060179,
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Midwest+SOARRING",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Midwest+SOARRING",
-        imageCharacterAnimatedUrl: null
+        imageCharacterAnimatedUrl: null // No animated GIF for this location
     },
     {
         id: 2,
@@ -494,7 +495,7 @@
         imagePresentDayUrl: "https://i.postimg.cc/R0zFjJrn/Marchio-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/MKK1F408/Victorian-Marchio.jpg",
         image1895CharacterUrl: "https://i.postimg.cc/nh1rfcnR/Francis-Tully-Marchio.jpg",
-        imageCharacterAnimatedUrl: "https://i.postimg.cc/KvRdNfYv/Manchiro-Tile.gif"
+        imageCharacterAnimatedUrl: "https://i.postimg.cc/KvRdNfYv/Manchiro-Tile.gif" // Assuming Manchiro is Marchio
     },
     {
         id: 20,
@@ -508,7 +509,7 @@
         imagePresentDayUrl: "https://i.postimg.cc/6pZqjLPX/Mangia-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/kg2Knbh1/Victorian-Mangia.jpg",
         image1895CharacterUrl: "https://i.postimg.cc/C5DMPwv4/Caneva-Mangia.jpg",
-        imageCharacterAnimatedUrl: "https://i.postimg.cc/bNDBbv6Z/Mangia-Pizzo.gif"
+        imageCharacterAnimatedUrl: "https://i.postimg.cc/bNDBbv6Z/Mangia-Pizzo.gif" // Assuming Pizzo is Pizza
     },
     {
         id: 21,
@@ -538,6 +539,7 @@
         image1895CharacterUrl: "https://i.postimg.cc/4nkkmtQ6/Jax-Biteable-Blissful.jpg",
         imageCharacterAnimatedUrl: "https://i.postimg.cc/vZ52qNwM/Biteable-Blissful.gif"
     },
+    // ... (rest of the locationsData array, ensuring imageCharacterAnimatedUrl is null for those without a GIF) ...
     {
         id: 23,
         characterName: "H. G. Lawrence: Army of the Republic Air Corp",
@@ -775,25 +777,29 @@
 ];
 
         // --- MAP INITIALIZATION ---
-        const map = L.map('map').setView([41.5870, -88.0565], 15);
+        const map = L.map('map').setView([41.5870, -88.0565], 15); // Centered on Lockport
 
+        // Base OpenStreetMap layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Mission 1895 Lockport Tour'
         }).addTo(map);
 
-        const fantasyMapUrl = 'https://mapwarper.net/maps/tile/91451/{z}/{x}/{y}.png';
+        // Fantasy Map Overlay from MapWarper
+        const fantasyMapUrl = 'https://mapwarper.net/maps/tile/91451/{z}/{x}/{y}.png'; // Map ID 91451
         const fantasyMapLayer = L.tileLayer(fantasyMapUrl, {
             attribution: 'Fantasy Map Overlay &copy; <a href="https://mapwarper.net/maps/91451" target="_blank">MapWarper</a>',
-            opacity: 0.7,
+            opacity: 0.7, // Adjust as needed for visibility
             minZoom: 13,
             maxZoom: 19,
-            tms: false
-        }).addTo(map);
+            tms: false // Standard XYZ tiles
+        });
+        fantasyMapLayer.addTo(map); // Add it directly to the map
         
         fantasyMapLayer.on('tileerror', function(event) {
             console.error('Fantasy map tile failed to load:', event.tile, event.url);
         });
+
 
         // --- MODAL GLOBALS ---
         const modal = document.getElementById('detailsModal');
@@ -803,34 +809,36 @@
         const modalHours = document.getElementById('modalHours');
         const modalDescription = document.getElementById('modalDescription');
         
+        // Fallback image display elements
         const oldModalImage = document.getElementById('modalImage'); 
         const steampunkBtn = document.getElementById('steampunkBtn');
         const realBtn = document.getElementById('realBtn');
+        const oldImageButtonsContainer = document.querySelector('.image-toggle-buttons');
         
+        // Animation image elements
         const animationContainer = document.getElementById('imageAnimationContainer');
         const modalImagePresent = document.getElementById('modalImagePresent');
         const modalImage1895 = document.getElementById('modalImage1895');
         const modalImageCharacter = document.getElementById('modalImageCharacter');
-        const modalImageCharacterAnimated = document.getElementById('modalImageCharacterAnimated'); // New image element
-        const oldImageButtonsContainer = document.querySelector('.image-toggle-buttons');
+        const modalImageCharacterAnimated = document.getElementById('modalImageCharacterAnimated');
 
-        let currentModalLocation = null;
 
-        // --- ANIMATION GLOBALS ---
-        let currentImageIndex = 0;
-        let animationImages = [modalImagePresent, modalImage1895, modalImageCharacter, modalImageCharacterAnimated]; // Added new animated GIF
-        let animationInterval = null;
+        let currentModalLocation = null; // Stores data of the currently open modal
+        let currentImageIndex = 0;     // Index for the current image in the slideshow
+        let animationInterval = null;  // Stores the interval ID for the slideshow
 
+        // --- ADD MARKERS TO MAP ---
         locationsData.forEach(location => {
             const customIcon = L.divIcon({
                 className: 'custom-marker-icon',
-                html: `<span>${location.id}</span>`,
+                html: `<span>${location.id}</span>`, // Display location ID on marker
                 iconSize: [20, 20],
-                iconAnchor: [10, 10],
-                popupAnchor: [0, -10]
+                iconAnchor: [10, 10], // Center of the icon
+                popupAnchor: [0, -10] // Position of the popup relative to the icon
             });
 
             const marker = L.marker([location.lat, location.lon], { icon: customIcon }).addTo(map);
+            // Popup content for each marker
             const popupContent = `
                 <h3 class="title-font">${location.locationName}</h3>
                 <p><strong>Character:</strong> ${location.characterName}</p>
@@ -839,124 +847,154 @@
             `;
             marker.bindPopup(popupContent);
         });
+        
+        // --- VALIDATION FUNCTION FOR IMAGE URLS ---
+        function isValidImageUrl(url) {
+            return url && !url.includes('placehold.co') && url.startsWith('http');
+        }
 
+        // --- ANIMATION FUNCTIONS ---
         function startImageAnimation() {
-            // Filter out images that don't have a valid src, especially the animated one if not present
-            const validAnimationImages = animationImages.filter(imgElement => imgElement && imgElement.src && !imgElement.src.includes('placehold.co') && imgElement.src.startsWith('http'));
+            if (animationInterval) clearInterval(animationInterval); // Clear existing interval
 
-            if (!currentModalLocation || validAnimationImages.length === 0) {
-                if (animationInterval) clearInterval(animationInterval);
-                animationInterval = null;
+            if (!currentModalLocation) return; // Should not happen if modal is open
+
+            const imagesToAnimate = []; // Dynamically build the list of images for the current location
+
+            // Add images to the animation list if their URLs are valid
+            if (isValidImageUrl(currentModalLocation.imagePresentDayUrl)) {
+                imagesToAnimate.push(modalImagePresent);
+            }
+            if (isValidImageUrl(currentModalLocation.image1895SteampunkUrl)) {
+                imagesToAnimate.push(modalImage1895);
+            }
+            if (isValidImageUrl(currentModalLocation.image1895CharacterUrl)) {
+                imagesToAnimate.push(modalImageCharacter);
+            }
+            if (isValidImageUrl(currentModalLocation.imageCharacterAnimatedUrl)) {
+                imagesToAnimate.push(modalImageCharacterAnimated);
+            }
+            
+            if (imagesToAnimate.length === 0) {
+                 // No valid images to animate, ensure container is hidden or shows a fallback
+                animationContainer.style.display = 'none'; // Or handle fallback
                 return;
             }
 
-            validAnimationImages.forEach((img) => {
-                img.classList.remove('active');
+            // Deactivate all images first
+            [modalImagePresent, modalImage1895, modalImageCharacter, modalImageCharacterAnimated].forEach(img => {
+                if(img) img.classList.remove('active');
             });
+            
             currentImageIndex = 0;
-            validAnimationImages[currentImageIndex].classList.add('active');
+            if (imagesToAnimate[currentImageIndex]) { // Check if the first image exists
+                 imagesToAnimate[currentImageIndex].classList.add('active');
+            }
 
-            if (animationInterval) clearInterval(animationInterval);
 
+            // Start the slideshow interval
             animationInterval = setInterval(() => {
-                validAnimationImages[currentImageIndex].classList.remove('active');
-                currentImageIndex = (currentImageIndex + 1) % validAnimationImages.length;
-                validAnimationImages[currentImageIndex].classList.add('active');
-            }, 3000);
+                if (imagesToAnimate[currentImageIndex]) {
+                    imagesToAnimate[currentImageIndex].classList.remove('active');
+                }
+                currentImageIndex = (currentImageIndex + 1) % imagesToAnimate.length;
+                if (imagesToAnimate[currentImageIndex]) {
+                    imagesToAnimate[currentImageIndex].classList.add('active');
+                }
+            }, 3000); // Change image every 3 seconds
         }
 
+        // --- MODAL FUNCTIONS ---
         function showDetails(locationId) {
             currentModalLocation = locationsData.find(loc => loc.id === locationId);
             if (!currentModalLocation) return;
 
+            // Populate modal text content
             modalTitle.textContent = currentModalLocation.locationName;
             modalCharacter.textContent = currentModalLocation.characterName;
             modalAddress.textContent = currentModalLocation.address;
             modalHours.textContent = currentModalLocation.hours;
-            modalDescription.innerHTML = currentModalLocation.description.replace(/\\n/g, '<br>');
+            modalDescription.innerHTML = currentModalLocation.description.replace(/\\n/g, '<br>'); // Replace \n with <br> for HTML display
             
-            const hasBaseNewImages = currentModalLocation.imagePresentDayUrl && 
-                                   currentModalLocation.image1895SteampunkUrl && 
-                                   currentModalLocation.image1895CharacterUrl &&
-                                   !currentModalLocation.imagePresentDayUrl.includes('placehold.co') && 
-                                   currentModalLocation.imagePresentDayUrl.startsWith('http');
+            // Determine if the new animation system should be used (requires at least the base 3 images)
+            const useNewAnimation = isValidImageUrl(currentModalLocation.imagePresentDayUrl) &&
+                                    isValidImageUrl(currentModalLocation.image1895SteampunkUrl) &&
+                                    isValidImageUrl(currentModalLocation.image1895CharacterUrl);
 
-            // Determine if the animated character GIF should be part of the new animation sequence
-            const hasAnimatedCharacterGif = currentModalLocation.imageCharacterAnimatedUrl && 
-                                            !currentModalLocation.imageCharacterAnimatedUrl.includes('placehold.co') &&
-                                            currentModalLocation.imageCharacterAnimatedUrl.startsWith('http');
+            if (useNewAnimation) {
+                animationContainer.style.display = 'block'; // Show the animation container
+                oldModalImage.style.display = 'none';      // Hide the old single image display
+                oldImageButtonsContainer.style.display = 'none'; // Hide old buttons
 
-            if (hasBaseNewImages) {
-                animationContainer.style.display = 'block';
-                oldModalImage.style.display = 'none'; 
-                oldImageButtonsContainer.style.display = 'none'; 
-
+                // Set sources for the animation images
                 modalImagePresent.src = currentModalLocation.imagePresentDayUrl;
                 modalImagePresent.alt = `Present day view of ${currentModalLocation.locationName}`;
+                
                 modalImage1895.src = currentModalLocation.image1895SteampunkUrl;
                 modalImage1895.alt = `1895 Steampunk view of ${currentModalLocation.locationName}`;
+                
                 modalImageCharacter.src = currentModalLocation.image1895CharacterUrl;
                 modalImageCharacter.alt = `1895 Character view of ${currentModalLocation.locationName}`;
                 
-                // Update animationImages array based on whether the animated GIF is available
-                animationImages = [modalImagePresent, modalImage1895, modalImageCharacter]; // Base images
-
-                if (hasAnimatedCharacterGif) {
+                // Set source for animated character GIF if available
+                if (isValidImageUrl(currentModalLocation.imageCharacterAnimatedUrl)) {
                     modalImageCharacterAnimated.src = currentModalLocation.imageCharacterAnimatedUrl;
                     modalImageCharacterAnimated.alt = `1895 Character animated view of ${currentModalLocation.locationName}`;
-                    animationImages.push(modalImageCharacterAnimated); // Add GIF to the sequence
                 } else {
-                    modalImageCharacterAnimated.src = ""; // Clear src if no animated GIF
+                    modalImageCharacterAnimated.src = ""; // Clear src if no animated GIF for this location
+                    modalImageCharacterAnimated.alt = ""; 
                 }
                 
-                animationImages.forEach(img => { // Iterate over the potentially modified animationImages array
-                    if (img && img.src) { // Check if img and img.src are defined
+                // Generic onerror handler for all animated images
+                [modalImagePresent, modalImage1895, modalImageCharacter, modalImageCharacterAnimated].forEach(img => {
+                    if(img) { // Ensure the element exists
                         img.onerror = function() { 
                             this.src = 'https://placehold.co/400x600/CCCCCC/FFF?text=Image+Not+Found'; 
+                            // Optionally, you might want to stop or adjust the animation if a critical image fails
                             if(animationInterval) clearInterval(animationInterval);
-                            animationInterval = null;
+                            animationInterval = null; // Stop animation on error
                         };
                     }
                 });
-                startImageAnimation();
+                startImageAnimation(); // Start the slideshow
             } else {
-                animationContainer.style.display = 'none';
-                oldModalImage.style.display = 'block'; 
-                oldImageButtonsContainer.style.display = 'block'; 
-                if (animationInterval) clearInterval(animationInterval);
+                // Fallback to the old image display system
+                animationContainer.style.display = 'none'; // Hide animation container
+                oldModalImage.style.display = 'block';     // Show old single image
+                oldImageButtonsContainer.style.display = 'block'; // Show old buttons
+                if (animationInterval) clearInterval(animationInterval); // Stop any ongoing animation
                 animationInterval = null;
 
-                let steampunkSource = currentModalLocation.imageSteampunkUrl; 
-                let realSource = currentModalLocation.imageRealUrl; 
+                // Determine sources for fallback (prefer new image fields if available, then old ones)
+                let steampunkSource = currentModalLocation.image1895SteampunkUrl || currentModalLocation.imageSteampunkUrl;
+                let realSource = currentModalLocation.imagePresentDayUrl || currentModalLocation.imageRealUrl;
 
-                if (!steampunkSource || steampunkSource.includes('placehold.co')) {
-                    steampunkSource = currentModalLocation.image1895SteampunkUrl || 'https://placehold.co/400x300/CCCCCC/FFF?text=Steampunk+Not+Available';
-                }
-                if (!realSource || realSource.includes('placehold.co')) {
-                     realSource = currentModalLocation.imagePresentDayUrl || 'https://placehold.co/400x300/CCCCCC/FFF?text=Real+Not+Available';
-                }
+                // If still no valid source, use placeholder
+                steampunkSource = isValidImageUrl(steampunkSource) ? steampunkSource : 'https://placehold.co/400x300/CCCCCC/FFF?text=Steampunk+Not+Available';
+                realSource = isValidImageUrl(realSource) ? realSource : 'https://placehold.co/400x300/CCCCCC/FFF?text=Real+Not+Available';
                 
-                oldModalImage.src = steampunkSource;
+                oldModalImage.src = steampunkSource; // Default to steampunk view
                 oldModalImage.alt = `Steampunk view of ${currentModalLocation.locationName}`;
                 oldModalImage.onerror = function() { this.src = 'https://placehold.co/400x300/CCCCCC/FFF?text=Image+Not+Found'; };
                 
                 steampunkBtn.onclick = () => toggleImage('steampunk', steampunkSource, realSource);
                 realBtn.onclick = () => toggleImage('real', steampunkSource, realSource);
             }
-            modal.style.display = "block";
+            modal.style.display = "block"; // Show the modal
         }
 
         function closeModal() {
             modal.style.display = "none";
-            if (animationInterval) clearInterval(animationInterval);
+            if (animationInterval) clearInterval(animationInterval); // Stop slideshow on close
             animationInterval = null;
-            currentModalLocation = null;
-            // Reset all animated image elements to avoid showing old images briefly
-            [modalImagePresent, modalImage1895, modalImageCharacter, modalImageCharacterAnimated].forEach(img => {
+            currentModalLocation = null; // Reset current location
+            // Clear all image sources to prevent flickering or showing old images
+            [modalImagePresent, modalImage1895, modalImageCharacter, modalImageCharacterAnimated, oldModalImage].forEach(img => {
                 if(img) img.src = ""; 
             });
         }
 
+        // Function for the old toggle buttons (kept for locations not using the new animation)
         function toggleImage(type, steampunkSrc, realSrc) {
             if (!currentModalLocation) return;
             
@@ -964,24 +1002,26 @@
             let altText = '';
 
             if (type === 'steampunk') {
-                targetSrc = steampunkSrc || currentModalLocation.imageSteampunkUrl || currentModalLocation.image1895SteampunkUrl || 'https://placehold.co/400x300/CCCCCC/FFF?text=Steampunk+Not+Found';
+                targetSrc = steampunkSrc; // Already determined with fallback in showDetails
                 altText = `Steampunk view of ${currentModalLocation.locationName}`;
             } else if (type === 'real') {
-                targetSrc = realSrc || currentModalLocation.imageRealUrl || currentModalLocation.imagePresentDayUrl || 'https://placehold.co/400x300/CCCCCC/FFF?text=Real+Not+Found';
+                targetSrc = realSrc; // Already determined with fallback in showDetails
                 altText = `Real view of ${currentModalLocation.locationName}`;
             }
             
-            oldModalImage.src = targetSrc.replace(/\\n/g, '');
+            oldModalImage.src = targetSrc.replace(/\\n/g, ''); // Clean up any newline characters
             oldModalImage.alt = altText;
             oldModalImage.onerror = function() { this.src = 'https://placehold.co/400x300/CCCCCC/FFF?text=Image+Not+Found'; };
         }
 
+        // Close modal if user clicks outside of it
         window.onclick = function(event) {
             if (event.target == modal) {
                 closeModal();
             }
         }
 
+        // Close modal on Escape key press
         document.addEventListener('keydown', function(event) {
             if (event.key === "Escape") {
                 closeModal();
