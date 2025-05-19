@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-P">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M:1895- Lockport IL Experience</title>
+    <title>Mission 1895 - Lockport Interactive Map</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
@@ -12,14 +12,19 @@
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        html, body {
+            height: 100%; /* Ensure html and body take full height for background */
+        }
         body {
             font-family: 'Merriweather', serif;
-            /* Darker, rich background inspired by the PDF's mood */
-            background-color: #3a2f2f; /* Dark, slightly desaturated brown */
-            /* Optional: Add a subtle texture or gradient. Example:
-            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('your-subtle-texture.png');
-            */
-            color: #e0dcd1; /* Light parchment color for general text for contrast */
+            /* Argyle background for the entire site */
+            background-image: url('https://i.postimg.cc/25G68s0k/argylebackgroundtexture.jpg');
+            background-color: #3a2f2f; /* Fallback color */
+            background-repeat: repeat; /* Tile the background image */
+            background-attachment: fixed; /* Keep background fixed during scroll */
+            background-size: auto; /* Or specify a size like '300px' or 'cover' if needed */
+            
+            color: #e0dcd1; 
             margin: 0;
             padding: 0;
             overflow-x: hidden; 
@@ -27,27 +32,20 @@
 
         /* Header Styling */
         header {
-            background-color: #2c1e1e; /* Even darker brown for header, like old leather/wood */
-            padding: 2rem 1rem; /* Increased padding */
+            background-color: rgba(44, 30, 30, 0.85); /* Dark brown with some transparency to show argyle slightly */
+            padding: 1.5rem 1rem; 
             text-align: center;
-            border-bottom: 4px solid #8c0000; /* Deep red accent border, inspired by PDF accents */
+            border-bottom: 4px solid #8c0000; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            display: flex; /* For centering the logo */
+            justify-content: center; /* For centering the logo */
+            align-items: center; /* For centering the logo */
         }
 
-        header h1.main-title {
-            font-family: 'Cinzel Decorative', serif; /* Ornate font for the main title */
-            font-size: 3.5rem; /* Larger font size */
-            color: #d4af37; /* Gold/Bronze color for main title */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7), 0 0 10px rgba(212,175,55,0.3); /* Shadow for depth */
-            margin-bottom: 0.5rem;
-        }
-
-        header p.subtitle {
-            font-family: 'Merriweather', serif;
-            font-style: italic;
-            font-size: 1.25rem;
-            color: #c9b7a5; /* Lighter, aged parchment for subtitle */
-            margin-top: 0.5rem;
+        header img.header-logo {
+            max-width: 80%; /* Adjust as needed */
+            max-height: 150px; /* Adjust as needed */
+            height: auto; /* Maintain aspect ratio */
         }
         
         /* General title font for other headings */
@@ -64,7 +62,7 @@
         }
         .leaflet-popup-content-wrapper {
             background: #fdf5e6; 
-            color: #4a3b31; /* Keep dark text for readability on light popup */
+            color: #4a3b31; 
             border-radius: 5px;
             box-shadow: 0 3px 14px rgba(0,0,0,0.4);
         }
@@ -72,7 +70,7 @@
             margin-top: 0;
             margin-bottom: 5px;
             font-size: 1.3em;
-            font-family: 'IM Fell English SC', serif; /* Consistent title font */
+            font-family: 'IM Fell English SC', serif; 
             color: #5a3d2b;
         }
         .leaflet-popup-content p {
@@ -83,10 +81,10 @@
             background: #fdf5e6;
         }
         .popup-button {
-            background-color: #6a0dad; /* Purple accent from PDF */
+            background-color: #6a0dad; 
             color: #fff;
             padding: 8px 12px;
-            border: 1px solid #40006b; /* Darker purple border */
+            border: 1px solid #40006b; 
             border-radius: 4px;
             cursor: pointer;
             font-family: 'Merriweather', serif;
@@ -98,7 +96,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
         .popup-button:hover {
-            background-color: #800080; /* Brighter purple on hover */
+            background-color: #800080; 
             border-color: #500050;
         }
 
@@ -112,25 +110,25 @@
             width: 100%; 
             height: 100%; 
             overflow: auto; 
-            background-color: rgba(0,0,0,0.7); /* Darker overlay */
+            background-color: rgba(0,0,0,0.7); 
             padding-top: 20px; 
         }
         .modal-content {
-            background-color: #f5e8c8; /* Parchment for modal content */
+            background-color: #f5e8c8; 
             margin: 5% auto; 
             padding: 25px;
-            border: 5px solid #8c0000; /* Deep red accent border */
+            border: 5px solid #8c0000; 
             border-radius: 10px;
             width: 90%; 
             max-width: 700px;
-            box-shadow: 0 0 25px rgba(0,0,0,0.8); /* Stronger shadow */
+            box-shadow: 0 0 25px rgba(0,0,0,0.8); 
             position: relative;
             font-family: 'Merriweather', serif;
-            color: #4a3b31; /* Dark text for readability on parchment */
+            color: #4a3b31; 
         }
         .modal-content h2, .modal-content h3 {
              font-family: 'IM Fell English SC', serif;
-             color: #5a3d2b; /* Darker brown for titles within modal */
+             color: #5a3d2b; 
         }
         .close-button {
             color: #5a3d2b;
@@ -143,7 +141,7 @@
         }
         .close-button:hover,
         .close-button:focus {
-            color: #8c0000; /* Red accent on hover */
+            color: #8c0000; 
             text-decoration: none;
             cursor: pointer;
         }
@@ -154,7 +152,7 @@
             object-fit: contain;
             margin-top: 15px; 
             margin-bottom: 15px; 
-            border: 3px solid #8c0000; /* Red accent border */
+            border: 3px solid #8c0000; 
             border-radius: 8px;
             margin-left: auto;
             margin-right: auto;
@@ -185,18 +183,17 @@
         .image-toggle-buttons button:hover {
             background-color: #A0522D;
         }
-        /* Intro Text Box Styling */
         .intro-text {
-            background-color: rgba(245, 232, 200, 0.85); /* Slightly more opaque parchment */
+            background-color: rgba(245, 232, 200, 0.9); /* Slightly more opaque parchment for better readability over argyle */
             padding: 20px;
-            margin: 30px auto; /* Centered with more margin */
+            margin: 30px auto; 
             border-radius: 8px;
-            border: 3px dashed #8c0000; /* Red accent border */
+            border: 3px dashed #8c0000; 
             text-align: justify;
-            color: #4a3b31; /* Dark text for readability */
-            max-width: 900px; /* Limit width for better readability */
+            color: #4a3b31; 
+            max-width: 900px; 
         }
-         .intro-text h2 { /* Specific styling for h2 within intro-text */
+         .intro-text h2 { 
             font-family: 'IM Fell English SC', serif;
             color: #5a3d2b;
          }
@@ -215,7 +212,6 @@
             box-shadow: 0 0 5px rgba(0,0,0,0.5);
         }
 
-        /* Animation Styles */
         .image-animation-container {
             position: relative;
             width: 100%;
@@ -244,19 +240,16 @@
         }
     </style>
 </head>
-<body class="bg-gray-100"> <header>
-        <h1 class="main-title">M:1895 Lockport</h1>
-        <p class="subtitle">Hunt for the Infernal Crystal </p>
+<body> 
+    <header>
+        <img src="https://i.postimg.cc/sfNMWRs1/M1895withlightning-Smaller.png" alt="Mission 1895 Lockport Logo" class="header-logo">
     </header>
 
     <div class="container mx-auto px-4">
-<!--
         <div class="intro-text mb-6">
-            <h2 class="text-3xl mb-3">A Message from The Sentinel...</h2>
-            <p>In the early 1830’s, dreamy eyed settlers from the east had arrived on the unbroken prairie of what would soon be known as Lockport. Because of a forty-foot drop in elevation along the Des Plaines River, men with vision saw that they could harness nature and supply hydro-electric power for all their needs. Terrain thus fated Lockport to be the headquarters of the great I&M Canal – an inland waterway linking New York to New Orleans... But by 1895, the once promising and hopeful city of Lockport had fallen into darkness... The evil that undermines men’s desires to build towers to heaven by their own hand had beginnings much further back...</p>
+            <h2 class="text-3xl mb-3 title-font">A Message from The Sentinel...</h2> <p>In the early 1830’s, dreamy eyed settlers from the east had arrived on the unbroken prairie of what would soon be known as Lockport. Because of a forty-foot drop in elevation along the Des Plaines River, men with vision saw that they could harness nature and supply hydro-electric power for all their needs. Terrain thus fated Lockport to be the headquarters of the great I&M Canal – an inland waterway linking New York to New Orleans... But by 1895, the once promising and hopeful city of Lockport had fallen into darkness... The evil that undermines men’s desires to build towers to heaven by their own hand had beginnings much further back...</p>
             <p class="mt-2">Use this Chrono-Map to navigate the streets of 1895 Lockport, uncover the secrets of its denizens, and aid in a mission of utmost importance!</p>
         </div>
--->
 
         <div id="map" class="mb-8"></div>
     </div>
@@ -560,7 +553,7 @@
     },
     {
         id: 18,
-        characterName: "Dorothy Dow Fitzgerald: Author and Bohemian", // Clarified name
+        characterName: "Dorothy Dow Fitzgerald: Author and Bohemian", 
         locationName: "White Oak Library",
         address: "121 E 8th St, Lockport, IL",
         hours: "Mon: 9:00am - 9:00pm, Tue: 9:00am - 9:00pm, Wed: 9:00am - 9:00pm, Thu: 9:00am - 9:00pm, Fri: 9:00am - 5:00pm, Sat: 9:00am - 5:00pm",
@@ -569,7 +562,7 @@
         lon: -88.056071,
         imagePresentDayUrl: "https://i.postimg.cc/2jH1V5WP/White-Oak-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/rsgxpCkb/Victorian-White-Oak.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/wBTvq8v6/Boyer-White-Oak.jpg", // This image seems to be Boyer, but card is Dorothy
+        image1895CharacterUrl: "https://i.postimg.cc/wBTvq8v6/Boyer-White-Oak.jpg", 
         imageCharacterAnimatedUrl: "https://i.postimg.cc/yNBQwy7R/White-Oak-Library.gif",
         characterCardUrl: "https://i.postimg.cc/vmBZyjLF/18-Card-Dorothy-Dow.jpg"
     },
@@ -952,7 +945,7 @@
         const fantasyMapUrl = 'https://mapwarper.net/maps/tile/91451/{z}/{x}/{y}.png'; 
         const fantasyMapLayer = L.tileLayer(fantasyMapUrl, {
             attribution: 'Fantasy Map Overlay &copy; <a href="https://mapwarper.net/maps/91451" target="_blank">MapWarper</a>',
-            opacity: 1.0, 
+            opacity: 1.0, // Updated opacity to 100%
             minZoom: 13,
             maxZoom: 19,
             tms: false 
@@ -1074,13 +1067,13 @@
             if (isValidImageUrl(currentModalLocation.characterCardUrl)) {
                 modalCharacterCard.src = currentModalLocation.characterCardUrl;
                 modalCharacterCard.alt = `${currentModalLocation.characterName} Card`;
-                modalCharacterCard.style.display = 'block'; // Make it visible
+                modalCharacterCard.style.display = 'block'; 
                 modalCharacterCard.onerror = function() { 
                     this.style.display = 'none'; 
                     console.error(`Character card for ${currentModalLocation.locationName} failed to load: ${this.src}`);
                 };
             } else {
-                modalCharacterCard.style.display = 'none'; // Hide if no valid URL
+                modalCharacterCard.style.display = 'none'; 
                 modalCharacterCard.src = ''; 
             }
             
