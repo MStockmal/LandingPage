@@ -3,35 +3,68 @@
 <head>
     <meta charset="UTF-P">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mission 1895 - Lockport Interactive Map</title>
+    <title>M:1895- Lockport IL Experience</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
-    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             font-family: 'Merriweather', serif;
-            background-color: #f5e8c8; /* Parchment base color */
-            color: #4a3b31; /* Dark brown text */
+            /* Darker, rich background inspired by the PDF's mood */
+            background-color: #3a2f2f; /* Dark, slightly desaturated brown */
+            /* Optional: Add a subtle texture or gradient. Example:
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('your-subtle-texture.png');
+            */
+            color: #e0dcd1; /* Light parchment color for general text for contrast */
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden; 
         }
-        h1, h2, h3, .title-font {
+
+        /* Header Styling */
+        header {
+            background-color: #2c1e1e; /* Even darker brown for header, like old leather/wood */
+            padding: 2rem 1rem; /* Increased padding */
+            text-align: center;
+            border-bottom: 4px solid #8c0000; /* Deep red accent border, inspired by PDF accents */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        header h1.main-title {
+            font-family: 'Cinzel Decorative', serif; /* Ornate font for the main title */
+            font-size: 3.5rem; /* Larger font size */
+            color: #d4af37; /* Gold/Bronze color for main title */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7), 0 0 10px rgba(212,175,55,0.3); /* Shadow for depth */
+            margin-bottom: 0.5rem;
+        }
+
+        header p.subtitle {
+            font-family: 'Merriweather', serif;
+            font-style: italic;
+            font-size: 1.25rem;
+            color: #c9b7a5; /* Lighter, aged parchment for subtitle */
+            margin-top: 0.5rem;
+        }
+        
+        /* General title font for other headings */
+        .title-font {
             font-family: 'IM Fell English SC', serif;
-            color: #5a3d2b; /* Darker brown for titles */
         }
+
         #map {
-            height: 60vh; /* Adjust as needed */
+            height: 60vh; 
             width: 100%;
-            border: 3px solid #8B4513; /* SaddleBrown border */
+            border: 3px solid #8B4513; 
             box-shadow: 0 0 15px rgba(0,0,0,0.5);
             border-radius: 8px;
         }
         .leaflet-popup-content-wrapper {
-            background: #fdf5e6; /* Old Lace - for popups */
-            color: #4a3b31;
+            background: #fdf5e6; 
+            color: #4a3b31; /* Keep dark text for readability on light popup */
             border-radius: 5px;
             box-shadow: 0 3px 14px rgba(0,0,0,0.4);
         }
@@ -39,6 +72,8 @@
             margin-top: 0;
             margin-bottom: 5px;
             font-size: 1.3em;
+            font-family: 'IM Fell English SC', serif; /* Consistent title font */
+            color: #5a3d2b;
         }
         .leaflet-popup-content p {
             margin: 5px 0;
@@ -48,52 +83,54 @@
             background: #fdf5e6;
         }
         .popup-button {
-            background-color: #8B4513; /* SaddleBrown */
+            background-color: #6a0dad; /* Purple accent from PDF */
             color: #fff;
             padding: 8px 12px;
-            border: none;
+            border: 1px solid #40006b; /* Darker purple border */
             border-radius: 4px;
             cursor: pointer;
             font-family: 'Merriweather', serif;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
             display: block;
             width: calc(100% - 10px);
             margin: 10px 5px 5px 5px;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
         .popup-button:hover {
-            background-color: #A0522D; /* Sienna */
+            background-color: #800080; /* Brighter purple on hover */
+            border-color: #500050;
         }
 
         /* Modal Styles */
         .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1000; /* Sit on top */
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
             left: 0;
             top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
-            padding-top: 20px; /* Location of the box */
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.7); /* Darker overlay */
+            padding-top: 20px; 
         }
         .modal-content {
-            background-color: #f5e8c8; /* Parchment */
-            margin: 5% auto; /* 5% from the top and centered */
+            background-color: #f5e8c8; /* Parchment for modal content */
+            margin: 5% auto; 
             padding: 25px;
-            border: 5px solid #8B4513; /* SaddleBrown border */
+            border: 5px solid #8c0000; /* Deep red accent border */
             border-radius: 10px;
-            width: 90%; /* Could be more or less, depending on screen size */
+            width: 90%; 
             max-width: 700px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.7);
+            box-shadow: 0 0 25px rgba(0,0,0,0.8); /* Stronger shadow */
             position: relative;
             font-family: 'Merriweather', serif;
-            color: #4a3b31;
+            color: #4a3b31; /* Dark text for readability on parchment */
         }
         .modal-content h2, .modal-content h3 {
              font-family: 'IM Fell English SC', serif;
-             color: #5a3d2b;
+             color: #5a3d2b; /* Darker brown for titles within modal */
         }
         .close-button {
             color: #5a3d2b;
@@ -106,26 +143,24 @@
         }
         .close-button:hover,
         .close-button:focus {
-            color: #8B4513;
+            color: #8c0000; /* Red accent on hover */
             text-decoration: none;
             cursor: pointer;
         }
-         /* Styles for the new character card image */
         #modalCharacterCard {
             width: 100%;
-            max-width: 250px; /* Adjust as needed, smaller than main images */
+            max-width: 250px; 
             height: auto;
             object-fit: contain;
-            margin-top: 15px; /* Space above the card */
-            margin-bottom: 15px; /* Space below the card */
-            border: 3px solid #a56a43; /* Slightly different border */
+            margin-top: 15px; 
+            margin-bottom: 15px; 
+            border: 3px solid #8c0000; /* Red accent border */
             border-radius: 8px;
-            /* display is controlled by JS, initially hidden via inline style */
             margin-left: auto;
             margin-right: auto;
             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
-        #modalImage { /* Old single image display */
+        #modalImage { 
             width: 100%;
             max-width: 400px;
             object-fit: contain;
@@ -136,7 +171,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        .image-toggle-buttons button { /* Old buttons */
+        .image-toggle-buttons button { 
             background-color: #8B4513;
             color: white;
             padding: 10px 15px;
@@ -150,14 +185,22 @@
         .image-toggle-buttons button:hover {
             background-color: #A0522D;
         }
+        /* Intro Text Box Styling */
         .intro-text {
-            background-color: rgba(253, 245, 230, 0.8);
+            background-color: rgba(245, 232, 200, 0.85); /* Slightly more opaque parchment */
             padding: 20px;
-            margin: 20px;
+            margin: 30px auto; /* Centered with more margin */
             border-radius: 8px;
-            border: 2px dashed #8B4513;
+            border: 3px dashed #8c0000; /* Red accent border */
             text-align: justify;
+            color: #4a3b31; /* Dark text for readability */
+            max-width: 900px; /* Limit width for better readability */
         }
+         .intro-text h2 { /* Specific styling for h2 within intro-text */
+            font-family: 'IM Fell English SC', serif;
+            color: #5a3d2b;
+         }
+
         .custom-marker-icon {
             background-color: #8B4513;
             border: 2px solid #D2B48C;
@@ -172,12 +215,12 @@
             box-shadow: 0 0 5px rgba(0,0,0,0.5);
         }
 
-        /* New Animation Styles */
+        /* Animation Styles */
         .image-animation-container {
             position: relative;
             width: 100%;
             max-width: 400px;
-            aspect-ratio: 2 / 3; /* Or your preferred aspect ratio */
+            aspect-ratio: 2 / 3; 
             margin-top: 15px;
             border: 2px solid #8B4513;
             border-radius: 5px;
@@ -201,11 +244,9 @@
         }
     </style>
 </head>
-<body class="bg-gray-100">
-
-    <header class="text-center py-8">
-        <h1 class="text-5xl title-font">Mission 1895: Lockport</h1>
-        <p class="text-xl mt-2">An Alternate Victorian Steampunk Reality Tour</p>
+<body class="bg-gray-100"> <header>
+        <h1 class="main-title">M:1895 Lockport</h1>
+        <p class="subtitle">Hunt for the Infernal Crystal </p>
     </header>
 
     <div class="container mx-auto px-4">
@@ -517,7 +558,7 @@
     },
     {
         id: 18,
-        characterName: "Charles Boyer: Entrepreneur (Dorothy Dow Fitzgerald: Author and Bohemian)", // Updated character name for clarity
+        characterName: "Dorothy Dow Fitzgerald: Author and Bohemian", // Clarified name
         locationName: "White Oak Library",
         address: "121 E 8th St, Lockport, IL",
         hours: "Mon: 9:00am - 9:00pm, Tue: 9:00am - 9:00pm, Wed: 9:00am - 9:00pm, Thu: 9:00am - 9:00pm, Fri: 9:00am - 5:00pm, Sat: 9:00am - 5:00pm",
@@ -526,7 +567,7 @@
         lon: -88.056071,
         imagePresentDayUrl: "https://i.postimg.cc/2jH1V5WP/White-Oak-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/rsgxpCkb/Victorian-White-Oak.jpg",
-        image1895CharacterUrl: "https://i.postimg.cc/wBTvq8v6/Boyer-White-Oak.jpg", // This might be Dorothy Dow, card is Dorothy Dow
+        image1895CharacterUrl: "https://i.postimg.cc/wBTvq8v6/Boyer-White-Oak.jpg", // This image seems to be Boyer, but card is Dorothy
         imageCharacterAnimatedUrl: "https://i.postimg.cc/yNBQwy7R/White-Oak-Library.gif",
         characterCardUrl: "https://i.postimg.cc/vmBZyjLF/18-Card-Dorothy-Dow.jpg"
     },
@@ -899,7 +940,7 @@
 ];
 
         // --- MAP INITIALIZATION ---
-        const map = L.map('map').setView([41.5870, -88.0565], 15); // Centered on Lockport
+        const map = L.map('map').setView([41.5870, -88.0565], 15); 
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -1030,14 +1071,14 @@
             // Handle Character Card Image Display
             if (isValidImageUrl(currentModalLocation.characterCardUrl)) {
                 modalCharacterCard.src = currentModalLocation.characterCardUrl;
-                modalCharacterCard.alt = `${currentModalLocation.characterName} Card`; // Use characterName for alt text
-                modalCharacterCard.style.display = 'block';
+                modalCharacterCard.alt = `${currentModalLocation.characterName} Card`;
+                modalCharacterCard.style.display = 'block'; // Make it visible
                 modalCharacterCard.onerror = function() { 
-                    this.style.display = 'none'; // Hide if card image fails to load
+                    this.style.display = 'none'; 
                     console.error(`Character card for ${currentModalLocation.locationName} failed to load: ${this.src}`);
                 };
             } else {
-                modalCharacterCard.style.display = 'none';
+                modalCharacterCard.style.display = 'none'; // Hide if no valid URL
                 modalCharacterCard.src = ''; 
             }
             
@@ -1111,8 +1152,8 @@
             currentModalLocation = null; 
             [modalImagePresent, modalImage1895, modalImageCharacter, modalImageCharacterAnimated, oldModalImage, modalCharacterCard].forEach(img => {
                 if(img) {
-                    img.src = ""; // Clear src to prevent old images from flashing
-                    img.onerror = null; // Remove previous onerror handlers
+                    img.src = ""; 
+                    img.onerror = null; 
                 }
             });
         }
