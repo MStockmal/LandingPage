@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,18 +15,30 @@
     <style>
         html, body {
             height: 100%;
+            width: 100%;
+            overflow: hidden; /* Prevent scrolling of the page */
         }
         body {
             font-family: 'Merriweather', serif;
-            background-image: url('https://i.postimg.cc/25G68s0k/argylebackgroundtexture.jpg');
             background-color: #3a2f2f;
-            background-repeat: repeat;
-            background-attachment: fixed;
-            background-size: auto;
             color: #e0dcd1;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
+        }
+
+        /* Full-screen map */
+        #map {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            z-index: 100;
+        }
+
+        /* Initially hidden elements */
+        .hidden-on-load {
+            display: none;
         }
 
         /* Header Styling */
@@ -39,6 +52,8 @@
             justify-content: center;
             align-items: center;
             height: 200px; /* Fixed height for the header */
+            position: relative;
+            z-index: 101;
         }
 
         header img.header-logo {
@@ -53,37 +68,26 @@
             font-family: 'IM Fell English SC', serif;
         }
 
-        /* Map container and controls styling */
-        .map-container-wrapper {
-            padding-bottom: 50px; /* Added footer space */
-        }
-
-        #map {
-            height: 60vh;
-            width: 100%;
-            border: 3px solid #DAA520; /* Gold color */
-            box-shadow: 0 0 10px rgba(218, 165, 32, 0.7), /* Gold outer glow */
-                        inset 0 0 5px rgba(0,0,0,0.5); /* Inner shadow for embossed look */
-            border-radius: 10px; /* Rounded corners */
-            margin-bottom: 10px; /* Space between map and slider */
-        }
+        /* Map controls styling */
         .map-controls {
-            background-color: rgba(44, 30, 30, 0.75); /* Dark, slightly transparent background */
-            padding: 0.75rem 1rem;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(44, 30, 30, 0.85);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
             text-align: center;
-            margin: 20px auto 20px auto; /* Centered with top and bottom margin */
-            max-width: 400px; /* Limit width of control box */
+            z-index: 102; /* Ensure controls are on top of the map */
         }
         .map-controls label {
-            color: #f5e8c8; /* Parchment color for label */
+            color: #f5e8c8;
             margin-right: 10px;
             font-family: 'IM Fell English SC', serif;
             font-size: 1.1em;
         }
         .map-controls input[type="range"] {
-            width: 200px; /* Adjust slider width */
+            width: 200px;
             vertical-align: middle;
             cursor: pointer;
         }
@@ -221,6 +225,8 @@
             text-align: justify;
             color: #4a3b31;
             max-width: 900px;
+            position: relative;
+            z-index: 101;
         }
          .intro-text h2 {
             font-family: 'IM Fell English SC', serif;
@@ -270,22 +276,20 @@
     </style>
 </head>
 <body>
-    <header>
+    <header class="hidden-on-load">
         <img src="https://i.postimg.cc/YCfDn7rz/M1895withlightning.png" alt="Mission 1895 Lockport Logo" class="header-logo">
     </header>
 
-    <div class="container mx-auto px-4 map-container-wrapper">
-        <div class="map-controls">
-            <label for="opacitySlider">Fantasy Map Opacity:</label>
-            <input type="range" id="opacitySlider" min="0" max="1" step="0.01" value="1.0">
-        </div>
+    <div class="map-controls"> <label for="opacitySlider">Fantasy Map Opacity:</label>
+        <input type="range" id="opacitySlider" min="0" max="1" step="0.01" value="1.0">
+    </div>
 
-        <div id="map"></div>
+    <div id="map"></div>
 
-        <div class="intro-text mt-6 mb-6"> <h2 class="text-3xl mb-3 title-font">A Message from The Sentinel...</h2>
-            <p>In the early 1830’s, dreamy eyed settlers from the east had arrived on the unbroken prairie of what would soon be known as Lockport. Because of a forty-foot drop in elevation along the Des Plaines River, men with vision saw that they could harness nature and supply hydro-electric power for all their needs. Terrain thus fated Lockport to be the headquarters of the great I&M Canal – an inland waterway linking New York to New Orleans... But by 1895, the once promising and hopeful city of Lockport had fallen into darkness... The evil that undermines men’s desires to build towers to heaven by their own hand had beginnings much further back...</p>
-            <p class="mt-2">Use this Chrono-Map to navigate the streets of 1895 Lockport, uncover the secrets of its denizens, and aid in a mission of utmost importance!</p>
-        </div>
+    <div class="intro-text mt-6 mb-6 hidden-on-load">
+        <h2 class="text-3xl mb-3 title-font">A Message from The Sentinel...</h2>
+        <p>In the early 1830’s, dreamy eyed settlers from the east had arrived on the unbroken prairie of what would soon be known as Lockport. Because of a forty-foot drop in elevation along the Des Plaines River, men with vision saw that they could harness nature and supply hydro-electric power for all their needs. Terrain thus fated Lockport to be the headquarters of the great I&M Canal – an inland waterway linking New York to New Orleans... But by 1895, the once promising and hopeful city of Lockport had fallen into darkness... The evil that undermines men’s desires to build towers to heaven by their own hand had beginnings much further back...</p>
+        <p class="mt-2">Use this Chrono-Map to navigate the streets of 1895 Lockport, uncover the secrets of its denizens, and aid in a mission of utmost importance!</p>
     </div>
 
     <div id="detailsModal" class="modal">
@@ -966,19 +970,21 @@
 ];
 
         // --- MAP INITIALIZATION ---
-        const map = L.map('map').setView([41.5870, -88.0565], 15);
+        const map = L.map('map', {
+            zoomControl: false // Disable zoom control to keep the view clean
+        }).setView([41.589, -88.0575], 17); // Centered and zoomed on Downtown Lockport
 
-        // Satellite Base Layer
+        // Satellite Base Layer (can be removed if you ONLY want the fantasy map)
         const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
             maxZoom: 19
-        }).addTo(map);
+        }); //.addTo(map); // Initially commented out to only show fantasy map
 
         // Fantasy Map Overlay from MapWarper
         const fantasyMapUrl = 'https://mapwarper.net/maps/tile/91451/{z}/{x}/{y}.png';
         const fantasyMapLayer = L.tileLayer(fantasyMapUrl, {
             attribution: 'Fantasy Map Overlay &copy; <a href="https://mapwarper.net/maps/91451" target="_blank">MapWarper</a>',
-            opacity: 1.0, // Initial opacity set to 1.0 (100%)
+            opacity: 1.0,
             minZoom: 13,
             maxZoom: 19,
             tms: false
@@ -991,7 +997,16 @@
         // Opacity Slider Event Listener
         const opacitySlider = document.getElementById('opacitySlider');
         opacitySlider.addEventListener('input', function (e) {
-            fantasyMapLayer.setOpacity(parseFloat(e.target.value));
+            const newOpacity = parseFloat(e.target.value);
+            fantasyMapLayer.setOpacity(newOpacity);
+
+            // Optional: Show satellite layer if fantasy map is partially transparent
+            if (newOpacity < 1.0 && !map.hasLayer(satelliteLayer)) {
+                map.addLayer(satelliteLayer);
+                satelliteLayer.bringToBack();
+            } else if (newOpacity >= 1.0 && map.hasLayer(satelliteLayer)) {
+                map.removeLayer(satelliteLayer);
+            }
         });
 
 
