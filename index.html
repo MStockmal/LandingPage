@@ -40,27 +40,16 @@
             display: none;
         }
 
-        /* Header Styling */
-        header {
-            background-color: rgba(24, 10, 10, 0.9); /* Darkened opacity */
-            padding: 0.5rem; /* Adjusted padding */
-            text-align: center;
-            border-bottom: 4px solid #8c0000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px; /* Fixed height for the header */
-            position: relative;
-            z-index: 101;
-        }
-
-        header img.header-logo {
-            max-width: 100%;
-            max-height: 100%; /* Allow logo to fill header height */
-            width: auto;
+        /* Floating Logo */
+        #floating-logo {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 250px;
             height: auto;
-            object-fit: contain;
+            z-index: 102;
+            filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.7));
         }
 
         .title-font { /* For other titles if needed */
@@ -70,8 +59,9 @@
         /* Map controls styling */
         .map-controls {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             background-color: rgba(44, 30, 30, 0.85);
             padding: 1rem;
             border-radius: 8px;
@@ -275,13 +265,7 @@
     </style>
 </head>
 <body>
-    <header class="hidden-on-load">
-        <img src="https://i.postimg.cc/YCfDn7rz/M1895withlightning.png" alt="Mission 1895 Lockport Logo" class="header-logo">
-    </header>
-
-    <div class="map-controls"> <label for="opacitySlider">Fantasy Map Opacity:</label>
-        <input type="range" id="opacitySlider" min="0" max="1" step="0.01" value="1.0">
-    </div>
+    <img src="https://i.postimg.cc/YCfDn7rz/M1895withlightning.png" alt="Mission 1895 Lockport Logo" id="floating-logo">
 
     <div id="map"></div>
 
@@ -305,6 +289,11 @@
              <img id="modalSteampunkImage" src="" alt="1895 Steampunk View" style="display: none; width: 100%; max-width: 400px; object-fit: contain; margin-top: 15px; border: 2px solid #8B4513; border-radius: 5px; display: block; margin-left: auto; margin-right: auto;">
              </div>
       </div>
+    </div>
+    
+    <div class="map-controls"> 
+        <label for="opacitySlider">Fantasy Map Opacity:</label>
+        <input type="range" id="opacitySlider" min="0" max="1" step="0.01" value="1.0">
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
