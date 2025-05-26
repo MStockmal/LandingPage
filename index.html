@@ -293,7 +293,7 @@
 
     <div id="detailsModal" class="modal">
       <div class="modal-content">
-        <span class="close-button" onclick="closeModal()">&times;</span>
+        <span class="close-button" onclick="closeModal()">×</span>
         <h2 id="modalTitle" class="text-3xl mb-3"></h2>
         <p><strong>Address:</strong> <a id="modalAddressLink" href="#" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 visited:text-purple-600"><span id="modalAddress"></span></a></p>
         <p><strong>Status:</strong> <span id="modalOpenStatus"></span></p>
@@ -314,20 +314,29 @@
 
     <script>
         // --- MAP INITIALIZATION ---
+        // Define the boundaries for the map to keep it focused on the fantasy area
+        const corner1 = L.latLng(41.592, -88.054);
+        const corner2 = L.latLng(41.560, -88.072);
+        const bounds = L.latLngBounds(corner1, corner2);
+
         const map = L.map('map', {
-            zoomControl: false // Disable zoom control to keep the view clean
-        }).setView([41.589, -88.0575], 17); // Centered and zoomed on Downtown Lockport
+            zoomControl: false, // Disable zoom control to keep the view clean
+            minZoom: 17, // Prevent zooming out too far
+            maxBounds: bounds, // Restrict panning to the fantasy map area
+            maxBoundsViscosity: 1.0 // Makes the bounds completely solid
+        }).setView([41.589, -88.0575], 18); // Increased zoom level for immersion
+
 
         // Satellite Base Layer (can be removed if you ONLY want the fantasy map)
         const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+            attribution: 'Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
             maxZoom: 19
         }); //.addTo(map); // Initially commented out to only show fantasy map
 
         // Fantasy Map Overlay from MapWarper
         const fantasyMapUrl = 'https://mapwarper.net/maps/tile/91451/{z}/{x}/{y}.png';
         const fantasyMapLayer = L.tileLayer(fantasyMapUrl, {
-            attribution: 'Fantasy Map Overlay &copy; <a href="https://mapwarper.net/maps/91451" target="_blank">MapWarper</a>',
+            attribution: 'Fantasy Map Overlay © <a href="https://mapwarper.net/maps/91451" target="_blank">MapWarper</a>',
             opacity: 1.0,
             minZoom: 13,
             maxZoom: 19,
@@ -480,7 +489,7 @@
             // Set basic info
             modalTitle.textContent = currentModalLocation.locationName;
             modalAddress.textContent = currentModalLocation.address;
-            modalAddressLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(currentModalLocation.address)}`;
+            modalAddressLink.href = `https://www.google.com/maps/search/?api=1&query=$${encodeURIComponent(currentModalLocation.address)}`;
             modalDescription.innerHTML = currentModalLocation.description.replace(/\\n/g, '<br>');
 
 
