@@ -329,11 +329,11 @@
         }).setView([41.589631, -88.057953], 19); // Centered on the intersection of 9th and State St
 
 
-        // Satellite Base Layer
+        // Satellite Base Layer (can be removed if you ONLY want the fantasy map)
         const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             attribution: 'Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
             maxZoom: 19
-        }).addTo(map);
+        }); //.addTo(map); // Initially commented out to only show fantasy map
 
         // Fantasy Map Overlay from MapWarper
         const fantasyMapUrl = 'https://mapwarper.net/maps/tile/91451/{z}/{x}/{y}.png';
@@ -354,6 +354,14 @@
         opacitySlider.addEventListener('input', function (e) {
             const newOpacity = parseFloat(e.target.value);
             fantasyMapLayer.setOpacity(newOpacity);
+
+            // Optional: Show satellite layer if fantasy map is partially transparent
+            if (newOpacity < 1.0 && !map.hasLayer(satelliteLayer)) {
+                map.addLayer(satelliteLayer);
+                satelliteLayer.bringToBack();
+            } else if (newOpacity >= 1.0 && map.hasLayer(satelliteLayer)) {
+                map.removeLayer(satelliteLayer);
+            }
         });
 
 
