@@ -295,31 +295,23 @@
       <div class="modal-content">
         <span class="close-button" onclick="closeModal()">&times;</span>
         <h2 id="modalTitle" class="text-3xl mb-3"></h2>
-        <h3 class="text-xl mb-1"><strong>Character:</strong> <span id="modalCharacter"></span></h3>
-        <p><strong>Address:</strong> <span id="modalAddress"></span></p> <p><strong>Operating Hours:</strong> <span id="modalHours"></span></p> <img id="modalCharacterCard" src="" alt="Character Card" style="display: none;">
+        <p><strong>Address:</strong> <a id="modalAddressLink" href="#" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 visited:text-purple-600"><span id="modalAddress"></span></a></p>
+        <p><strong>Status:</strong> <span id="modalOpenStatus"></span></p>
+        <p><strong>Today's Hours:</strong> <span id="modalTodaysHours"></span></p>
 
         <h3 class="text-xl mt-4 mb-2">Chronovisor Report:</h3>
         <div id="modalDescription" class="text-sm leading-relaxed max-h-60 overflow-y-auto pr-2"></div>
-        <div class="image-toggle mt-4 text-center">
-          <div id="imageAnimationContainer" class="image-animation-container" style="display: none;">
-            <img id="modalImagePresent" src="" alt="Present Day View" class="animated-image">
-            <img id="modalImage1895" src="" alt="1895 Steampunk View" class="animated-image">
-            <img id="modalImageCharacter" src="" alt="1895 Character View" class="animated-image">
-            <img id="modalImageCharacterAnimated" src="" alt="1895 Character Animated View" class="animated-image">
-          </div>
-          <img id="modalImage" src="" alt="Location Image" style="display: block;">
-          <div class="image-toggle-buttons mt-2" style="display: block;">
-            <button id="steampunkBtn">View Steampunk Version</button>
-            <button id="realBtn">View Real Version</button>
-          </div>
-        </div>
+         <div class="image-toggle mt-4 text-center">
+             <img id="modalSteampunkImage" src="" alt="1895 Steampunk View" style="display: none; width: 100%; max-width: 400px; object-fit: contain; margin-top: 15px; border: 2px solid #8B4513; border-radius: 5px; display: block; margin-left: auto; margin-right: auto;">
+             </div>
       </div>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
-    <script src="locations.js"></script>
+     <script src="locations.js"></script>
+
     <script>
         // --- MAP INITIALIZATION ---
         const map = L.map('map', {
@@ -365,27 +357,15 @@
         // --- MODAL GLOBALS ---
         const modal = document.getElementById('detailsModal');
         const modalTitle = document.getElementById('modalTitle');
-        const modalCharacter = document.getElementById('modalCharacter');
         const modalAddress = document.getElementById('modalAddress');
-        const modalHours = document.getElementById('modalHours');
+        const modalAddressLink = document.getElementById('modalAddressLink');
+        const modalOpenStatus = document.getElementById('modalOpenStatus');
+        const modalTodaysHours = document.getElementById('modalTodaysHours');
         const modalDescription = document.getElementById('modalDescription');
-        const modalCharacterCard = document.getElementById('modalCharacterCard');
-
-        const oldModalImage = document.getElementById('modalImage');
-        const steampunkBtn = document.getElementById('steampunkBtn');
-        const realBtn = document.getElementById('realBtn');
-        const oldImageButtonsContainer = document.querySelector('.image-toggle-buttons');
-
-        const animationContainer = document.getElementById('imageAnimationContainer');
-        const modalImagePresent = document.getElementById('modalImagePresent');
-        const modalImage1895 = document.getElementById('modalImage1895');
-        const modalImageCharacter = document.getElementById('modalImageCharacter');
-        const modalImageCharacterAnimated = document.getElementById('modalImageCharacterAnimated');
-
+        const modalSteampunkImage = document.getElementById('modalSteampunkImage');
 
         let currentModalLocation = null;
-        let currentImageIndex = 0;
-        let animationInterval = null;
+
 
         // --- ADD MARKERS TO MAP ---
         locationsData.forEach(location => {
@@ -400,9 +380,9 @@
             const marker = L.marker([location.lat, location.lon], { icon: customIcon }).addTo(map);
             const popupContent = `
                 <h3 class="title-font">${location.locationName}</h3>
-                <p><strong>Character:</strong> ${location.characterName}</p>
-                <p>${location.description.substring(0, 100).replace(/\\n/g, ' ')}...</p>
-                <button class="popup-button" onclick="showDetails(${location.id})">View Details & Chronovisor</button>
+                <p><strong>Address:</strong> ${location.address}</p>
+                <p><strong>Card Name:</strong> ${location.characterName}: Card #${location.id}</p>
+                <button class="popup-button" onclick="showDetails(${location.id})">View Details</button>
             `;
             marker.bindPopup(popupContent);
         });
@@ -412,174 +392,136 @@
             return url && typeof url === 'string' && !url.includes('placehold.co') && url.startsWith('http');
         }
 
-        // --- ANIMATION FUNCTIONS ---
-        function startImageAnimation() {
-            if (animationInterval) clearInterval(animationInterval);
-
-            if (!currentModalLocation) return;
-
-            const imagesToAnimate = [];
-
-            if (isValidImageUrl(currentModalLocation.imagePresentDayUrl)) {
-                imagesToAnimate.push(modalImagePresent);
+       // --- BUSINESS HOURS FUNCTIONS ---
+        function getOpeningHours(hoursString) {
+            const hours = {};
+            if (!hoursString || hoursString.toLowerCase() === 'hours not listed' || hoursString.toLowerCase() === 'hours not available') {
+                return null;
             }
-            if (isValidImageUrl(currentModalLocation.image1895SteampunkUrl)) {
-                imagesToAnimate.push(modalImage1895);
-            }
-            if (isValidImageUrl(currentModalLocation.image1895CharacterUrl)) {
-                imagesToAnimate.push(modalImageCharacter);
-            }
-            if (isValidImageUrl(currentModalLocation.imageCharacterAnimatedUrl)) {
-                imagesToAnimate.push(modalImageCharacterAnimated);
-            }
+            // Regex to handle various formats like "Mon-Fri", "Mon, Tue", etc.
+            const dayRanges = hoursString.split(/, (?=[A-Z][a-z]{2}:)/);
+            const dayMap = { 'Mon': 0, 'Tue': 1, 'Wed': 2, 'Thu': 3, 'Fri': 4, 'Sat': 5, 'Sun': 6 };
+            const dayAbbrs = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-            if (imagesToAnimate.length === 0) {
-                animationContainer.style.display = 'none';
-                return;
-            }
 
-            [modalImagePresent, modalImage1895, modalImageCharacter, modalImageCharacterAnimated].forEach(img => {
-                if(img) img.classList.remove('active');
+            dayRanges.forEach(rangeInfo => {
+                const [daysPart, timesPart] = rangeInfo.split(/: /);
+                const [startTimeStr, endTimeStr] = timesPart.split(' - ');
+
+                if (daysPart.includes('-')) { // Handles ranges like "Mon-Fri"
+                    const [startDay, endDay] = daysPart.split('-');
+                    let startIndex = dayAbbrs.indexOf(startDay);
+                    let endIndex = dayAbbrs.indexOf(endDay);
+                    for (let i = startIndex; i <= endIndex; i++) {
+                         hours[dayAbbrs[i]] = { start: startTimeStr, end: endTimeStr };
+                    }
+                } else { // Handles single days like "Sat"
+                    hours[daysPart] = { start: startTimeStr, end: endTimeStr };
+                }
             });
+            return hours;
+        }
 
-            currentImageIndex = 0;
-            if (imagesToAnimate.length > 0 && imagesToAnimate[currentImageIndex]) {
-                 imagesToAnimate[currentImageIndex].classList.add('active');
+
+        function checkIfOpen(openingHours) {
+            if (!openingHours) {
+                return { isOpen: "N/A", todaysHours: "Not available" };
             }
 
-            animationInterval = setInterval(() => {
-                if (imagesToAnimate.length > 0 && imagesToAnimate[currentImageIndex]) {
-                    imagesToAnimate[currentImageIndex].classList.remove('active');
+            const now = new Date();
+             const dayOfWeek = now.toLocaleString('en-US', { weekday: 'short' }); // Mon, Tue, etc.
+
+            const todaysHoursData = openingHours[dayOfWeek];
+
+            if (!todaysHoursData) {
+                return { isOpen: "Closed", todaysHours: "Closed Today" };
+            }
+
+             const parseTime = (timeStr) => {
+                if (!timeStr) return null;
+                const normalizedTime = timeStr.toLowerCase().replace(/:\s/g, ':');
+                let [time, modifier] = normalizedTime.split(/(am|pm)/);
+                if (!modifier) { // Handle "Noon" case
+                    if(time.trim() === 'noon') return new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 0);
+                    return null; // or handle other non-standard times
                 }
-                currentImageIndex = (currentImageIndex + 1) % imagesToAnimate.length;
-                if (imagesToAnimate.length > 0 && imagesToAnimate[currentImageIndex]) {
-                    imagesToAnimate[currentImageIndex].classList.add('active');
-                }
-            }, 3000);
+
+                let [hours, minutes] = time.split(':');
+                hours = parseInt(hours, 10);
+                minutes = minutes ? parseInt(minutes, 10) : 0;
+
+                if (modifier === 'pm' && hours < 12) hours += 12;
+                if (modifier === 'am' && hours === 12) hours = 0; // Midnight case
+
+                const date = new Date(now.getTime());
+                date.setHours(hours, minutes, 0, 0);
+                return date;
+            };
+
+            const startTime = parseTime(todaysHoursData.start);
+            const endTime = parseTime(todaysHoursData.end);
+
+            if (!startTime || !endTime) {
+                 return { isOpen: "N/A", todaysHours: "Invalid time format" };
+            }
+
+            const isOpen = now >= startTime && now <= endTime;
+            const statusString = isOpen ? "Open Now" : "Closed";
+
+            return { isOpen: statusString, todaysHours: `${todaysHoursData.start} - ${todaysHoursData.end}` };
         }
+
 
         // --- MODAL FUNCTIONS ---
         function showDetails(locationId) {
             currentModalLocation = locationsData.find(loc => loc.id === locationId);
             if (!currentModalLocation) return;
 
+            // Set basic info
             modalTitle.textContent = currentModalLocation.locationName;
-            modalCharacter.textContent = currentModalLocation.characterName;
             modalAddress.textContent = currentModalLocation.address;
-            modalHours.textContent = currentModalLocation.hours;
+            modalAddressLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(currentModalLocation.address)}`;
             modalDescription.innerHTML = currentModalLocation.description.replace(/\\n/g, '<br>');
 
-            // Handle Character Card Image Display
-            if (isValidImageUrl(currentModalLocation.characterCardUrl)) {
-                modalCharacterCard.src = currentModalLocation.characterCardUrl;
-                modalCharacterCard.alt = `${currentModalLocation.characterName} Card`;
-                modalCharacterCard.style.display = 'block';
-                modalCharacterCard.onerror = function() {
-                    this.style.display = 'none';
-                    console.error(`Character card for ${currentModalLocation.locationName} failed to load: ${this.src}`);
-                };
+
+            // Check and display open status
+            const openingHours = getOpeningHours(currentModalLocation.hours);
+            const openStatus = checkIfOpen(openingHours);
+            modalOpenStatus.textContent = openStatus.isOpen;
+            modalTodaysHours.textContent = openStatus.todaysHours;
+
+
+            // Handle Steampunk Image Display
+            let steampunkImageSource = currentModalLocation.image1895SteampunkUrl || currentModalLocation.imageSteampunkUrl;
+            if (isValidImageUrl(steampunkImageSource)) {
+                modalSteampunkImage.src = steampunkImageSource;
+                modalSteampunkImage.alt = `1895 Steampunk view of ${currentModalLocation.locationName}`;
+                modalSteampunkImage.style.display = 'block';
+                modalSteampunkImage.onerror = function() { this.style.display = 'none'; };
             } else {
-                modalCharacterCard.style.display = 'none';
-                modalCharacterCard.src = '';
+                modalSteampunkImage.style.display = 'none';
             }
 
-            const useNewAnimation = isValidImageUrl(currentModalLocation.imagePresentDayUrl) &&
-                                    isValidImageUrl(currentModalLocation.image1895SteampunkUrl) &&
-                                    isValidImageUrl(currentModalLocation.image1895CharacterUrl);
-
-            if (useNewAnimation) {
-                animationContainer.style.display = 'block';
-                oldModalImage.style.display = 'none';
-                oldImageButtonsContainer.style.display = 'none';
-
-                modalImagePresent.src = currentModalLocation.imagePresentDayUrl;
-                modalImagePresent.alt = `Present day view of ${currentModalLocation.locationName}`;
-
-                modalImage1895.src = currentModalLocation.image1895SteampunkUrl;
-                modalImage1895.alt = `1895 Steampunk view of ${currentModalLocation.locationName}`;
-
-                modalImageCharacter.src = currentModalLocation.image1895CharacterUrl;
-                modalImageCharacter.alt = `1895 Character view of ${currentModalLocation.locationName}`;
-
-                if (isValidImageUrl(currentModalLocation.imageCharacterAnimatedUrl)) {
-                    modalImageCharacterAnimated.src = currentModalLocation.imageCharacterAnimatedUrl;
-                    modalImageCharacterAnimated.alt = `1895 Character animated view of ${currentModalLocation.locationName}`;
-                } else {
-                    modalImageCharacterAnimated.src = "";
-                    modalImageCharacterAnimated.alt = "";
-                }
-
-                [modalImagePresent, modalImage1895, modalImageCharacter, modalImageCharacterAnimated].forEach(img => {
-                    if(img) {
-                        img.onerror = function() {
-                            this.src = 'https://placehold.co/400x600/CCCCCC/FFF?text=Image+Not+Found';
-                            if(animationInterval) clearInterval(animationInterval);
-                            animationInterval = null;
-                             console.error(`Slideshow image for ${currentModalLocation.locationName} failed to load: ${this.src}`);
-                        };
-                    }
-                });
-                startImageAnimation();
-            } else {
-                animationContainer.style.display = 'none';
-                oldModalImage.style.display = 'block';
-                oldImageButtonsContainer.style.display = 'block';
-                if (animationInterval) clearInterval(animationInterval);
-                animationInterval = null;
-
-                let steampunkSource = currentModalLocation.imageSteampunkUrl || currentModalLocation.image1895SteampunkUrl;
-                let realSource = currentModalLocation.imageRealUrl || currentModalLocation.imagePresentDayUrl;
-
-                steampunkSource = isValidImageUrl(steampunkSource) ? steampunkSource : 'https://placehold.co/400x300/CCCCCC/FFF?text=Steampunk+Not+Available';
-                realSource = isValidImageUrl(realSource) ? realSource : 'https://placehold.co/400x300/CCCCCC/FFF?text=Real+Not+Available';
-
-                oldModalImage.src = steampunkSource;
-                oldModalImage.alt = `Steampunk view of ${currentModalLocation.locationName}`;
-                oldModalImage.onerror = function() {
-                    this.src = 'https://placehold.co/400x300/CCCCCC/FFF?text=Image+Not+Found';
-                    console.error(`Fallback image for ${currentModalLocation.locationName} failed to load: ${this.src}`);
-                };
-
-                steampunkBtn.onclick = () => toggleImage('steampunk', steampunkSource, realSource);
-                realBtn.onclick = () => toggleImage('real', steampunkSource, realSource);
-            }
+            // Display the modal
             modal.style.display = "block";
         }
 
+
         function closeModal() {
             modal.style.display = "none";
-            if (animationInterval) clearInterval(animationInterval);
-            animationInterval = null;
             currentModalLocation = null;
-            [modalImagePresent, modalImage1895, modalImageCharacter, modalImageCharacterAnimated, oldModalImage, modalCharacterCard].forEach(img => {
-                if(img) {
-                    img.src = "";
-                    img.onerror = null;
-                }
-            });
+            // Clear content to prevent flash of old content
+            modalTitle.textContent = '';
+            modalAddress.textContent = '';
+            modalAddressLink.href = '#';
+            modalOpenStatus.textContent = '';
+            modalTodaysHours.textContent = '';
+            modalDescription.innerHTML = '';
+            modalSteampunkImage.src = '';
+            modalSteampunkImage.style.display = 'none';
+
         }
 
-        function toggleImage(type, steampunkSrc, realSrc) {
-            if (!currentModalLocation) return;
-
-            let targetSrc = '';
-            let altText = '';
-
-            if (type === 'steampunk') {
-                targetSrc = steampunkSrc;
-                altText = `Steampunk view of ${currentModalLocation.locationName}`;
-            } else if (type === 'real') {
-                targetSrc = realSrc;
-                altText = `Real view of ${currentModalLocation.locationName}`;
-            }
-
-            oldModalImage.src = targetSrc.replace(/\\n/g, '');
-            oldModalImage.alt = altText;
-            oldModalImage.onerror = function() {
-                this.src = 'https://placehold.co/400x300/CCCCCC/FFF?text=Image+Not+Found';
-                console.error(`Fallback (toggled) image for ${currentModalLocation.locationName} failed to load: ${this.src}`);
-            };
-        }
 
         window.onclick = function(event) {
             if (event.target == modal) {
