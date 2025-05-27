@@ -296,11 +296,10 @@
         <p><strong>Status:</strong> <span id="modalOpenStatus"></span></p>
         <p><strong>Today's Hours:</strong> <span id="modalTodaysHours"></span></p>
 
+        <img id="modalSteampunkImage" src="" alt="1895 Steampunk View" style="display: none; width: 100%; max-width: 400px; object-fit: contain; margin-top: 15px; border: 2px solid #8B4513; border-radius: 5px; display: block; margin-left: auto; margin-right: auto;">
+        
         <h3 class="text-xl mt-4 mb-2">Chronovisor Report:</h3>
         <div id="modalDescription" class="text-sm leading-relaxed max-h-60 overflow-y-auto pr-2"></div>
-         <div class="image-toggle mt-4 text-center">
-             <img id="modalSteampunkImage" src="" alt="1895 Steampunk View" style="display: none; width: 100%; max-width: 400px; object-fit: contain; margin-top: 15px; border: 2px solid #8B4513; border-radius: 5px; display: block; margin-left: auto; margin-right: auto;">
-             </div>
       </div>
     </div>
     
@@ -409,7 +408,6 @@
             if (!hoursString || hoursString.toLowerCase() === 'hours not listed' || hoursString.toLowerCase() === 'hours not available') {
                 return null;
             }
-            // Regex to handle various formats like "Mon-Fri", "Mon, Tue", etc.
             const dayRanges = hoursString.split(/, (?=[A-Z][a-z]{2}:)/);
             const dayMap = { 'Mon': 0, 'Tue': 1, 'Wed': 2, 'Thu': 3, 'Fri': 4, 'Sat': 5, 'Sun': 6 };
             const dayAbbrs = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -417,16 +415,17 @@
 
             dayRanges.forEach(rangeInfo => {
                 const [daysPart, timesPart] = rangeInfo.split(/: /);
+                if (!timesPart) return;
                 const [startTimeStr, endTimeStr] = timesPart.split(' - ');
 
-                if (daysPart.includes('-')) { // Handles ranges like "Mon-Fri"
+                if (daysPart.includes('-')) {
                     const [startDay, endDay] = daysPart.split('-');
                     let startIndex = dayAbbrs.indexOf(startDay);
                     let endIndex = dayAbbrs.indexOf(endDay);
                     for (let i = startIndex; i <= endIndex; i++) {
                          hours[dayAbbrs[i]] = { start: startTimeStr, end: endTimeStr };
                     }
-                } else { // Handles single days like "Sat"
+                } else {
                     hours[daysPart] = { start: startTimeStr, end: endTimeStr };
                 }
             });
@@ -440,7 +439,7 @@
             }
 
             const now = new Date();
-             const dayOfWeek = now.toLocaleString('en-US', { weekday: 'short' }); // Mon, Tue, etc.
+             const dayOfWeek = now.toLocaleString('en-US', { weekday: 'short' });
 
             const todaysHoursData = openingHours[dayOfWeek];
 
@@ -452,17 +451,20 @@
                 if (!timeStr) return null;
                 const normalizedTime = timeStr.toLowerCase().replace(/:\s/g, ':');
                 let [time, modifier] = normalizedTime.split(/(am|pm)/);
-                if (!modifier) { // Handle "Noon" case
-                    if(time.trim() === 'noon') return new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 0);
-                    return null; // or handle other non-standard times
+                
+                if(time.trim() === 'noon') return new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 0);
+
+                if (!modifier) { 
+                    modifier = 'pm'; // Assume pm if not specified for single numbers like "9"
                 }
+
 
                 let [hours, minutes] = time.split(':');
                 hours = parseInt(hours, 10);
                 minutes = minutes ? parseInt(minutes, 10) : 0;
 
                 if (modifier === 'pm' && hours < 12) hours += 12;
-                if (modifier === 'am' && hours === 12) hours = 0; // Midnight case
+                if (modifier === 'am' && hours === 12) hours = 0;
 
                 const date = new Date(now.getTime());
                 date.setHours(hours, minutes, 0, 0);
@@ -471,6 +473,15 @@
 
             const startTime = parseTime(todaysHoursData.start);
             const endTime = parseTime(todaysHoursData.end);
+            
+            // Handle overnight hours
+            if (endTime < startTime) {
+                endTime.setDate(endTime.getDate() + 1);
+                if (now < startTime) {
+                    now.setDate(now.getDate() + 1);
+                }
+            }
+
 
             if (!startTime || !endTime) {
                  return { isOpen: "N/A", todaysHours: "Invalid time format" };
@@ -488,21 +499,20 @@
             currentModalLocation = locationsData.find(loc => loc.id === locationId);
             if (!currentModalLocation) return;
 
-            // Set basic info
+            // 1. Business Name
             modalTitle.textContent = currentModalLocation.locationName;
+            
+            // 2. Business Address (linked)
             modalAddress.textContent = currentModalLocation.address;
-            modalAddressLink.href = `https://www.google.com/maps/search/?api=1&query=$${encodeURIComponent(currentModalLocation.address)}`;
-            modalDescription.innerHTML = currentModalLocation.description.replace(/\\n/g, '<br>');
-
-
-            // Check and display open status
+            modalAddressLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(currentModalLocation.address)}`;
+            
+            // 3. & 4. Open Status and Today's Hours
             const openingHours = getOpeningHours(currentModalLocation.hours);
             const openStatus = checkIfOpen(openingHours);
             modalOpenStatus.textContent = openStatus.isOpen;
             modalTodaysHours.textContent = openStatus.todaysHours;
 
-
-            // Handle Steampunk Image Display
+            // 5. 1895 Steampunk Image
             let steampunkImageSource = currentModalLocation.image1895SteampunkUrl || currentModalLocation.imageSteampunkUrl;
             if (isValidImageUrl(steampunkImageSource)) {
                 modalSteampunkImage.src = steampunkImageSource;
@@ -512,6 +522,9 @@
             } else {
                 modalSteampunkImage.style.display = 'none';
             }
+
+            // 6. Chronovisor Description
+            modalDescription.innerHTML = currentModalLocation.description.replace(/\\n/g, '<br>');
 
             // Display the modal
             modal.style.display = "block";
