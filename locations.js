@@ -11,7 +11,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Midwest+SOARRING",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Midwest+SOARRING",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/zvjB3QKb/Victorian-Midwest-SOARRING.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/CxphZ5GN/01-Card-Evil-Buried.jpg"
@@ -120,7 +120,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Amazing+Fantasy",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Amazing+Fantasy",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/rmGyYHhn/Victorian-Amazing-Fantasy-Comics.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/25VrMWrC/08-Card-Lorna-Arrival.jpg"
@@ -257,7 +257,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Sopranos+Pizzeria",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Sopranos+Pizzeria",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/8CJjwtQ9/Victorian-Sopranos-Pizza.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/CKQLxNmZ/17-Change-of-Plans.jpg"
@@ -349,7 +349,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Ameri-Cutz",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Ameri-Cutz",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/1t15BSKV/Victorian-Ameri-Cutz.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/jqJCCpVR/23-Card-Hiram-Lawrence.jpg"
@@ -366,7 +366,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Mamma+Onesti's",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Mamma+Onesti's",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/CMHdvRXh/Victorian-Mamma-Onesta.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/KjLYVM71/24-Card-Robert-Burcenski.jpg"
@@ -383,7 +383,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Capital+Barber",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Capital+Barber",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/YCj9qb90/Victorian-Capital-Barber.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/Qtvt0b7L/25-Card-Styx-Mc-Donald.jpg"
@@ -400,7 +400,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Dawn's+Barber+Shop",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Dawn's+Barber+Shop",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/ncFrNHfv/Victorian-Dawns-Barber.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/PxCJWcPz/26-Card-Gilbert-Bengston.jpg"
@@ -417,7 +417,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Thimbles",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Thimbles",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/SQWYwT2p/Victorian-Thimbles.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/Pq3N8hr5/27-Card-Marie-Cook.jpg"
@@ -434,7 +434,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Tattoo+City",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Tattoo+City",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/PrypqCQ3/Victorian-Tattoo-City.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/6Q5y3TKP/28-Card-HH-Carter.jpg"
@@ -451,7 +451,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Rainbow+Council",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Rainbow+Council",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/Dz9mNL7Z/Victorian-Rainbow-Council.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/jShDtPpN/29-Card-Gladys-Fox.jpg"
@@ -485,7 +485,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Vegan+Café",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Vegan+Café",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/RhQ3Kh50/Victorian-Vegan-Cafe.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/BQH87dNm/31-Card-Restrained.jpg"
@@ -502,7 +502,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Submarine+City",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Submarine+City",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/Z5q9vJfT/Victorian-Submarine.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/sftQcVPB/32-Card-Haley-Augello.jpg"
@@ -536,7 +536,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Mint+Salon",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Mint+Salon",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/rscsVT02/Victorian-Mint-Salon.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/26tmCSjn/34-Card-Minora-Paxson.jpg"
@@ -553,7 +553,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Blue+Collar+Supply",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Blue+Collar+Supply",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/zGMfLKbj/Victorian-Blue-Collar-Supply.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/3NDhNQWV/35-Card-Labor-and-Innovation.jpg"
@@ -570,7 +570,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+State+Street+Restaurant",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+State+Street+Restaurant",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/4xFYzjMp/Victorian-State-St-Grill.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/9z5hqg7M/36-Card-Dorothy-Worst.jpg"
@@ -587,7 +587,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Victory+Leather",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Victory+Leather",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/X74B3fdB/Victorian-Victory-Leather.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/C15Syq0F/37-Card-Transference.jpg"
@@ -604,7 +604,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+City+Hall",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+City+Hall",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/15vXQLyb/Victorian-City-Hall.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/9fJCNBv8/38-Card-Press-Gang.jpg"
@@ -621,7 +621,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Beanie's+Candy",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Beanie's+Candy",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/Zqd56n6h/Victorian-Beanies-Candy.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/sgPV5zKR/39-Card-Common-Destiny.jpg"
@@ -638,7 +638,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Nik+&+Ivy",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Nik+&+Ivy",
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: null,
+        image1895SteampunkUrl: "https://i.postimg.cc/vB5DwTmv/Victorian-Nik-Ivy-Brewing.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/Jh1RqFdH/40-Card-Jax-and-Lorna.jpg"
