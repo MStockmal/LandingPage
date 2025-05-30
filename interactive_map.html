@@ -72,7 +72,7 @@
         /* Map controls styling */
         .map-controls {
             position: fixed;
-            bottom: 20px;
+            bottom: 50px; /* Adjusted from 20px to make space for footer */
             left: 50%;
             transform: translateX(-50%);
             background-color: rgba(44, 30, 30, 0.85);
@@ -315,15 +315,33 @@
         /* --- HOVER EFFECTS FOR CARD THUMBNAILS --- */
         .card-thumbnail-icon {
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            /* box-shadow: 0 2px 5px rgba(0,0,0,0.3); */ /* A more subtle default shadow if desired */
-            border-radius: 3px; /* Optional: if your card images are perfectly rectangular, this might not be needed unless they have transparency */
+            border-radius: 3px; 
         }
 
         .card-thumbnail-icon:hover {
-            transform: scale(1.15); /* Expands the icon by 15% */
-            box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.75); /* A golden glowing shadow */
-            z-index: 1000; /* Ensures the hovered icon appears on top of others */
+            transform: scale(1.15); 
+            box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.75); 
+            z-index: 1000; 
         }
+
+        /* --- NEW FOOTER STYLES --- */
+        .page-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #000000; /* Solid black */
+            padding: 5px 0; /* Makes the footer thin */
+            text-align: center;
+            z-index: 102; /* Same as map controls */
+        }
+
+        .page-footer img {
+            max-height: 30px; /* Controls the height of the logos, keeping footer thin */
+            width: auto;
+            display: inline-block;
+        }
+
     </style>
 </head>
 <body>
@@ -355,6 +373,10 @@
     <div class="map-controls"> 
         <label for="opacitySlider">Chronovisor Level:</label>
         <input type="range" id="opacitySlider" min="0" max="1" step="0.01" value="0.99">
+    </div>
+
+    <div class="page-footer">
+        <img src="https://i.postimg.cc/YCgZ8gdb/Logos-Clear.png" alt="Sponsor Logos">
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
