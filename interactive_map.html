@@ -393,6 +393,7 @@
 
         const map = L.map('map', {
             zoomControl: false, // Disable zoom control to keep the view clean
+            attributionControl: false, // ADDED THIS LINE to remove the attribution
             minZoom: 17, // Prevent zooming out too far
             maxBounds: bounds, // Restrict panning to the fantasy map area
             maxBoundsViscosity: 1.0 // Makes the bounds completely solid
@@ -401,14 +402,14 @@
 
         // Satellite Base Layer (can be removed if you ONLY want the fantasy map)
         const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-            attribution: 'Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+            // The attribution for this layer will not be displayed if attributionControl is false on the map
             maxZoom: 19
         }).addTo(map).bringToBack();
 
         // Fantasy Map Overlay from MapWarper
         const fantasyMapUrl = 'https://mapwarper.net/maps/tile/93417/{z}/{x}/{y}.png'; // Updated URL
         const fantasyMapLayer = L.tileLayer(fantasyMapUrl, {
-            attribution: 'Fantasy Map Overlay © <a href="https://mapwarper.net/maps/93417" target="_blank">MapWarper</a>',
+             // The attribution for this layer will not be displayed if attributionControl is false on the map
             opacity: 0.99,
             minZoom: 13,
             maxZoom: 19,
