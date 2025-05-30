@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+<style>
         html, body {
             height: 100%;
             width: 100%;
@@ -88,7 +88,7 @@
             font-family: 'IM Fell English SC', serif;
             font-size: 1.1em;
         }
-        .map-controls input[type="range"] {
+        .map-controls input['type="range"'] {
             width: 200px;
             vertical-align: middle;
             cursor: pointer;
@@ -99,7 +99,7 @@
         }
 
         /* Custom slider thumb for WebKit browsers (Chrome, Safari) */
-        .map-controls input[type="range"]::-webkit-slider-thumb {
+        .map-controls input['type="range"']::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
             width: 30px; /* Width of the crystal image */
@@ -109,11 +109,12 @@
             background-repeat: no-repeat;
             background-position: center;
             cursor: pointer;
-            margin-top: -7.5px; /* Adjust to vertically center the thumb if track height is different */
+            margin-top: -12px; /* Adjust to vertically center the thumb */
+            box-shadow: 0 0 10px 3px rgba(128, 0, 128, 0.7); /* Purple glow */
         }
 
         /* Custom slider thumb for Mozilla Firefox */
-        .map-controls input[type="range"]::-moz-range-thumb {
+        .map-controls input['type="range"']::-moz-range-thumb {
             width: 30px; /* Width of the crystal image */
             height: 45px; /* Height of the crystal image */
             background-image: url('https://i.postimg.cc/D0HfQnmH/Crystal-Handle.png');
@@ -123,10 +124,11 @@
             cursor: pointer;
             border: none; /* Remove default border */
             border-radius: 0; /* Remove default border-radius */
+            box-shadow: 0 0 10px 3px rgba(128, 0, 128, 0.7); /* Purple glow */
         }
 
         /* Optional: Style for the track itself (can be customized or left default) */
-        .map-controls input[type="range"]::-webkit-slider-runnable-track {
+        .map-controls input['type="range"']::-webkit-slider-runnable-track {
             width: 100%;
             height: 8px;
             cursor: pointer;
@@ -135,7 +137,7 @@
             border: 1px solid #5a3d2b;
         }
 
-        .map-controls input[type="range"]::-moz-range-track {
+        .map-controls input['type="range"']::-moz-range-track {
             width: 100%;
             height: 8px;
             cursor: pointer;
