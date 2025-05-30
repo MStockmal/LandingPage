@@ -1,4 +1,4 @@
-const locationsData = [ // Ensure this data is complete and correct as per previous versions
+const locationsData = [
     {
         id: 1,
         characterName: "Evil Buried: Soul Survivor",
@@ -31,6 +31,7 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         imageCharacterAnimatedUrl: "https://i.postimg.cc/fWgPJdv4/Public-Landing.gif",
         characterCardUrl: "https://i.postimg.cc/wMcpLccQ/02-Card-Fate-Unleased.jpg"
     },
+    // ... (other locations 3-11 remain unchanged) ...
     {
         id: 3,
         characterName: "Milo Perkins: I&M Canal Laborer",
@@ -174,11 +175,11 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         id: 12,
         characterName: "Ichabod Codding: Evangelist & Apologist",
         locationName: "Nicola'a Heavenly Bakery", // Shares location with ID 1
-        address: "133 W 13th St, Lockport, IL", // Shares location with ID 1
+        address: "133 W 13th St, Lockport, IL",    // Shares location with ID 1
         hours: "Tue: 5:30 - 9:00am, Wed: 5:30 - 5:00pm, Thu: 5:30 - 5:00pm, Fri: 5:30 - 5:00pm, Sat: 8:00am - 1:00pm, Sun: 8:00am - 1:00pm",
         description: "Considered a man of truth, Ichabod Codding was a sought after advisor and consultant to the rich and poor alike. His word was considered the authority on everything from theology to politics.\nBut as the Crystal’s evil spread through the community, he became a shunned and ridiculed figure, and no one wanted to hear the truth he preached. However, this didn’t stop Ichabod from speaking out.\nOver the years, he traveled the length of Lockport, speaking passionately about the evil that permeated the City and the need for people to repent. As he stood in Camp Dellwood one day, speaking for the thousandth time about ridding the City of corruption, he saw a stranger.\nIchabod knew in an instant that she was not from Dellwood or anywhere else in Lockport proper. She had a military look but wore an unfamiliar uniform. He stopped speaking, and no one noticed…except her. She walked toward him with boldness and asked him what he knew.\n“I know much,” he said. Lorna smiled slightly, “I believe you do.” When Lorna asked him if there was an event, a single cause for the despair in the city, Ichabod was astonished; this was the first time in his memory that anyone even cared to ask. \nGrabbing her hand, he drew her in. “Young lady, this is a city so drenched in evil, it no longer even knows it needs saving.” Then he said, “Let me tell you of the Crystal....”",
-        lat: 41.585136, // Shifted from 41.585086
-        lon: -88.060129, // Shifted from -88.060179
+        lat: 41.585186, // Original Lat (41.585086) + 0.00010
+        lon: -88.060079, // Original Lon (-88.060179) + 0.00010 (Shifted NE)
         imagePresentDayUrl: "https://i.postimg.cc/RVyqLbXd/Nicola-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/66hdzwv0/Victorian-Nicola.jpg",
         image1895CharacterUrl: "https://i.postimg.cc/2jq1LDxy/Ichabod-Nicola-Heavenly-Bakery.jpg",
@@ -192,14 +193,15 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         address: "200 W 8th St, Lockport, IL", // Shares location with ID 2 & 33
         hours: "Tue: 9:00am - 5:00pm, Wed: 9:00am - 5:00pm, Thu: 9:00am - 5:00pm, Fri: 9:00am - 5:00pm, Sat: Noon - 5:00pm, Sun: Noon - 5:00pm",
         description: "After the completion of the I&M Canal in 1849, the limestone building that was constructed to house men and tools was no longer needed by the Commissioners. They sold it to George Gaylord. Gaylord added a classic three story Italianate structure to the east end of the building, which stood on one end of the Public Landing directly opposite of Hiram Norton’s monolithic grain elevator. \nAt first, Gaylord used the building for his office and as a dry goods store, but when he installed a grain elevator, he became Norton’s chief rival in the wholesale grain business. This move sparked the Lockport Commodities War of 1870. \nStarting with small skirmishes and vandalism by the two men’s hired hands, it soon elevated to the threat of all-out war with mercenary troops facing each other on the dolomite prairie located west of the City. Just as combat was about to be engaged by a thousand Joliet Toughs, hired as mercenaries by the House of Norton, against the hired Dellwood Guns of the House of Gaylord, a diplomatic intervention by Elizabeth Runyon Boyer saved the day.  \nThe Belle of Lockport courageously stood between the opposing armies and called the two rivals to task. Compromises were agreed upon, and the grain business in Lockport continued with little more than the two captains of industry staring grimly at each other from their office windows.",
-        lat: 41.590941, // Shifted from 41.590891
-        lon: -88.057782, // Shifted from -88.057832
+        lat: 41.590961, // Original Lat (41.590891) + 0.00007
+        lon: -88.057762, // Original Lon (-88.057832) + 0.00007 (Shifted NE from ID 2)
         imagePresentDayUrl: "https://i.postimg.cc/Y0jq11FT/Gaylord-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/PxQ86zPx/Victorian-Gaylord.jpg",
         image1895CharacterUrl: "https://i.postimg.cc/fRsyP0QS/Gaylord-Gaylord-Building.jpg",
         imageCharacterAnimatedUrl: "https://i.postimg.cc/7YdjQzC1/Gaylord-Building.gif",
         characterCardUrl: "https://i.postimg.cc/Y2gqtQg9/13-Card-George-Gaylord.jpg"
     },
+    // ... (other locations 14-32 remain unchanged) ...
     {
         id: 14,
         characterName: "Investigation: Shadows, Secrets, Contention",
@@ -514,8 +516,8 @@ const locationsData = [ // Ensure this data is complete and correct as per previ
         address: "200 W 8th St, Lockport, IL", // Shares location with ID 2 & 13
         hours: "Thu: Noon - 5:00pm, Fri: Noon - 5:00pm, Sat: Noon - 5:00pm, Sun: Noon - 3:00pm",
         description: "Robert Carr’s beginnings were typical for the majority of people in Lockport’s dark days: poverty, a broken home, and hopelessness. Robert, however, had an atypical brain and used it to rise above his circumstances. \nGraduating at the top of his High School class, Carr was given a scholarship to attend the University by the Lockport’s Woman’s Club. Again graduating at the top of his class, Carr went on to make a fortune in trade transactions by discovering a secure way to protect people’s money from highwaymen. \nHe built a thriving business called Mercantile Amalgamated and, going against the grain of the day, paid his employees fairly. In 1883, he lost his fortune through a security breach, but in true Carr form, the man rebuilt Mercantile Amalgamated and the company became stronger than ever. \nRobert’s proudest achievement was not in business, though. Remembering the generosity of the Lockport Woman’s Club, Carr built an academy in Lockport called the Midwest Academy of Excellence that provided higher education free of charge to young men and woman with potential and tenacity, yet no means to pay the University’s tuition costs.",
-        lat: 41.590841, // Shifted from 41.590891
-        lon: -88.057882, // Shifted from -88.057832
+        lat: 41.590821, // Original Lat (41.590891) - 0.00007
+        lon: -88.057902, // Original Lon (-88.057832) - 0.00007 (Shifted SW from ID 2)
         imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Gallery+7",
         imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Gallery+7",
         imagePresentDayUrl: null,
