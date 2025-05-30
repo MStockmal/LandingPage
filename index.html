@@ -235,6 +235,8 @@
             color: #5a3d2b;
          }
 
+        /* REMOVED .custom-marker-icon as it's replaced by L.icon with image */
+        /*
         .custom-marker-icon {
             background-color: #8B4513;
             border: 2px solid #D2B48C;
@@ -248,6 +250,7 @@
             font-size: 10px;
             box-shadow: 0 0 5px rgba(0,0,0,0.5);
         }
+        */
 
         .image-animation-container {
             position: relative;
@@ -335,7 +338,7 @@
         }).addTo(map).bringToBack();
 
         // Fantasy Map Overlay from MapWarper
-        const fantasyMapUrl = 'https://mapwarper.net/maps/tile/93417/{z}/{x}/{y}.png';
+        const fantasyMapUrl = 'https://mapwarper.net/maps/tile/93417/{z}/{x}/{y}.png'; // Updated URL
         const fantasyMapLayer = L.tileLayer(fantasyMapUrl, {
             attribution: 'Fantasy Map Overlay © <a href="https://mapwarper.net/maps/93417" target="_blank">MapWarper</a>',
             opacity: 0.99,
@@ -368,18 +371,63 @@
 
         let currentModalLocation = null;
 
+        // --- NEW THUMBNAIL URLS ---
+        const newThumbnailUrls = [
+            "https://i.postimg.cc/c47rxyvm/01-Card-Evil-Buried.jpg",          // ID 1
+            "https://i.postimg.cc/kMb2Ht9L/02-Card-Fate-Unleased.jpg",        // ID 2
+            "https://i.postimg.cc/QdXVV45r/03-Card-Milo-Perkins.jpg",         // ID 3
+            "https://i.postimg.cc/htpvmLbQ/04-Card-Hiram-Norton.jpg",         // ID 4
+            "https://i.postimg.cc/CK51sRmP/05-Card-Camp-Dellwood.jpg",        // ID 5
+            "https://i.postimg.cc/rpHpnqH8/06-Card-John-Sears.jpg",           // ID 6
+            "https://i.postimg.cc/4dhxjrCp/07-Card-Jim-Stephenson.jpg",       // ID 7
+            "https://i.postimg.cc/tJQ4b2yw/08-Card-Lorna-Arrival.jpg",        // ID 8
+            "https://i.postimg.cc/GtFhmGm2/09-Card-William-Gooding.jpg",      // ID 9
+            "https://i.postimg.cc/zXNGPtxR/10-Card-Another-Calling.jpg",      // ID 10
+            "https://i.postimg.cc/nVBL2bGJ/11-Card-Charles-Boyer.jpg",        // ID 11
+            "https://i.postimg.cc/QxqdLQzY/12-Card-Ichabod-Codding.jpg",       // ID 12
+            "https://i.postimg.cc/7ZYYqC8H/13-Card-George-Gaylord.jpg",       // ID 13
+            "https://i.postimg.cc/XYHNqV4w/14-Card-Investigation.jpg",        // ID 14
+            "https://i.postimg.cc/bvZy2Kw4/15-Card-John-Lamb.jpg",            // ID 15
+            "https://i.postimg.cc/JhS13Py0/16-Card-Armstead-Runyon.jpg",       // ID 16
+            "https://i.postimg.cc/LXfmxLfT/17-Change-of-Plans.jpg",           // ID 17
+            "https://i.postimg.cc/Znx4Smwv/18-Card-Dorothy-Dow.jpg",          // ID 18
+            "https://i.postimg.cc/prHR4rJt/19-Card-Francis-Tully.jpg",        // ID 19
+            "https://i.postimg.cc/HWwp50TW/20-Card-Ernest-Caneva.jpg",        // ID 20
+            "https://i.postimg.cc/28CCxq5Q/21-Card-John-Lane.jpg",            // ID 21
+            "https://i.postimg.cc/15Ms79gL/22-Card-Urgent-Business.jpg",      // ID 22
+            "https://i.postimg.cc/nhzZ66BM/23-Card-Hiram-Lawrence.jpg",       // ID 23
+            "https://i.postimg.cc/YCskkbzR/24-Card-Robert-Burcenski.jpg",     // ID 24
+            "https://i.postimg.cc/3w0hwmLT/25-Card-Styx-Mc-Donald.jpg",       // ID 25
+            "https://i.postimg.cc/V6y80vTb/26-Card-Gilbert-Bengston.jpg",     // ID 26
+            "https://i.postimg.cc/fLxhcZnq/27-Card-Marie-Cook.jpg",           // ID 27
+            "https://i.postimg.cc/T1fvQSTd/28-Card-HH-Carter.jpg",            // ID 28
+            "https://i.postimg.cc/ZnHtQcqr/29-Card-Gladys-Fox.jpg",           // ID 29
+            "https://i.postimg.cc/3rFTWKZd/30-Card-Horace-Singer.jpg",        // ID 30
+            "https://i.postimg.cc/hP4qdHCM/31-Card-Restrained.jpg",           // ID 31
+            "https://i.postimg.cc/Qx6Zk0wD/32-Card-Haley-Augello.jpg",        // ID 32
+            "https://i.postimg.cc/y8k4f0CZ/33-Card-Robert-Carr.jpg",          // ID 33
+            "https://i.postimg.cc/wjZKn39b/34-Card-Minora-Paxson.jpg",        // ID 34
+            "https://i.postimg.cc/nLm8xZzV/35-Card-Labor-and-Innovation.jpg", // ID 35
+            "https://i.postimg.cc/bJf7NMDx/36-Card-Dorothy-Worst.jpg",        // ID 36
+            "https://i.postimg.cc/ydhwJPcw/37-Card-Transference.jpg",         // ID 37
+            "https://i.postimg.cc/90Wsy7Bz/38-Card-Press-Gang.jpg",           // ID 38
+            "https://i.postimg.cc/0jcFnytn/39-Card-Common-Destiny.jpg",       // ID 39
+            "https://i.postimg.cc/KcN6x0ZT/40-Card-Jax-and-Lorna.jpg"         // ID 40
+        ];
 
         // --- ADD MARKERS TO MAP ---
         locationsData.forEach(location => {
-            const customIcon = L.divIcon({
-                className: 'custom-marker-icon',
-                html: `<span>${location.id}</span>`,
-                iconSize: [20, 20],
-                iconAnchor: [10, 10],
-                popupAnchor: [0, -10]
+            const thumbnailUrl = newThumbnailUrls[location.id - 1]; // Get URL from our new array
+
+            const cardIcon = L.icon({
+                iconUrl: thumbnailUrl,
+                iconSize: [40, 60], // Width: 40px, Height: 60px (adjust aspect ratio if needed)
+                iconAnchor: [20, 60], // Point of the icon which will correspond to marker's location (bottom-center)
+                popupAnchor: [0, -60] // Point from which the popup should open relative to the iconAnchor (top-center of icon)
             });
 
-            const marker = L.marker([location.lat, location.lon], { icon: customIcon }).addTo(map);
+            const marker = L.marker([location.lat, location.lon], { icon: cardIcon }).addTo(map);
+            
             const popupContent = `
                 <h3 class="title-font">${location.locationName}</h3>
                 <p><strong>Address:</strong> ${location.address}</p>
