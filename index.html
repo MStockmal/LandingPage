@@ -60,9 +60,9 @@
             font-family: 'Merriweather', serif;
             text-align: left;
             background-color: rgba(40, 20, 60, 0.8); /* Darker violet semi-transparent background */
-            border: 2px solid #8A2BE2; /* Violet border */
+            border: 4px solid #CFB53B; /* NEW Gold Primary Border */
             border-radius: 10px; /* Rounded corners for the box */
-            animation: violet-lightning-glow 3s infinite ease-in-out; /* Applies border glow and opacity */
+            animation: gold-intro-effect 3s infinite ease-in-out; /* MODIFIED animation for gold border glow */
         }
 
         .glowing-intro-text h2 {
@@ -97,22 +97,28 @@
             margin-top: 15px;
         }
 
-        @keyframes violet-lightning-glow { /* Handles border glow and opacity for the container */
+        @keyframes gold-intro-effect { /* Replaces violet-lightning-glow, now for gold effect */
             0% {
                 opacity: 0.7;
-                box-shadow: 0 0 8px #8A2BE2, 0 0 16px #8A2BE2, 0 0 24px #9370DB;
+                box-shadow: 0 0 0 2px #F0E68C, /* Gold Highlight (static part of emboss) */
+                            0 0 10px #DAA520,  /* Gold Accent - base glow */
+                            0 0 15px #DAA520;  /* Gold Accent - pulsing part */
             }
             50% {
                 opacity: 1;
-                box-shadow: 0 0 12px #8A2BE2, 0 0 24px #8A2BE2, 0 0 36px #9370DB, 0 0 48px #A020F0;
+                box-shadow: 0 0 0 2px #F0E68C, /* Gold Highlight (static part of emboss) */
+                            0 0 15px #FFD700,  /* Brighter Gold for pulse peak */
+                            0 0 25px #FFD700;  /* Brighter Gold for pulse peak */
             }
             100% {
                 opacity: 0.7;
-                box-shadow: 0 0 8px #8A2BE2, 0 0 16px #8A2BE2, 0 0 24px #9370DB;
+                box-shadow: 0 0 0 2px #F0E68C, /* Gold Highlight (static part of emboss) */
+                            0 0 10px #DAA520,  /* Gold Accent - base glow */
+                            0 0 15px #DAA520;  /* Gold Accent - pulsing part */
             }
         }
 
-        @keyframes text-glow-violet { /* Handles text glow specifically for h2 and h3 */
+        @keyframes text-glow-violet { /* Handles text glow specifically for h2 and h3 - REMAINS UNCHANGED */
             0% {
                 text-shadow: 0 0 2px #fff, 0 0 4px #E6E6FA, 0 0 7px #9370DB;
             }
@@ -126,10 +132,8 @@
         /* End of Updated styles for Intro Mission Section */
 
         .mission-description {
-            /* This section is now hidden as per user request */
             display: none;
             width: 100%;
-            /* display: flex; */ /* Original value */
             justify-content: center;
             margin-bottom: 10px;
             padding: 0 20px;
@@ -179,19 +183,23 @@
             background-color: black;
             color: white;
             padding: 20px;
-            border: 2px solid #555;
+            border: 4px solid #CFB53B; /* NEW Gold Primary Border */
+            box-shadow: 0 0 0 2px #F0E68C, /* Gold Highlight for 'emboss' */
+                        1px 1px 3px rgba(0,0,0,0.2) inset, /* Subtle inner shadow for depth */
+                        -1px -1px 3px rgba(255,255,255,0.1) inset, /* Subtle inner highlight for depth */
+                        0px 0px 10px rgba(218, 165, 32, 0.4); /* Soft outer gold glow */
             border-radius: 8px;
-            max-height: 300px; /* Adjust as needed */
+            max-height: 300px; 
             overflow-y: auto;
             width: 85%;
             margin-left: auto;
             margin-right: auto;
             text-align: left;
-            font-family: 'Merriweather', serif; /* Example font */
+            font-family: 'Merriweather', serif; 
         }
 
         .origins-text-box h2 {
-            font-family: 'Cinzel Decorative', cursive; /* Example heading font */
+            font-family: 'Cinzel Decorative', cursive; 
             text-align: center;
             margin-top: 0;
             margin-bottom: 15px;
@@ -200,7 +208,7 @@
         }
 
         .origins-text-box h3 {
-            font-family: 'Cinzel Decorative', cursive; /* Example heading font */
+            font-family: 'Cinzel Decorative', cursive; 
             text-align: center;
             margin-top: 20px;
             margin-bottom: 10px;
@@ -220,17 +228,17 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); /* Adjust Y based on text box height */
+            transform: translate(-50%, -50%); 
             z-index: 1;
         }
 
         .crystal-image {
-            max-width: 65%; /* Adjust as needed */
+            max-width: 65%; 
             height: auto;
             display: block;
             margin-left: auto;
             margin-right: auto;
-            opacity: 0.75; /* Adjust as needed */
+            opacity: 0.75; 
         }
 
         .footer {
@@ -253,14 +261,13 @@
         /* Basic responsiveness */
         @media (max-width: 768px) {
             .title-image { max-width: 90%; }
-            /* .mission-text-image { max-width: 90%; } */ /* Hidden */
             .map-button-image { max-width: 70%; }
             .origins-text-box {
                 width: 90%;
                 max-height: 280px;
             }
             .crystal-section {
-                 transform: translate(-50%, -45%); /* Adjust Y for tablets */
+                 transform: translate(-50%, -45%); 
             }
             .glowing-intro-text h2 { font-size: 1.8em; }
             .glowing-intro-text h3 { font-size: 1.3em; }
@@ -269,11 +276,10 @@
 
         @media (max-width: 480px) {
             .container { padding: 10px 0 0 0; }
-            .header, .map-button-section, .origins-section, .intro-mission-section { /* .mission-description removed as it's hidden */
+            .header, .map-button-section, .origins-section, .intro-mission-section { 
                 padding: 0 10px;
             }
             .title-image { max-width: 95%; }
-            /* .mission-text-image { max-width: 95%; } */ /* Hidden */
             .map-button-image { max-width: 80%; }
             .origins-text-box {
                 width: 95%;
@@ -287,7 +293,7 @@
                 font-size: 1.3em;
             }
             .crystal-section {
-                 transform: translate(-50%, -40%); /* Adjust Y for mobile */
+                 transform: translate(-50%, -40%); 
             }
             .footer { padding: 15px 0; }
             .glowing-intro-text h2 { font-size: 1.5em; }
@@ -348,8 +354,3 @@
         </div>
 
         <footer class="footer">
-            <img src="https://i.postimg.cc/JzBMLft4/Footersponsorlogos.png" alt="Sponsor Logos" class="sponsor-logos-image">
-        </footer>
-    </div>
-</body>
-</html>
