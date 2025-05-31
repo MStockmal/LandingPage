@@ -13,7 +13,7 @@
             background-repeat: repeat;
             background-attachment: fixed;
             background-size: auto;
-            font-family: sans-serif;
+            font-family: sans-serif; /* Default sans-serif, can be overridden */
             display: flex;
             justify-content: center;
         }
@@ -24,17 +24,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px 0 0 0; /* Removed bottom padding to let footer handle it */
+            padding: 20px 0 0 0;
             box-sizing: border-box;
-            position: relative; /* Added for z-index stacking context if needed by children */
+            position: relative;
         }
 
         .header {
             width: 100%;
             text-align: center;
             margin-bottom: 10px;
-            padding: 0 20px; /* Add side padding like original container */
-             box-sizing: border-box;
+            padding: 0 20px;
+            box-sizing: border-box;
         }
 
         .title-image {
@@ -50,7 +50,7 @@
             display: flex;
             justify-content: center;
             margin-bottom: 10px;
-            padding: 0 20px; /* Add side padding like original container */
+            padding: 0 20px;
             box-sizing: border-box;
         }
 
@@ -63,7 +63,7 @@
             width: 100%;
             text-align: center;
             margin-bottom: 25px;
-            padding: 0 20px; /* Add side padding like original container */
+            padding: 0 20px;
             box-sizing: border-box;
         }
 
@@ -73,68 +73,97 @@
             cursor: pointer;
         }
 
-        .content-wrapper { /* New wrapper for origins and crystal */
-            position: relative; /* Establishes stacking context */
+        .content-wrapper {
+            position: relative;
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-bottom: 60px; /* Add space for the footer */
         }
 
         .origins-section {
             width: 100%;
             display: flex;
             justify-content: center;
-            margin-bottom: 20px; /* Adjust as needed, was 0px */
-            position: relative; /* For z-index */
-            z-index: 2;       /* Origins text on top */
-            padding: 0 20px; /* Add side padding like original container */
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
             box-sizing: border-box;
         }
 
-        .origins-image {
-            max-width: 85%;
-            height: auto;
-            display: block; /* Ensures it behaves as a block for centering within flex */
+        /* Styles for the new Origins Text Box */
+        .origins-text-box {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            border: 2px solid #555;
+            border-radius: 8px;
+            max-height: 300px; /* Adjust as needed */
+            overflow-y: auto;
+            width: 85%;
             margin-left: auto;
             margin-right: auto;
+            text-align: left;
+            font-family: 'Merriweather', serif; /* Example font */
+        }
+
+        .origins-text-box h2 {
+            font-family: 'Cinzel Decorative', cursive; /* Example heading font */
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            color: #f0f0f0;
+        }
+
+        .origins-text-box h3 {
+            font-family: 'Cinzel Decorative', cursive; /* Example heading font */
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            color: #e0e0e0;
+        }
+
+        .origins-text-box p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 0.95em;
         }
 
         .crystal-section {
             width: 100%;
             text-align: center;
-            position: absolute; /* Position it relative to content-wrapper */
-            top: 50%;          /* Start at vertical center of origins text approx */
+            position: absolute;
+            top: 50%;
             left: 50%;
-            transform: translate(-50%, -35%); /* Adjust Y to move it up/down. X for horizontal. */
-                                             /* The -35% for Y is an estimate, adjust this! */
-            z-index: 1;        /* Crystal behind origins */
+            transform: translate(-50%, -50%); /* Adjust Y based on text box height */
+            z-index: 1;
         }
 
         .crystal-image {
-            max-width: 75%; /* Significantly larger crystal - Adjust as needed */
-            /* You might want to use a specific pixel width for more control if max-width isn't enough */
-            /* e.g., width: 400px; */
+            max-width: 65%; /* Adjust as needed */
             height: auto;
             display: block;
             margin-left: auto;
             margin-right: auto;
-            opacity: 0.85; /* Optional: makes it look a bit more like a glow from behind */
+            opacity: 0.75; /* Adjust as needed */
         }
 
         .footer {
-            width: 100%; /* Footer itself spans full width of container */
-            background-color: black; /* Black background for the entire footer area */
+            width: 100%;
+            background-color: black;
             text-align: center;
-            padding: 20px 0; /* Add some padding above and below the logos */
-            margin-top: 0px; /* Was auto, adjust if too much/little space from crystal */
-                            /* This might need significant adjustment based on crystal's final size/pos */
-            position: relative; /* For z-index context if ever needed, though likely not here */
-            z-index: 0; /* Below crystal and origins in stacking order */
+            padding: 20px 0;
+            /* margin-top: 0px; Removed fixed margin-top, let content-wrapper handle spacing */
+            position: relative;
+            z-index: 0;
         }
 
         .sponsor-logos-image {
-            max-width: 95%; /* Allow logos to be almost full width of black bar but with slight padding */
+            max-width: 95%;
             height: auto;
             display: block;
             margin-left: auto;
@@ -146,35 +175,43 @@
             .title-image { max-width: 90%; }
             .mission-text-image { max-width: 90%; }
             .map-button-image { max-width: 70%; }
-            .origins-image { max-width: 95%; }
-            .crystal-image {
-                max-width: 85%; /* Adjust for tablets */
-                /* transform: translate(-50%, -30%); /* May need to adjust transform for tablet */
+            .origins-text-box {
+                width: 90%;
+                max-height: 280px;
             }
             .crystal-section {
-                 transform: translate(-50%, -30%); /* Example adjustment for tablets */
+                 transform: translate(-50%, -45%); /* Adjust Y for tablets */
             }
         }
 
         @media (max-width: 480px) {
-            .container { padding: 10px 0 0 0; } /* Adjusted padding for mobile */
+            .container { padding: 10px 0 0 0; }
             .header, .mission-description, .map-button-section, .origins-section {
-                padding: 0 10px; /* Adjust side padding for mobile */
+                padding: 0 10px;
             }
             .title-image { max-width: 95%; }
             .mission-text-image { max-width: 95%; }
             .map-button-image { max-width: 80%; }
-            .origins-image { max-width: 100%; }
-            .crystal-image {
-                max-width: 95%; /* Adjust for mobile */
-                /* transform: translate(-50%, -25%); /* May need to adjust transform for mobile */
+            .origins-text-box {
+                width: 95%;
+                max-height: 250px;
+                font-size: 0.9em;
             }
-             .crystal-section {
-                 transform: translate(-50%, -25%); /* Example adjustment for mobile */
+            .origins-text-box h2 {
+                font-size: 1.5em;
+            }
+            .origins-text-box h3 {
+                font-size: 1.3em;
+            }
+            .crystal-section {
+                 transform: translate(-50%, -40%); /* Adjust Y for mobile */
             }
             .footer { padding: 15px 0; }
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -193,7 +230,15 @@
 
         <div class="content-wrapper">
             <section class="origins-section">
-                <img src="https://i.postimg.cc/PrJd6pjD/Origins.png" alt="Origins - The Hunt begins here..." class="origins-image">
+                <div class="origins-text-box">
+                    <h2>ORIGINS - The Hunt begins here</h2>
+                    <p>In the early 1830’s, dreamy-eyed settlers from the east had arrived on the unbroken prairie of what would soon be known as Lockport. Because of a forty-foot drop in elevation along the Des Plaines River, men with vision saw that they could harness nature and supply hydro-electric power for all their needs. Terrain thus fated Lockport to be the headquarters of the great Illinois & Michigan Canal – an inland waterway linking New York to New Orleans. The great engineers and self-made visionaries of the day came to Lockport to transform the prairie into farms and the hillsides into a spectacular metropolis, a place where honest folk could make a living and enjoy the fruits of labor and invention.</p>
+                    <p>But by 1895, the once promising and hopeful city of Lockport had fallen into darkness.  It seemed the more people tried to force Lockport’s utopian aspirations, the more clouded the dream became. Altruistic beginnings had turned into selfish ambition and in the midst of the Gilded Age, Lockport became a city run by a ruthless plutocracy. The divide between rich and poor was ever widening, and contention began to tear the fabric of the city. The driving force of this wickedness was not understood by those enslaved by it, for it had mysterious ancient origins.</p>
+                    <h3>100,000 BC</h3>
+                    <p>Many millennium earlier there were people who lived and thrived in the region where Lockport now stood. Their history has long been forgotten, and any traces of their existence has been engulfed by the Earth. Though small in numbers, these people, who called themselves the Anunnuki, advanced their technology even beyond that of today. At the height of their civilization, they learned how to control the elements and bend the physical world to their will at the quantum level. With this power, they found they could fold their very spirits into the quantum vibrations that govern the design of the universe. All knowledge and time could be accessed in an instant for those willing to leave the world behind. Indeed, for those willing to embrace this quantum technology, it was akin to becoming omniscient - to be like God. This paradigm shift in technology came so rapidly and was embraced by the Anunnuki with such enthusiasm, they never even paused to ask themselves if it was right.</p>
+                    <p>They believed this higher form of consciousness was an evolutionary step to greatness. One they controlled by their own hand. All rushed to integrate themselves into these quantum vibrations and left their bodies behind to exist eternally with the universe. But the human soul was designed in that place. Within a short span their minds drifted and decayed into wraiths trapped in this subatomic world. Worse, and unbeknown to them, as they disrupted the quantum fields, they opened a window for Spirits from that world to enter our own. It was at this time, a terrible darkness entered our world.</p>
+                    <p>Of all the Anunnuki peoples there was only one who warned of the dangers of tampering with the quantum world, the Sentinel. He explained that humans were created to live and enjoy the world visible to their natural bodies. To try and be “like God” was to invite death and darkness. He was ridiculed for his archaic thinking and the Anunnaki, with their “advanced” technology, left their physical bodies behind. Even his beloved wife fell prey to the promise of infinite knowledge and eternal life. She was the last Anunnuki to give her soul to the quantum world.</p>
+                </div>
             </section>
 
             <section class="crystal-section">
