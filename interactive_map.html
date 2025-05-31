@@ -657,7 +657,7 @@
                 modalSteampunkImage.style.display = 'none';
             }
 
-            modalDescription.innerHTML = currentModalLocation.description.replace(/\\n/g, '<br>');
+            // modalDescription.innerHTML = currentModalLocation.description.replace(/\\n/g, '<br>'); // This line is commented out
             modal.style.display = "block";
         }
 
@@ -670,7 +670,7 @@
             modalAddressLink.href = '#';
             modalOpenStatus.textContent = '';
             modalTodaysHours.textContent = '';
-            modalDescription.innerHTML = '';
+            modalDescription.innerHTML = ''; // Ensure this is also cleared
             modalSteampunkImage.src = '';
             modalSteampunkImage.style.display = 'none';
 
