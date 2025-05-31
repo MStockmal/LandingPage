@@ -45,7 +45,7 @@
             margin-right: auto;
         }
 
-        /* New styles for the Intro Mission Section */
+        /* Updated styles for the Intro Mission Section */
         .intro-mission-section {
             width: 100%;
             text-align: center;
@@ -58,39 +58,38 @@
         .glowing-intro-text {
             padding: 20px;
             font-family: 'Merriweather', serif;
-            animation: glow-animation 2.5s infinite alternate;
             text-align: left;
-            background-color: rgba(20, 0, 30, 0.75); /* Dark semi-transparent background */
-            border: 2px solid #ff00ff; /* Magenta border */
+            background-color: rgba(40, 20, 60, 0.8); /* Darker violet semi-transparent background */
+            border: 2px solid #8A2BE2; /* Violet border */
             border-radius: 10px; /* Rounded corners for the box */
-            box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff, 0 0 45px #ff00ff;
+            animation: violet-lightning-glow 3s infinite ease-in-out; /* Updated animation */
         }
 
         .glowing-intro-text h2 {
             font-family: 'Cinzel Decorative', cursive;
             text-align: center;
             font-size: 2em;
-            color: #f0f0f0;
+            color: #E6E6FA; /* Lavender for heading */
             margin-bottom: 15px;
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00ff, 0 0 20px #ff00ff;
+            /* text-shadow handled by keyframe animation for pulsing effect */
         }
 
         .glowing-intro-text h3 {
             font-family: 'Cinzel Decorative', cursive;
             text-align: center;
             font-size: 1.5em;
-            color: #e0e0e0;
+            color: #D8BFD8; /* Thistle */
             margin-top: 20px;
             margin-bottom: 10px;
-            text-shadow: 0 0 5px #fff, 0 0 8px #fff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
+            /* text-shadow handled by keyframe animation */
         }
 
         .glowing-intro-text p, .glowing-intro-text li {
             margin-bottom: 12px;
             line-height: 1.6;
             font-size: 1em;
-            color: #f5f5f5;
-            text-shadow: 0 0 3px #f5f5f5, 0 0 6px #ff00ff; /* Subtle glow for paragraphs */
+            color: #EAEAEA; /* Lighter grey/off-white for paragraph text */
+            /* text-shadow handled by keyframe animation */
         }
 
         .glowing-intro-text ul {
@@ -99,21 +98,30 @@
             margin-top: 15px;
         }
 
-        @keyframes glow-animation {
-            from {
-                text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 12px #ff00ff, 0 0 16px #ff00ff, 0 0 20px #ff00ff, 0 0 24px #ff00ff, 0 0 28px #ff00ff;
-                box-shadow: 0 0 12px #ff00ff, 0 0 24px #ff00ff, 0 0 36px #ff00ff, 0 0 48px #ff00ff;
+        @keyframes violet-lightning-glow {
+            0% {
+                opacity: 0.7;
+                box-shadow: 0 0 8px #8A2BE2, 0 0 16px #8A2BE2, 0 0 24px #9370DB;
+                text-shadow: 0 0 2px #fff, 0 0 4px #E6E6FA, 0 0 7px #9370DB;
             }
-            to {
-                text-shadow: 0 0 8px #fff, 0 0 16px #fff, 0 0 24px #ff00aa, 0 0 32px #ff00aa, 0 0 40px #ff00aa, 0 0 48px #ff00aa, 0 0 56px #ff00aa;
-                box-shadow: 0 0 18px #ff00aa, 0 0 36px #ff00aa, 0 0 54px #ff00aa, 0 0 72px #ff00aa;
+            50% {
+                opacity: 1;
+                box-shadow: 0 0 12px #8A2BE2, 0 0 24px #8A2BE2, 0 0 36px #9370DB, 0 0 48px #A020F0; /* Added deeper violet */
+                text-shadow: 0 0 3px #fff, 0 0 6px #E6E6FA, 0 0 10px #9370DB, 0 0 15px #A020F0;
+            }
+            100% {
+                opacity: 0.7;
+                box-shadow: 0 0 8px #8A2BE2, 0 0 16px #8A2BE2, 0 0 24px #9370DB;
+                text-shadow: 0 0 2px #fff, 0 0 4px #E6E6FA, 0 0 7px #9370DB;
             }
         }
-        /* End of New styles for Intro Mission Section */
+        /* End of Updated styles for Intro Mission Section */
 
         .mission-description {
+            /* This section is now hidden as per user request */
+            display: none;
             width: 100%;
-            display: flex;
+            /* display: flex; */ /* Original value */
             justify-content: center;
             margin-bottom: 10px;
             padding: 0 20px;
@@ -159,7 +167,6 @@
             box-sizing: border-box;
         }
 
-        /* Styles for the new Origins Text Box */
         .origins-text-box {
             background-color: black;
             color: white;
@@ -223,7 +230,6 @@
             background-color: black;
             text-align: center;
             padding: 20px 0;
-            /* margin-top: 0px; Removed fixed margin-top, let content-wrapper handle spacing */
             position: relative;
             z-index: 0;
         }
@@ -239,7 +245,7 @@
         /* Basic responsiveness */
         @media (max-width: 768px) {
             .title-image { max-width: 90%; }
-            .mission-text-image { max-width: 90%; }
+            /* .mission-text-image { max-width: 90%; } */ /* Hidden */
             .map-button-image { max-width: 70%; }
             .origins-text-box {
                 width: 90%;
@@ -248,7 +254,6 @@
             .crystal-section {
                  transform: translate(-50%, -45%); /* Adjust Y for tablets */
             }
-            /* Responsive adjustments for intro text */
             .glowing-intro-text h2 { font-size: 1.8em; }
             .glowing-intro-text h3 { font-size: 1.3em; }
             .glowing-intro-text p, .glowing-intro-text li { font-size: 0.95em; }
@@ -256,11 +261,11 @@
 
         @media (max-width: 480px) {
             .container { padding: 10px 0 0 0; }
-            .header, .mission-description, .map-button-section, .origins-section, .intro-mission-section {
+            .header, .map-button-section, .origins-section, .intro-mission-section { /* .mission-description removed as it's hidden */
                 padding: 0 10px;
             }
             .title-image { max-width: 95%; }
-            .mission-text-image { max-width: 95%; }
+            /* .mission-text-image { max-width: 95%; } */ /* Hidden */
             .map-button-image { max-width: 80%; }
             .origins-text-box {
                 width: 95%;
@@ -277,7 +282,6 @@
                  transform: translate(-50%, -40%); /* Adjust Y for mobile */
             }
             .footer { padding: 15px 0; }
-            /* Responsive adjustments for intro text on mobile */
             .glowing-intro-text h2 { font-size: 1.5em; }
             .glowing-intro-text h3 { font-size: 1.2em; }
             .glowing-intro-text p, .glowing-intro-text li { font-size: 0.9em; }
@@ -324,7 +328,7 @@
                     <p>In the early 1830’s, dreamy-eyed settlers from the east had arrived on the unbroken prairie of what would soon be known as Lockport. Because of a forty-foot drop in elevation along the Des Plaines River, men with vision saw that they could harness nature and supply hydro-electric power for all their needs. Terrain thus fated Lockport to be the headquarters of the great Illinois & Michigan Canal – an inland waterway linking New York to New Orleans. The great engineers and self-made visionaries of the day came to Lockport to transform the prairie into farms and the hillsides into a spectacular metropolis, a place where honest folk could make a living and enjoy the fruits of labor and invention.</p>
                     <p>But by 1895, the once promising and hopeful city of Lockport had fallen into darkness.  It seemed the more people tried to force Lockport’s utopian aspirations, the more clouded the dream became. Altruistic beginnings had turned into selfish ambition and in the midst of the Gilded Age, Lockport became a city run by a ruthless plutocracy. The divide between rich and poor was ever widening, and contention began to tear the fabric of the city. The driving force of this wickedness was not understood by those enslaved by it, for it had mysterious ancient origins.</p>
                     <h3>100,000 BC</h3>
-                    <p>Many millennium earlier there were people who lived and thrived in the region where Lockport now stood. Their history has long been forgotten, and any traces of their existence has been engulfed by the Earth. Though small in numbers, these people, who called themselves the Anunnuki, advanced their technology even beyond that of today. At the height of their civilization, they learned how to control the elements and bend the physical world to their will at the quantum level. With this power, they found they could fold their very spirits into the quantum vibrations that govern the design of the universe. All knowledge and time could be accessed in an instant for those willing to leave the world behind. Indeed, for those willing to embrace this quantum technology, it was akin to becoming omniscient - to be like God. This paradigm shift in technology came so rapidly and was embraced by the Anunnuki with such enthusiasm, they never even paused to ask themselves if it was right.</p>
+                    <p>Many millennium earlier there were people who lived and thrived in the region where Lockport now stood. Their history haslong been forgotten, and any traces of their existence has been engulfed by the Earth. Though small in numbers, these people, who called themselves the Anunnuki, advanced their technology even beyond that of today. At the height of their civilization, they learned how to control the elements and bend the physical world to their will at the quantum level. With this power, they found they could fold their very spirits into the quantum vibrations that govern the design of the universe. All knowledge and time could be accessed in an instant for those willing to leave the world behind. Indeed, for those willing to embrace this quantum technology, it was akin to becoming omniscient - to be like God. This paradigm shift in technology came so rapidly and was embraced by the Anunnuki with such enthusiasm, they never even paused to ask themselves if it was right.</p>
                     <p>They believed this higher form of consciousness was an evolutionary step to greatness. One they controlled by their own hand. All rushed to integrate themselves into these quantum vibrations and left their bodies behind to exist eternally with the universe. But the human soul was designed in that place. Within a short span their minds drifted and decayed into wraiths trapped in this subatomic world. Worse, and unbeknown to them, as they disrupted the quantum fields, they opened a window for Spirits from that world to enter our own. It was at this time, a terrible darkness entered our world.</p>
                     <p>Of all the Anunnuki peoples there was only one who warned of the dangers of tampering with the quantum world, the Sentinel. He explained that humans were created to live and enjoy the world visible to their natural bodies. To try and be “like God” was to invite death and darkness. He was ridiculed for his archaic thinking and the Anunnaki, with their “advanced” technology, left their physical bodies behind. Even his beloved wife fell prey to the promise of infinite knowledge and eternal life. She was the last Anunnuki to give her soul to the quantum world.</p>
                 </div>
