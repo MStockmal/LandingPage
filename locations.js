@@ -14,7 +14,8 @@ const locationsData = [
         image1895SteampunkUrl: "https://i.postimg.cc/zvjB3QKb/Victorian-Midwest-SOARRING.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
-        characterCardUrl: "https://i.postimg.cc/CxphZ5GN/01-Card-Evil-Buried.jpg"
+        characterCardUrl: "https://i.postimg.cc/CxphZ5GN/01-Card-Evil-Buried.jpg",
+        crystalHint: "I heard you were asking about the Infernal Crystal. Dangerous business that is. The Native people’s of this land may have some wisdom on the matter. Find them at the south end of the train station. But before you walk up the stairs, you should humble yourself and lay low."
     },
     {
         id: 2,
@@ -76,7 +77,8 @@ const locationsData = [
         image1895SteampunkUrl: null,
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
-        characterCardUrl: "https://i.postimg.cc/sfpyksdG/05-Card-Camp-Dellwood.jpg"
+        characterCardUrl: "https://i.postimg.cc/sfpyksdG/05-Card-Camp-Dellwood.jpg",
+        crystalHint: "The Infernal Crystal. That is a foolish pursuit. I suggest you go to Camp Dellwood and find the Canyons Pro-shop. You can sit under the porch there and contemplate the folly of your search."
     },
     {
         id: 6,
@@ -198,7 +200,8 @@ const locationsData = [
         image1895SteampunkUrl: "https://i.postimg.cc/PxQ86zPx/Victorian-Gaylord.jpg",
         image1895CharacterUrl: "https://i.postimg.cc/fRsyP0QS/Gaylord-Gaylord-Building.jpg",
         imageCharacterAnimatedUrl: "https://i.postimg.cc/7YdjQzC1/Gaylord-Building.gif",
-        characterCardUrl: "https://i.postimg.cc/Y2gqtQg9/13-Card-George-Gaylord.jpg"
+        characterCardUrl: "https://i.postimg.cc/Y2gqtQg9/13-Card-George-Gaylord.jpg",
+        crystalHint: "Where is the Infernal Crystal, you ask? I’m not entirely sure, but I would start at the beginning…the digging of the I&M Canal. There is an old exhibit here at the Gaylord building that talks about those early days. Look for the old tool chest. I am sure you’ll find a clue there."
     },
     {
         id: 14,
@@ -275,7 +278,8 @@ const locationsData = [
         image1895SteampunkUrl: "https://i.postimg.cc/rsgxpCkb/Victorian-White-Oak.jpg",
         image1895CharacterUrl: "https://i.postimg.cc/wBTvq8v6/Boyer-White-Oak.jpg",
         imageCharacterAnimatedUrl: "https://i.postimg.cc/yNBQwy7R/White-Oak-Library.gif",
-        characterCardUrl: "https://i.postimg.cc/vmBZyjLF/18-Card-Dorothy-Dow.jpg"
+        characterCardUrl: "https://i.postimg.cc/vmBZyjLF/18-Card-Dorothy-Dow.jpg",
+        crystalHint: "If you want to find the Crystal, you probably need to do a little research. Best place for that sort of thing is at the White Oak Library. I recommend you look for Mr. Dewy Decimal HIS205.2"
     },
     {
         id: 19,
@@ -607,7 +611,8 @@ const locationsData = [
         image1895SteampunkUrl: null, // Was Victorian-City-Hall.jpg
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
-        characterCardUrl: "https://i.postimg.cc/9fJCNBv8/38-Card-Press-Gang.jpg"
+        characterCardUrl: "https://i.postimg.cc/9fJCNBv8/38-Card-Press-Gang.jpg",
+        crystalHint: "What!? You’re looking for the Infernal Crystal? I would take Canal Road south, past the junk yard, to the land of Adventure. I am sure you will find a sign that gives you a clue."
     },
     {
         id: 39,
