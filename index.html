@@ -45,6 +45,72 @@
             margin-right: auto;
         }
 
+        /* New styles for the Intro Mission Section */
+        .intro-mission-section {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 25px; /* Spacing after the intro */
+            padding: 0 20px;
+            box-sizing: border-box;
+            color: #fff;
+        }
+
+        .glowing-intro-text {
+            padding: 20px;
+            font-family: 'Merriweather', serif;
+            animation: glow-animation 2.5s infinite alternate;
+            text-align: left;
+            background-color: rgba(20, 0, 30, 0.75); /* Dark semi-transparent background */
+            border: 2px solid #ff00ff; /* Magenta border */
+            border-radius: 10px; /* Rounded corners for the box */
+            box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff, 0 0 45px #ff00ff;
+        }
+
+        .glowing-intro-text h2 {
+            font-family: 'Cinzel Decorative', cursive;
+            text-align: center;
+            font-size: 2em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00ff, 0 0 20px #ff00ff;
+        }
+
+        .glowing-intro-text h3 {
+            font-family: 'Cinzel Decorative', cursive;
+            text-align: center;
+            font-size: 1.5em;
+            color: #e0e0e0;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 5px #fff, 0 0 8px #fff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
+        }
+
+        .glowing-intro-text p, .glowing-intro-text li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            font-size: 1em;
+            color: #f5f5f5;
+            text-shadow: 0 0 3px #f5f5f5, 0 0 6px #ff00ff; /* Subtle glow for paragraphs */
+        }
+
+        .glowing-intro-text ul {
+            list-style-type: disc;
+            padding-left: 40px;
+            margin-top: 15px;
+        }
+
+        @keyframes glow-animation {
+            from {
+                text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 12px #ff00ff, 0 0 16px #ff00ff, 0 0 20px #ff00ff, 0 0 24px #ff00ff, 0 0 28px #ff00ff;
+                box-shadow: 0 0 12px #ff00ff, 0 0 24px #ff00ff, 0 0 36px #ff00ff, 0 0 48px #ff00ff;
+            }
+            to {
+                text-shadow: 0 0 8px #fff, 0 0 16px #fff, 0 0 24px #ff00aa, 0 0 32px #ff00aa, 0 0 40px #ff00aa, 0 0 48px #ff00aa, 0 0 56px #ff00aa;
+                box-shadow: 0 0 18px #ff00aa, 0 0 36px #ff00aa, 0 0 54px #ff00aa, 0 0 72px #ff00aa;
+            }
+        }
+        /* End of New styles for Intro Mission Section */
+
         .mission-description {
             width: 100%;
             display: flex;
@@ -182,11 +248,15 @@
             .crystal-section {
                  transform: translate(-50%, -45%); /* Adjust Y for tablets */
             }
+            /* Responsive adjustments for intro text */
+            .glowing-intro-text h2 { font-size: 1.8em; }
+            .glowing-intro-text h3 { font-size: 1.3em; }
+            .glowing-intro-text p, .glowing-intro-text li { font-size: 0.95em; }
         }
 
         @media (max-width: 480px) {
             .container { padding: 10px 0 0 0; }
-            .header, .mission-description, .map-button-section, .origins-section {
+            .header, .mission-description, .map-button-section, .origins-section, .intro-mission-section {
                 padding: 0 10px;
             }
             .title-image { max-width: 95%; }
@@ -207,6 +277,10 @@
                  transform: translate(-50%, -40%); /* Adjust Y for mobile */
             }
             .footer { padding: 15px 0; }
+            /* Responsive adjustments for intro text on mobile */
+            .glowing-intro-text h2 { font-size: 1.5em; }
+            .glowing-intro-text h3 { font-size: 1.2em; }
+            .glowing-intro-text p, .glowing-intro-text li { font-size: 0.9em; }
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -218,6 +292,21 @@
         <header class="header">
             <img src="https://i.postimg.cc/JhVm4pB3/Title.png" alt="Mission 1895 Title" class="title-image">
         </header>
+
+        <section class="intro-mission-section">
+            <div class="glowing-intro-text">
+                <h2>The City of Lockport welcomes you to Mission1895!</h2>
+                <p>The year is 1895 and the city finds itself under the dark influence of a mysterious crystal. In this dystopian world, oppression, corruption, and despair have slowly engulfed Lockport ever since 1830 when Milo Perkins, an I&M Canal laborer, accidentally released the ancient talisman from its limestone tomb. Perkins was immediately captivated by the Crystal’s alluring spell and believed that by posing it, wealth and power would be his, but the Infernal Crystal was only filled with lies. After destroying Perkins and his family, the Crystal passed through the years from one doomed soul to another until its dark influence held sway over the entire city.</p>
+                <p>Your mission, should you choose to accept it, is to find the Infernal Crystal and break its powerful hold over Lockport but fair warning - even if you have the tenacity and wit to find the Crystal, will you be strong enough to destroy it or will you be deceived by its false promises of wealth and power?</p>
+                <h3>The M:1895 adventure begins here.</h3>
+                <ul>
+                    <li>Read the origins of the Crystal.</li>
+                    <li>Use the online map to explore Lockport and collect another piece of the story from each of the participating businesses.</li>
+                    <li>Scan the QR Codes you find on location and watch Lockport characters come to life.</li>
+                    <li>Listen to them carefully as they reveal 6 clues that uncover the location of the Infernal Crystal.</li>
+                </ul>
+            </div>
+        </section>
 
         <section class="mission-description">
             <img src="https://i.postimg.cc/zBqrT37V/Map-Description.png" alt="Mission goals and prize description" class="mission-text-image">
