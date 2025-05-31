@@ -315,13 +315,13 @@
         /* --- HOVER EFFECTS FOR CARD THUMBNAILS --- */
         .card-thumbnail-icon {
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, opacity 0.1s linear; /* Added opacity transition */
-            border-radius: 3px;
+            border-radius: 3px; 
         }
 
         .card-thumbnail-icon:hover {
-            transform: scale(1.15);
-            box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.75);
-            z-index: 1000;
+            transform: scale(1.15); 
+            box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.75); 
+            z-index: 1000; 
             opacity: 1 !important; /* Ensure hover makes it fully visible regardless of slider */
         }
 
@@ -341,40 +341,6 @@
             max-height: 30px; /* Controls the height of the logos, keeping footer thin */
             width: auto;
             display: inline-block;
-        }
-
-        /* --- GLOWING HINT STYLES --- */
-        .glowing-hint-title {
-            font-family: 'IM Fell English SC', serif;
-            color: #ff8c00; /* Fiery orange */
-            text-shadow: 0 0 5px #ff8c00, 0 0 10px #ff8c00, 0 0 15px #ff4500;
-            text-align: center;
-            font-size: 1.5em; /* Adjusted size */
-        }
-        .glowing-hint-text {
-            font-family: 'Merriweather', serif;
-            color: #ffd700; /* Gold color */
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 15px; /* Added margin bottom */
-            background-color: rgba(0,0,0,0.6); /* Slightly darker background for better contrast */
-            border: 1px solid #ff8c00; /* Orange border */
-            border-radius: 5px;
-            text-shadow: 0 0 3px #ffd700, 0 0 6px #ffae42, 0 0 9px #ffae42;
-            animation: hint-glow 1.5s infinite alternate;
-            text-align: center; /* Center the hint text */
-            font-size: 0.95em; /* Adjusted size */
-            line-height: 1.5;
-        }
-        @keyframes hint-glow {
-            from {
-                box-shadow: 0 0 5px #ffae42, 0 0 10px #ffae42, inset 0 0 5px #ffae42;
-                text-shadow: 0 0 3px #ffd700, 0 0 6px #ffae42, 0 0 9px #ffae42;
-            }
-            to {
-                box-shadow: 0 0 10px #ff8c00, 0 0 15px #ff8c00, inset 0 0 10px #ff8c00;
-                text-shadow: 0 0 5px #fffacd, 0 0 10px #ffd700, 0 0 15px #ff8c00;
-            }
         }
 
     </style>
@@ -404,12 +370,6 @@
         
         <h3 class="text-xl mt-4 mb-2">Chronovisor Report:</h3>
         <div id="modalDescription" class="text-sm leading-relaxed max-h-60 overflow-y-auto pr-2"></div>
-
-        <div id="modalCrystalHintContainer" style="display: none;">
-            <h3 class="glowing-hint-title">Infernal Crystal Hint:</h3>
-            <p id="modalCrystalHint" class="glowing-hint-text"></p>
-        </div>
-
       </div>
     </div>
     
@@ -472,9 +432,6 @@
         const modalTodaysHours = document.getElementById('modalTodaysHours');
         const modalDescription = document.getElementById('modalDescription');
         const modalSteampunkImage = document.getElementById('modalSteampunkImage');
-        const modalCrystalHintContainer = document.getElementById('modalCrystalHintContainer'); // New
-        const modalCrystalHint = document.getElementById('modalCrystalHint'); // New
-
 
         let currentModalLocation = null;
 
@@ -546,7 +503,7 @@
             const popupContent = `
                 <h3 class="title-font">${location.locationName}</h3>
                 <p><strong>Address:</strong> ${location.address}</p>
-                <p><strong>Card Name:</strong> <span class="math-inline">\{location\.characterName\}\: Card \#</span>{location.id}</p>
+                <p><strong>Card Name:</strong> ${location.characterName}: Card #${location.id}</p>
                 <button class="popup-button" onclick="showDetails(${location.id})">View Details</button>
             `;
             marker.bindPopup(popupContent);
@@ -693,4 +650,45 @@
             let steampunkImageSource = currentModalLocation.image1895SteampunkUrl || currentModalLocation.imageSteampunkUrl;
             if (isValidImageUrl(steampunkImageSource)) {
                 modalSteampunkImage.src = steampunkImageSource;
-                modalSteampunkImage.alt = `1895 Steampunk view of ${currentModalLocation.
+                modalSteampunkImage.alt = `1895 Steampunk view of ${currentModalLocation.locationName}`;
+                modalSteampunkImage.style.display = 'block';
+                modalSteampunkImage.onerror = function() { this.style.display = 'none'; };
+            } else {
+                modalSteampunkImage.style.display = 'none';
+            }
+
+            // modalDescription.innerHTML = currentModalLocation.description.replace(/\\n/g, '<br>'); // This line is commented out
+            modal.style.display = "block";
+        }
+
+
+        function closeModal() {
+            modal.style.display = "none";
+            currentModalLocation = null;
+            modalTitle.textContent = '';
+            modalAddress.textContent = '';
+            modalAddressLink.href = '#';
+            modalOpenStatus.textContent = '';
+            modalTodaysHours.textContent = '';
+            modalDescription.innerHTML = ''; // Ensure this is also cleared
+            modalSteampunkImage.src = '';
+            modalSteampunkImage.style.display = 'none';
+
+        }
+
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+
+    </script>
+</body>
+</html>
