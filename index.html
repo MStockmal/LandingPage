@@ -59,10 +59,12 @@
             padding: 20px;
             font-family: 'Merriweather', serif;
             text-align: left;
-            background-color: rgba(40, 20, 60, 0.8); /* Darker violet semi-transparent background */
-            border: 4px solid #CFB53B; /* NEW Gold Primary Border */
-            border-radius: 10px; /* Rounded corners for the box */
-            animation: gold-intro-effect 3s infinite ease-in-out; /* MODIFIED animation for gold border glow */
+            background-color: rgba(40, 20, 60, 0.8); /* Static semi-transparent background */
+            border: 4px solid #CFB53B; /* Gold Primary Border */
+            border-radius: 10px;
+            box-shadow: 0 0 0 2px #F0E68C, /* Gold Highlight for 'emboss' effect */
+                        0 0 10px rgba(218, 165, 32, 0.5); /* Softer static gold glow for the border */
+            /* animation property removed, making the box itself static */
         }
 
         .glowing-intro-text h2 {
@@ -97,24 +99,24 @@
             margin-top: 15px;
         }
 
-        @keyframes gold-intro-effect { /* Replaces violet-lightning-glow, now for gold effect */
+        @keyframes gold-intro-effect { /* This keyframe is no longer actively used by .glowing-intro-text but kept for potential other uses */
             0% {
                 opacity: 0.7;
-                box-shadow: 0 0 0 2px #F0E68C, /* Gold Highlight (static part of emboss) */
-                            0 0 10px #DAA520,  /* Gold Accent - base glow */
-                            0 0 15px #DAA520;  /* Gold Accent - pulsing part */
+                box-shadow: 0 0 0 2px #F0E68C, 
+                            0 0 10px #DAA520,  
+                            0 0 15px #DAA520;  
             }
             50% {
                 opacity: 1;
-                box-shadow: 0 0 0 2px #F0E68C, /* Gold Highlight (static part of emboss) */
-                            0 0 15px #FFD700,  /* Brighter Gold for pulse peak */
-                            0 0 25px #FFD700;  /* Brighter Gold for pulse peak */
+                box-shadow: 0 0 0 2px #F0E68C, 
+                            0 0 15px #FFD700,  
+                            0 0 25px #FFD700;  
             }
             100% {
                 opacity: 0.7;
-                box-shadow: 0 0 0 2px #F0E68C, /* Gold Highlight (static part of emboss) */
-                            0 0 10px #DAA520,  /* Gold Accent - base glow */
-                            0 0 15px #DAA520;  /* Gold Accent - pulsing part */
+                box-shadow: 0 0 0 2px #F0E68C, 
+                            0 0 10px #DAA520,  
+                            0 0 15px #DAA520;  
             }
         }
 
@@ -183,7 +185,7 @@
             background-color: black;
             color: white;
             padding: 20px;
-            border: 4px solid #CFB53B; /* NEW Gold Primary Border */
+            border: 4px solid #CFB53B; /* Gold Primary Border */
             box-shadow: 0 0 0 2px #F0E68C, /* Gold Highlight for 'emboss' */
                         1px 1px 3px rgba(0,0,0,0.2) inset, /* Subtle inner shadow for depth */
                         -1px -1px 3px rgba(255,255,255,0.1) inset, /* Subtle inner highlight for depth */
@@ -354,3 +356,8 @@
         </div>
 
         <footer class="footer">
+            <img src="https://i.postimg.cc/JzBMLft4/Footersponsorlogos.png" alt="Sponsor Logos" class="sponsor-logos-image">
+        </footer>
+    </div>
+</body>
+</html>
