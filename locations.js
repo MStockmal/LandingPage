@@ -6,10 +6,10 @@ const locationsData = [
         address: "133 W 13th St, Lockport, IL",
         hours: "Hours not listed",
         description: "After the Sentinel buried the evil Crystal in the earth, neutralizing its influence, he reflected on how his people, the Mound Builders, had let such an evil into their society. \nHis people believed they were above creation and no longer needed their physical forms. They believed in a higher form of consciousness as the next evolutionary step to greatness and found a way to leave the body and exist ethereally.\nPlaying God is what The Sentinel called it. He believed God’s creatures were meant to be as created…connected to the earth and to the Creator.\nThe vast majority of the Mound Builders left their physical bodies behind and ignored the protestations of The Sentinel. He was told to stay behind and keep watch over their physical bodies, but it really was an empty gesture.\nThose who transformed themselves into pure consciousness did not know it, but without a purpose other than for themselves, their minds drifted then decayed into nothingness and were lost forever.\nWith his people, the knowledge they carried, and their culture all gone, The Sentinel was filled with grief. There was no one left. His only purpose now was to stand guard over the buried Crystal; the physical manifestation of the evil that destroyed everything he ever knew or loved.",
-        lat: 41.585086, // Original
-        lon: -88.060179, // Original
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Midwest+SOARRING",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Midwest+SOARRING",
+        lat: 41.585086,
+        lon: -88.060179,
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: "https://i.postimg.cc/zvjB3QKb/Victorian-Midwest-SOARRING.jpg",
         image1895CharacterUrl: null,
@@ -23,15 +23,14 @@ const locationsData = [
         address: "200 W 8th St, Lockport, IL",
         hours: "Tue: Noon - 7:30pm, Wed: Noon - 7:30pm, Thu: Noon - 7:30pm, Fri: Noon - 8:30pm, Sat: Noon - 8:30pm, Sun: Noon - 6:30pm",
         description: "A canal linking the Illinois River to Lake Michigan was first envisioned by Jacques Marquette and Louis Joliet who traveled through the Des Plaines River Valley in 1672. By 1836, after years of planning, the first shovel broke ground in the creation of this great inland waterway and soon Midwest produce would be able to reach world markets. But before fortunes were made, hard labor had to be endured.\nIrish, Germans, and Scandinavians were among the groups that constructed the I&M Canal. Rock and tough soil along the ninety-six-mile canal was broken and moved entirely by hand. The workers lived in rude shanties, and many died of diseases, including cholera and dysentery. During the summer months, the men feared contracting malaria. Workers argued that hard liquor would protect them from disease and demanded that they be supplied with whiskey in order to work. In many cases canal workers were paid a dollar and a gill of whiskey per week. Whether the libation saved lives or not is unknown, but what is clear is that many thousands died in the construction of the canal.  \nFather John Raho, a missionary to the Irish community on the Illinois and Michigan Canal, wrote to his bishop, \"So many die that there is hardly any time to give Extreme Unction to everybody. We run night and day to assist the sick.\"\nWhat the workers didn’t know was the evil that was lurking below their feet. As they broke the soil to open a channel for the canal, they would soon unleash an evil that was never meant to see the light of day.",
-        lat: 41.590891, // Original
-        lon: -88.057832, // Original
+        lat: 41.590891,
+        lon: -88.057832,
         imagePresentDayUrl: "https://i.postimg.cc/GhHHY1J9/Public-Landing-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/Gh5TSphk/Public-Landing-Victorian.jpg",
         image1895CharacterUrl: "https://i.postimg.cc/Vs3djV7R/IMCanal-Public-Landing.jpg",
         imageCharacterAnimatedUrl: "https://i.postimg.cc/fWgPJdv4/Public-Landing.gif",
         characterCardUrl: "https://i.postimg.cc/wMcpLccQ/02-Card-Fate-Unleased.jpg"
     },
-    // ... (other locations 3-11 remain unchanged) ...
     {
         id: 3,
         characterName: "Milo Perkins: I&M Canal Laborer",
@@ -64,15 +63,15 @@ const locationsData = [
     },
     {
         id: 5,
-        characterName: "Press Gang: Was Camp Dellwood",
-        locationName: "Legacy Adventure Park",
-        address: "2807 Canal St, Lockport, IL",
-        hours: "Sat: 10:00am - 5:00pm, Sun: 10:00am - 5:00pm",
+        characterName: "Camp Dellwood",
+        locationName: "Dellwood Disc Golf",
+        address: "309 Dell Park Avenue Lockport, IL 60441",
+        hours: "Mon - Sun: 10:00am - 6:00pm",
         description: "The first settlement for non-farmers, Camp Dellwood lay just outside of Lockport Proper. The land was owned by the County of Will and considered “open lands” where anyone could settle without cost or title. It remained so until it was sold to John Sears to fill a budget hole in the county’s finances. \nAs it was primary a camp for transient workers, few permanent structures were built on the property so the camp was never more than a ramshackle, haphazard community of tents and scraps. The one exception was the Dance Hall located in the center of the camp.\nAs time wore on through the 1850’s and 60’s, the evil unknowingly brought to Camp Dellwood by Milo Perkins, began to transform the community into a true den of inequity. Gambling, brothels, and hard drinking took on new meaning. \nDuring the War Between the States and the North American – Siberian Airship Wars, Dellwood was frequented by press gangs that “recruited” men, and sometimes burly woman, for service. It was not uncommon for a resident to pass out in a muddy lane between the tents after a hard night drinking only to wake the next day at 2,500 feet altitude in an airship destined for war. In the early 1890’s, industrialists were the biggest users of press gangs who repurposed them to collect workers for trade ships destined for undesirable, yet profitable ports of call.",
-        lat: 41.567308,
-        lon: -88.070872,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Legacy+Adventure+Park",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Legacy+Adventure+Park",
+        lat: 41.5716545,
+        lon: -88.0623766,
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: null,
         image1895CharacterUrl: null,
@@ -118,8 +117,8 @@ const locationsData = [
         description: "This is a placeholder description for Lorna's Arrival. The original document was missing this entry. Please update with the correct story details.",
         lat: 41.589084,
         lon: -88.05684,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Amazing+Fantasy",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Amazing+Fantasy",
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: "https://i.postimg.cc/rmGyYHhn/Victorian-Amazing-Fantasy-Comics.jpg",
         image1895CharacterUrl: null,
@@ -174,12 +173,12 @@ const locationsData = [
     {
         id: 12,
         characterName: "Ichabod Codding: Evangelist & Apologist",
-        locationName: "Nicola'a Heavenly Bakery", // Shares location with ID 1
-        address: "133 W 13th St, Lockport, IL",    // Shares location with ID 1
+        locationName: "Nicola'a Heavenly Bakery",
+        address: "133 W 13th St, Lockport, IL",
         hours: "Tue: 5:30 - 9:00am, Wed: 5:30 - 5:00pm, Thu: 5:30 - 5:00pm, Fri: 5:30 - 5:00pm, Sat: 8:00am - 1:00pm, Sun: 8:00am - 1:00pm",
         description: "Considered a man of truth, Ichabod Codding was a sought after advisor and consultant to the rich and poor alike. His word was considered the authority on everything from theology to politics.\nBut as the Crystal’s evil spread through the community, he became a shunned and ridiculed figure, and no one wanted to hear the truth he preached. However, this didn’t stop Ichabod from speaking out.\nOver the years, he traveled the length of Lockport, speaking passionately about the evil that permeated the City and the need for people to repent. As he stood in Camp Dellwood one day, speaking for the thousandth time about ridding the City of corruption, he saw a stranger.\nIchabod knew in an instant that she was not from Dellwood or anywhere else in Lockport proper. She had a military look but wore an unfamiliar uniform. He stopped speaking, and no one noticed…except her. She walked toward him with boldness and asked him what he knew.\n“I know much,” he said. Lorna smiled slightly, “I believe you do.” When Lorna asked him if there was an event, a single cause for the despair in the city, Ichabod was astonished; this was the first time in his memory that anyone even cared to ask. \nGrabbing her hand, he drew her in. “Young lady, this is a city so drenched in evil, it no longer even knows it needs saving.” Then he said, “Let me tell you of the Crystal....”",
-        lat: 41.585186, // Original Lat (41.585086) + 0.00010
-        lon: -88.060079, // Original Lon (-88.060179) + 0.00010 (Shifted NE)
+        lat: 41.585186,
+        lon: -88.060079,
         imagePresentDayUrl: "https://i.postimg.cc/RVyqLbXd/Nicola-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/66hdzwv0/Victorian-Nicola.jpg",
         image1895CharacterUrl: "https://i.postimg.cc/2jq1LDxy/Ichabod-Nicola-Heavenly-Bakery.jpg",
@@ -189,19 +188,18 @@ const locationsData = [
     {
         id: 13,
         characterName: "George Gaylord: Commodities Baron",
-        locationName: "Gaylord Building", // Shares location with ID 2 & 33
-        address: "200 W 8th St, Lockport, IL", // Shares location with ID 2 & 33
+        locationName: "Gaylord Building",
+        address: "200 W 8th St, Lockport, IL",
         hours: "Tue: 9:00am - 5:00pm, Wed: 9:00am - 5:00pm, Thu: 9:00am - 5:00pm, Fri: 9:00am - 5:00pm, Sat: Noon - 5:00pm, Sun: Noon - 5:00pm",
         description: "After the completion of the I&M Canal in 1849, the limestone building that was constructed to house men and tools was no longer needed by the Commissioners. They sold it to George Gaylord. Gaylord added a classic three story Italianate structure to the east end of the building, which stood on one end of the Public Landing directly opposite of Hiram Norton’s monolithic grain elevator. \nAt first, Gaylord used the building for his office and as a dry goods store, but when he installed a grain elevator, he became Norton’s chief rival in the wholesale grain business. This move sparked the Lockport Commodities War of 1870. \nStarting with small skirmishes and vandalism by the two men’s hired hands, it soon elevated to the threat of all-out war with mercenary troops facing each other on the dolomite prairie located west of the City. Just as combat was about to be engaged by a thousand Joliet Toughs, hired as mercenaries by the House of Norton, against the hired Dellwood Guns of the House of Gaylord, a diplomatic intervention by Elizabeth Runyon Boyer saved the day.  \nThe Belle of Lockport courageously stood between the opposing armies and called the two rivals to task. Compromises were agreed upon, and the grain business in Lockport continued with little more than the two captains of industry staring grimly at each other from their office windows.",
-        lat: 41.590961, // Original Lat (41.590891) + 0.00007
-        lon: -88.057762, // Original Lon (-88.057832) + 0.00007 (Shifted NE from ID 2)
+        lat: 41.590961,
+        lon: -88.057762,
         imagePresentDayUrl: "https://i.postimg.cc/Y0jq11FT/Gaylord-Real.jpg",
         image1895SteampunkUrl: "https://i.postimg.cc/PxQ86zPx/Victorian-Gaylord.jpg",
         image1895CharacterUrl: "https://i.postimg.cc/fRsyP0QS/Gaylord-Gaylord-Building.jpg",
         imageCharacterAnimatedUrl: "https://i.postimg.cc/7YdjQzC1/Gaylord-Building.gif",
         characterCardUrl: "https://i.postimg.cc/Y2gqtQg9/13-Card-George-Gaylord.jpg"
     },
-    // ... (other locations 14-32 remain unchanged) ...
     {
         id: 14,
         characterName: "Investigation: Shadows, Secrets, Contention",
@@ -256,8 +254,8 @@ const locationsData = [
         description: "Description for 'Change of Plans' (key: 'Change of Plans') not found. Please check mapping and description document.",
         lat: 41.582804,
         lon: -88.060958,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Sopranos+Pizzeria",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Sopranos+Pizzeria",
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: "https://i.postimg.cc/8CJjwtQ9/Victorian-Sopranos-Pizza.jpg",
         image1895CharacterUrl: null,
@@ -348,8 +346,8 @@ const locationsData = [
         description: "Soon after the invention of manned flight in 1858, the Army of the Republic saw the opportunity for military application. Cadets from West Point were eager to volunteer and perfect flying techniques. By the time the Rebel canons fired on Fort Sumter, the Army of the Republic had a fully functional Air Corp. \nHiram Lawrence was one of the early test pilots, and during the War Between the States, he flew countless reconnaissance missions over enemy lines. Dirigibles were, of course, highly vulnerable to enemy fire, but their ability to drift silently also made them nearly undetectable on moonless nights. It wasn’t long before the Rebels learned they had to spend their nights in a cold camp lest their campfires gave their positions away. \nThe Battle of 3rd Bull Run was the first time the Air Corp realized that ordinance could be dropped onto the enemy. Flying just high enough to avoid gunshot range, men of the Air Corp dropped long fused explosive charges upon the enemy ranks and won the day. After the War, flight technology and air warfare progressed exponentially. By the time of the North American – Siberian Airship Wars, death in the air was a perfected art.",
         lat: 41.588614,
         lon: -88.057602,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Ameri-Cutz",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Ameri-Cutz",
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: "https://i.postimg.cc/1t15BSKV/Victorian-Ameri-Cutz.jpg",
         image1895CharacterUrl: null,
@@ -365,8 +363,8 @@ const locationsData = [
         description: "There are chefs in this world, then there are Chefs. Robert Burcenski is the latter. \nBorn in Camp Dellwood, Robert started from humble beginnings. He learned the art of sausage making from his father, who ran an open air butcher shop in the Camp. As a young man, Robert worked as a cook on the passenger boats, known as packet boats, that ran along the I&M Canal. When Airships ruined the Canal’s passenger business, Robert left for France to perfect his passion for cooking. \nWhile in France, he quickly surpassed the skills of the Parisian chefs who were left speechless at his exquisite culinary creations. Burcenski then moved on to the Middle East, the Far East, and eventually the Caribbean where his legendary palette combined the perfect mix of all the great tastes of the world. \nBurcenski eventually returned to Lockport and opened the Tallgrass restaurant with his partner Thomas Alves. The two of them created a renowned restaurant reaching epic, and formerly unknown, gastronomic heights. The elite of the day often came into Lockport on their dirigibles, or by private train, for an opportunity to dine at the Tallgrass. Chef Burcenski was best known for his French-Middle Eastern-Japanese fusion dishes served in a Jamaican Jerk reduction sauce. \nMaître d’ Alves and Chef Burcenski were also known for the classical musical sessions they hosted in their private salon. The world’s greatest musicians performed for them and their guests. Ernesto Caneva was a local favorite. Both men did much to bring high culture to Lockport, even in its darkest days.",
         lat: 41.587107,
         lon: -88.058307,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Mamma+Onesti's",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Mamma+Onesti's",
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: "https://i.postimg.cc/CMHdvRXh/Victorian-Mamma-Onesta.jpg",
         image1895CharacterUrl: null,
@@ -382,8 +380,8 @@ const locationsData = [
         description: "Styx McDonald was a newspaper man from Minnesota who came to Lockport in 1850 to start a local rag called the Phoenix. \nStyx fancied himself the sort of reporter/editor who “told it like it was,” which was generally true, as long as the story didn’t harm any of his cronies. For instance, his relentless and brutal attacks on public officials were legendary, that is until his son ran for Mayor of Lockport in 1875; then suddenly, the hard boiled news turned into soft boiled eggs. \nStyx was a skilled sophist. For instance, he was staunchly against the building of the new Sanitary and Shipping Canal to replace the outdated I&M in the 90’s. He set out brilliant arguments on why such a venture was a waste of money and how it would destroy Lockport. But when his son was offered the position of Superintendent of Steam Shovels, a lucrative position in the construction of the Big Dig, Styx had a change of heart. The Sanitary and Shipping Canal began to headline in the Phoenix as the “Eighth Wonder of the Word” and a “sure boon” to the local economy.",
         lat: 41.589631,
         lon: -88.057953,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Capital+Barber",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Capital+Barber",
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: "https://i.postimg.cc/YCj9qb90/Victorian-Capital-Barber.jpg",
         image1895CharacterUrl: null,
@@ -399,8 +397,8 @@ const locationsData = [
         description: "A seer and prognosticator, Bengston was an eccentric man that claimed to catch glimpses of the future. People would have dismissed him as insane, except for the fact that his visions always seemed to come true. He was a cheerful man, and people enjoyed his company, despite an obnoxious habit of flapping his fingers when sharing one of his visions. \nJust then, Bengston came out of the Airship Café with an associate and stopped abruptly in front of the couple. With a bizarre grin, the man started snapping his fingers at the two astonished time travelers rambling on about Dellwood “Park.” Unknown to them, Bengston was sharing one of his visions with Jax and Lorna, telling them that one day, the desolate Camp Dellwood would be beautiful again, filled with trees, flowers, and serenity. People would come from many miles away for the sight, the music, and the fanfare. This change, he assured them, would take place because of Lorna and Jax. Then he did an abrupt about face and walked down State Street. Bengston’s associate, who was waiting patiently nearby, simply said, “The man’s usually right” then tipped his hat and followed his friend.",
         lat: 41.590021,
         lon: -88.057413,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Dawn's+Barber+Shop",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Dawn's+Barber+Shop",
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: "https://i.postimg.cc/ncFrNHfv/Victorian-Dawns-Barber.jpg",
         image1895CharacterUrl: null,
@@ -416,8 +414,8 @@ const locationsData = [
         description: "Marie Cook arrived in Lockport when she was fifteen years old with nothing more than a lunch pail, hand-me-down coat, and 16 cents. \nA very smart young girl, she not only found a way to survive on her own, Marie even attended High School and graduated with honors. In fact, she was so sharp, the school Superintendent hired her upon graduation to teach in the district. \nThough an exceptional teacher, Marie left the job upon marrying Farrell Cook who owned the Volz Hotel in Downtown. Marie opened a woman’s boutique on the first floor, called Worldly Things, which became a sensation. \nThe boutique was well known in Chicagoland not only for carrying the latest fashions, but for Marie’s impeccable eye. The rich and famous ladies of the day came to be outfitted by Mrs. Cook and her opinion on style was always the last. \nNot forgetting her humble beginnings, “Cookie” as she was known by most, repurposed older clothing and gave it to those in need.",
         lat: 41.588422,
         lon: -88.057681,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Thimbles",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Thimbles",
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: "https://i.postimg.cc/SQWYwT2p/Victorian-Thimbles.jpg",
         image1895CharacterUrl: null,
@@ -433,8 +431,8 @@ const locationsData = [
         description: "Photography, for most of the 19th Century, was regulated to studios like those of the famous Matthew Brady. Outdoor photography, such as that done during the War Between the States, was often staged and highly controlled. This, of course, was due to the long exposure times required by the medium. \nBy the end of the century though, advances in technology allowed for far smaller cameras that didn’t require bulky tripods and had far shorter exposure times. While H.H. Carter didn’t invent the technology, he certainly used it to its full potential. \nWalking the streets of Lockport, Carter captured candid street scenes filled with smiling people and spontaneous poses. As Carter’s work focused on daily life, his work was a very popular with everyday folks. His photographs were displayed in the Illinois State Museum for all to see and now his collection resides in Lewis University’s archives. \nDuring the North American – Siberian Airship Wars, Carter was the Army’s designated field photographer. Unfortunately, his work was destroyed when an over-eager assistant accidently exposed all of his film in a rush to develop the images.",
         lat: 41.582146,
         lon: -88.061155,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Tattoo+City",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Tattoo+City",
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: "https://i.postimg.cc/PrypqCQ3/Victorian-Tattoo-City.jpg",
         image1895CharacterUrl: null,
@@ -450,8 +448,8 @@ const locationsData = [
         description: "Known by everyone in Lockport, Gladys Fox served on nearly every board and committee in the City of Lockport at a time when a lady’s opinion was not always taken seriously. Her insight, however, was too valuable to overlook and the City’s plutocracy suffered her presence at the table simply because her ideas made them money. \nNothing in Lockport escaped Gladys’ eye. Her favorite quote was, “Anyone who has an opinion on a problem without presenting a solution is nothing more than a whiner.”  \nHer reputation outside of Lockport didn’t take root until after the death of her husband. Once she became a widower, Fox made no bones about the fact that she was sick of the endless bickering by the grey beards of the City. So, at age 73, the feisty widow left public service to pursue her true passion: High Adventure. \nJumping aboard an airship bound for overseas, Fox became one of the great explorers of the century. Her pluck earned her positions on dangerous expeditions ranging from Carsten Borchgrevink’s Southern Cross Adventure in Antarctica to Hiram Bingham’s discovery of Machu Picchu. \nGladys never returned to Lockport, but she was fondly remembered by all that knew her. For many years after her departure, she would send the school children of the city detailed letters of her adventures. Her letters and travel gear can be found at the Gladys Fox Museum.",
         lat: 41.588968,
         lon: -88.057934,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Rainbow+Council",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Rainbow+Council",
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: "https://i.postimg.cc/Dz9mNL7Z/Victorian-Rainbow-Council.jpg",
         image1895CharacterUrl: null,
@@ -467,8 +465,8 @@ const locationsData = [
         description: "Lorna had opened up to Jax about this feeling, this calling, to free this City of an evil oppression. Jax’s mind did not work the same way, as he was all about logic. He told her it wasn’t her place to intervene, and now that Stephenson had joined the Keepers, the mission was accomplished. It was time to return. \nWhile talking in hushed tones, the two walked through the clogged streets of the industrial town. Not a smile or hello was to be found, as people pushed their way from one destination to the next. She explained to Jax that, while she couldn’t explain her feeling, she couldn’t dismiss it. Lorna asked that he trust her.\nLorna felt an approach from behind right before Jax did. She quickly turned prepared to deal with any danger. Before her was a handsome man whose arms quickly raised up in an amused surrender pose. He smiled and charmingly said he meant no harm; he simply couldn’t keep away from such a beautiful creature as Lorna. Lorna was uncharacteristically transfixed. Jax moved between them, and riveted his stare inches away from the man. \nJax saw a strange light in the man’s eyes, but after a moment under Jax’s stern gaze, the stranger shook his head as if he awoke from a stupor. The man seemed surprised at his own crude behavior and apologized for being so uncouth. He introduced himself as Horace Singer, and as they were clearly strangers in town, offered to help them in any way he could.",
         lat: 41.587814,
         lon: -88.058427,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Genuine+Barbers",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Genuine+Barbers",
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: null,
         image1895CharacterUrl: null,
@@ -484,8 +482,8 @@ const locationsData = [
         description: "Lorna stepped past Jax and played a hunch. Taking Singer’s hand in her own, she asked him if he knew the location of the Crystal Ichabod Codding had told her about. As plain as day, the evil light crept back into his eyes, and a leer sizzled on his lips. “Boss Gooding keeps it in his office. I’ve seen it myself.” Stepping closer, he added, “I’d be happy to take you there.” Lorna strongly pushed Singer away, and he stumbled back, falling into the street.\nLorna turned to Jax. “Did you see his eyes?” she asked. He nodded as he watched Singer dust himself off and disappear into the crowd. With exasperation, she explained that something evil had a grip on this city, and it was tied to the Crystal in Gooding’s office. Jax agreed that something odd was going on, but…\nBefore he could finish, Lorna started to run. Catching up with her, he had to physically restrain her to get her to explain her actions. She said she was going to destroy the Crystal.\nJax told her to think this through. What was the plan? Break into a private office and smash it? Who’s to say that would actually solve anything, or what if it made matters worse? Maybe nothing would happen and the two of them would be arrested. This is the kind of impulsive behavior that… he didn’t get to finish. Lorna simply looked at Jax and asked, very directly, if he would help her or not. With a sigh, Jax let his feelings for Lorna push all logic aside. “Yes,” he said. “I will help you.”",
         lat: 41.588678,
         lon: -88.057566,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Vegan+Café",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Vegan+Café",
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: "https://i.postimg.cc/RhQ3Kh50/Victorian-Vegan-Cafe.jpg",
         image1895CharacterUrl: null,
@@ -501,8 +499,8 @@ const locationsData = [
         description: "Description for 'Haley Augello: Olympic Wrestler' (key: 'Haley Augello') not found. Please check mapping and description document.",
         lat: 41.586453,
         lon: -88.058352,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Submarine+City",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Submarine+City",
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: "https://i.postimg.cc/Z5q9vJfT/Victorian-Submarine.jpg",
         image1895CharacterUrl: null,
@@ -512,14 +510,14 @@ const locationsData = [
     {
         id: 33,
         characterName: "Robert Carr: Inventor & Philanthropist",
-        locationName: "Gallery 7", // Shares location with ID 2 & 13
-        address: "200 W 8th St, Lockport, IL", // Shares location with ID 2 & 13
+        locationName: "Gallery 7",
+        address: "200 W 8th St, Lockport, IL",
         hours: "Thu: Noon - 5:00pm, Fri: Noon - 5:00pm, Sat: Noon - 5:00pm, Sun: Noon - 3:00pm",
         description: "Robert Carr’s beginnings were typical for the majority of people in Lockport’s dark days: poverty, a broken home, and hopelessness. Robert, however, had an atypical brain and used it to rise above his circumstances. \nGraduating at the top of his High School class, Carr was given a scholarship to attend the University by the Lockport’s Woman’s Club. Again graduating at the top of his class, Carr went on to make a fortune in trade transactions by discovering a secure way to protect people’s money from highwaymen. \nHe built a thriving business called Mercantile Amalgamated and, going against the grain of the day, paid his employees fairly. In 1883, he lost his fortune through a security breach, but in true Carr form, the man rebuilt Mercantile Amalgamated and the company became stronger than ever. \nRobert’s proudest achievement was not in business, though. Remembering the generosity of the Lockport Woman’s Club, Carr built an academy in Lockport called the Midwest Academy of Excellence that provided higher education free of charge to young men and woman with potential and tenacity, yet no means to pay the University’s tuition costs.",
-        lat: 41.590821, // Original Lat (41.590891) - 0.00007
-        lon: -88.057902, // Original Lon (-88.057832) - 0.00007 (Shifted SW from ID 2)
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Gallery+7",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Gallery+7",
+        lat: 41.590821,
+        lon: -88.057902,
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: null,
         image1895CharacterUrl: null,
@@ -535,8 +533,8 @@ const locationsData = [
         description: "A simple, yet inspirational story, Minora Paxson was the nation’s first licensed female chiropractor. Minora was born in Lockport, Illinois in 1855 to Amos & Elizabeth Kilmer Paxon. \nAfter attending the University and earning her degree, Minora returned to Lockport and set up her practice in a plaza off 9th Street. Paxson, in addition to being a highly skilled chiropractor, who had the ability to cure the common cold with an adjustment, was also a bit of a showman. Her adjustment table was set up in the center of the room and, as she worked on one patient, others sat watching and waiting their turn. As Paxson worked her magic, she engaged everyone in the room with lively conversation and her technique was known in Lockport as the “Minora Show.” \nShe later confessed that the Minora Show was an idea of hers that ensured the wives of husbands seeking treatment that no shenanigans were occurring in a private room.",
         lat: 41.588769,
         lon: -88.055947,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Mint+Salon",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Mint+Salon",
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: "https://i.postimg.cc/rscsVT02/Victorian-Mint-Salon.jpg",
         image1895CharacterUrl: null,
@@ -552,8 +550,8 @@ const locationsData = [
         description: "As the great age of invention progressed, tools and techniques that served mankind through the millennia quickly changed. The greatest effect was on the unskilled laborer. Back-breaking work done with spade and barrow was replaced by powerful steam shovels and controlled ordinance that blew rock walls into pebbles. When the Sanitary and Shipping Canal was built in the 1890’s to replace the aging and undersized I&M Canal, a new breed of laborer was born. \nThough the work was still arduous, newly invented equipment allowed construction on a scale never before seen. A deep water channel was cut from Lake Michigan to the Illinois River that could accommodate barges of enormous size. Terrific engines where invented to push product across the nation by the most efficient means possible: water. \nNot welcome, at the time, was the fact the Shipping Canal was also a Sanitary Canal; part of the reason it was built was to float Chicago’s raw sewage away from their city and lakefront to the interior water ways. Downstream communities, including Lockport, were in an uproar, claiming the stench would be unbearable. Chicago advocates of the Sanitary and Shipping Canal claimed the passage downstream would purify the sewage long before it reached any inland city of consequence. Neighboring Great Lake States claimed that the great channel would drain Lake Michigan and turn it into a the “great mud puddle.” \nLawsuits were filed, though work continued, until all that remained to complete the project was the demolition of a small wooden dam separating the waters of Lake Michigan from the newly dug canal. In the dark of night, someone blew the dam and the waters flowed, reversing the flow of the Chicago River. Commerce commenced and Chicagoans began floating “special gifts” to their neighbors downriver.",
         lat: 41.588672,
         lon: -88.055681,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Blue+Collar+Supply",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Blue+Collar+Supply",
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: "https://i.postimg.cc/zGMfLKbj/Victorian-Blue-Collar-Supply.jpg",
         image1895CharacterUrl: null,
@@ -569,8 +567,8 @@ const locationsData = [
         description: "Dorothy Worst’s first experience treating men wounded in battle was as a young girl during the War Between the States. While visiting an aunt in Washington who served as a field nurse, thirteen-year-old Dorothy followed along helping to change bandages and comfort dying men. \nJust before the North American – Siberian Airwar began, Dorothy was volunteering with the Army as a nurse. In 1871, after the Czar changed his mind about selling Alaska to the United States and sent Russian warships across the Bering Sea to reclaim the territory, Dorothy found herself onboard a medical dirigible flying north. The bloody war lasted until 1875, and Worst served in nearly every engagement from the Battle of Yukon to the Snake River Offensive. \nIn the early battles, female nurses still wore seersucker white. When General George Armstrong Custer, the army’s supreme commander, saw that it only made the “Angels of the Battlefield” targets for enemy fire, he gave the change order, and woman were issued the same uniforms as men. \nAs the war progressed, Dorothy was assigned to a C-47 Airship Destroyer. On one occasion, Worst piloted the plane after the entire cabin crew was mortally wounded in flight. She successfully navigated the plane back to friendly territory and landed safely. \nAfter the war, Dorothy lived the rest of her life in Lockport where she was a strong supporter of veteran organizations.",
         lat: 41.586764,
         lon: -88.058453,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+State+Street+Restaurant",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+State+Street+Restaurant",
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: "https://i.postimg.cc/4xFYzjMp/Victorian-State-St-Grill.jpg",
         image1895CharacterUrl: null,
@@ -586,8 +584,8 @@ const locationsData = [
         description: "“Thank you,” she said in response to Jaxs’ willingness to help her. At that moment, Lorna lost consciousness and collapsed. Just before she reached the ground, Jax leapt to help cushion her fall. He carried her to a spot away from onlookers and into some shade. He felt for her pulse, and it was strong. Her eyes fluttered as if in a dream, but he could not wake her. Without opening her eyes, she whispered that she was not in danger and told Jax to just leave her be for a moment. \nThe Sentinel spoke in her mind, and it was with the same soft disembodied voice she heard when she arrived in Lockport. He told her that he was one of the original Mound Builders, and it was he who, long ago, vanquished the same evil they are experiencing now. He told Lorna of his people’s desire to leave their physical form, a desire he fought against during his lifetime. \nAfter the death of his people, he chose to stay and guard the evil, but had to battle his grief and despair every day. As his body aged, he realized he could not guard forever, so he used his people’s technology to separate the spirit from the body. Now he only existed in this form as pure thought. \nWhen the evil was unburied, he was aware, but was unable to do anything about it without a physical body. When Lorna arrived, he felt something he had not felt in uncountable generations…a kinship. He thought it impossible, for he believed all of his people had perished, but he was sure she was a distant relation of the Mound Builders! When he found she could hear him if he spoke in her mind, he was certain.",
         lat: 41.589108,
         lon: -88.056932,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Victory+Leather",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Victory+Leather",
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: "https://i.postimg.cc/X74B3fdB/Victorian-Victory-Leather.jpg",
         image1895CharacterUrl: null,
@@ -596,17 +594,17 @@ const locationsData = [
     },
     {
         id: 38,
-        characterName: "Camp Dellwood: Merchant Airship Press Gang",
-        locationName: "City Hall/Water Department",
-        address: "222 E 9th St, Lockport, IL",
-        hours: "Mon: 8:00am - 4:00pm, Tue: 8:00am - 4:00pm, Wed: 8:00am - Noon, Thu: 8:00am - 4:00pm, Fri: 8:00am - 4:00pm",
+        characterName: "Press Gang",
+        locationName: "Legacy Adventure Paintball Park",
+        address: "2807 Canal St, Lockport, IL 60441",
+        hours: "Sat: 10:00am - 5:00pm, Sun: 10:00am - 5:00pm",
         description: "The first settlement for non-farmers, Camp Dellwood lay just outside of Lockport Proper. The land was owned by the County of Will and considered “open lands” where anyone could settle without cost or title. It remained so until it was sold to John Sears to fill a budget hole in the county’s finances. \nAs it was primary a camp for transient workers, few permanent structures were built on the property so the camp was never more than a ramshackle, haphazard community of tents and scraps. The one exception was the Dance Hall located in the center of the camp.\nAs time wore on through the 1850’s and 60’s, the evil unknowingly brought to Camp Dellwood by Milo Perkins, began to transform the community into a true den of inequity. Gambling, brothels, and hard drinking took on new meaning. \nDuring the War Between the States and the North American – Siberian Airship Wars, Dellwood was frequented by press gangs that “recruited” men, and sometimes burly woman, for service. It was not uncommon for a resident to pass out in a muddy lane between the tents after a hard night drinking only to wake the next day at 2,500 feet altitude in an airship destined for war. In the early 1890’s, industrialists were the biggest users of press gangs who repurposed them to collect workers for trade ships destined for undesirable, yet profitable ports of call.",
-        lat: 41.589449,
-        lon: -88.05504,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+City+Hall",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+City+Hall",
+        lat: 41.5671833,
+        lon: -88.0712773,
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
-        image1895SteampunkUrl: "https://i.postimg.cc/15vXQLyb/Victorian-City-Hall.jpg",
+        image1895SteampunkUrl: null, // Was Victorian-City-Hall.jpg
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/9fJCNBv8/38-Card-Press-Gang.jpg"
@@ -620,8 +618,8 @@ const locationsData = [
         description: "The Sentinel and Lorna were ecstatic to have found each other, but how could they be related when all of Mound Builders perished?\nShe told him about the Chrono-Keepers and that their origins lay far ago in the ancient past of the Americas. The Sentinel said the only people in those days who knew about time travel were his own, and if there was someone protecting time, perhaps a small group DID survive the cataclysm and formed a policing unit. As they shared each other’s memories, it was clear the Sentinel’s theory was true. Something else was clear; not only were they kinsman, but Lorna and the Sentinel shared a common destiny. They were both tasked with containing the evil of this place. He told her she needed to bury the crystal again, and that he would guide her to do just that.\nLorna sat up fully awake and told Jax about her vision. He was at a loss for words, but that was not unusual for this mission. She asked Jax if he would be at her side until the end, no matter the outcome. As a soldier, Lorna had always wanted his approval, but she now opened up her heart to reveal deeper feelings. She took Jax’s outstretched hand as he helped her to her feet. “What do we need to do?” He asked.\n“We need to go retrieve the Crystal in the Commissioner’s office,” she said. \n“Ok,” said Jax, nodding. His was mind already forming a plan on how to get past Gooding’ security team. “I will get us in.”",
         lat: 41.588026,
         lon: -88.058309,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Beanie's+Candy",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Beanie's+Candy",
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: "https://i.postimg.cc/Zqd56n6h/Victorian-Beanies-Candy.jpg",
         image1895CharacterUrl: null,
@@ -637,8 +635,8 @@ const locationsData = [
         description: "They had found the Crystal in Gooding’s office like they were told. While Jax held off Gooding’s security, Lorna took the Crystal. Twenty minutes later, they rendezvoused on the edge of town in the Lockport Cemetery and placed the Crystal on the ground. The Sentinel communicated to Lorna that her staff was more than just a family heirloom; it had the power to bury the Crystal. Reaching into her mind, he showed Lorna how to channel her spirit into the staff.  As Lorna held it aloft, it glowed with a bright yellow-white light. A streak of lightning shot forth and struck the Crystal, which then produced its own red energy. The staff’s power began to force the Crystal into the earth below, but the evil inside fought back. With the Sentinel guiding her, Lorna focused both of their spirits and forced the Crystal down until the earth enveloped it. They left a nondescript marker over the spot.\nAs Jax helped an exhausted Lorna back to town, they noticed that people seemed different already. They experienced a couple raised hats and greetings of hello: something unheard of when the Crystal was exposed. On the outskirts of Camp Dellwood, they sat on a grassy hill, and a woman offered them some water, which they accepted graciously. Clearly, with the Crystal buried, an unseen darkness had been lifted. \n“I need to stay here, Jax,” Lorna said. “I am the new Sentinel.”\n“I figured as much,” he said. “You realize that they will send a team to try and bring us back?” She told him she didn’t care. Her duty was now clear and she was to remain here. She said she didn’t want Jax to leave but understood if he felt he had to.\n “Who said anything about leaving?” He said. Then, removing the power cell from his time harness, he smashed it on a rock. Jax would not leave the only person he had ever loved, no matter if her responsibilities were bigger than the both of them. With his arm about her, he added, “If the Keepers come for us, logic dictates that we will handle them better together then alone.” \n“Logic?” she laughed. Together they sat on that hill for a long time.",
         lat: 41.587514,
         lon: -88.058138,
-        imageSteampunkUrl: "https://placehold.co/400x300/8B4513/FFF?text=Steampunk+Nik+&+Ivy",
-        imageRealUrl: "https://placehold.co/400x300/A9A9A9/FFF?text=Real+Nik+&+Ivy",
+        imageSteampunkUrl: null, // Was placeholder
+        imageRealUrl: null, // Was placeholder
         imagePresentDayUrl: null,
         image1895SteampunkUrl: "https://i.postimg.cc/vB5DwTmv/Victorian-Nik-Ivy-Brewing.jpg",
         image1895CharacterUrl: null,
