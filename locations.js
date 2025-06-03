@@ -45,7 +45,8 @@ const locationsData = [
         image1895SteampunkUrl: "https://i.postimg.cc/ZK76tcjv/Victorian-Lock-Mule.jpg",
         image1895CharacterUrl: "https://i.postimg.cc/xd0QvvDg/Milo-Lock-Mule.jpg",
         imageCharacterAnimatedUrl: null,
-        characterCardUrl: "https://i.postimg.cc/BQ4ssk4Y/03-Card-Milo-Perkins.jpg"
+        characterCardUrl: "https://i.postimg.cc/BQ4ssk4Y/03-Card-Milo-Perkins.jpg",
+        youtubeVideoUrl: "https://youtu.be/hdp4fAsjjrs"
     },
     {
         id: 4,
@@ -108,7 +109,8 @@ const locationsData = [
         image1895SteampunkUrl: "https://i.postimg.cc/Wz9qVNmc/Victorian-Coyle-Law.jpg",
         image1895CharacterUrl: "https://i.postimg.cc/5yFW4pL9/Jim-Stepenson-Coyle-Law.jpg",
         imageCharacterAnimatedUrl: "https://i.postimg.cc/0yShgNmT/CoyleLAw.gif",
-        characterCardUrl: "https://i.postimg.cc/fLdZThVF/07-Card-Jim-Stephenson.jpg"
+        characterCardUrl: "https://i.postimg.cc/fLdZThVF/07-Card-Jim-Stephenson.jpg",
+        youtubeVideoUrl: "https://youtu.be/3Gsu8DM5MTA"
     },
     {
         id: 8,
@@ -201,7 +203,8 @@ const locationsData = [
         image1895CharacterUrl: "https://i.postimg.cc/fRsyP0QS/Gaylord-Gaylord-Building.jpg",
         imageCharacterAnimatedUrl: "https://i.postimg.cc/7YdjQzC1/Gaylord-Building.gif",
         characterCardUrl: "https://i.postimg.cc/Y2gqtQg9/13-Card-George-Gaylord.jpg",
-        crystalHint: "Where is the Infernal Crystal, you ask? I’m not entirely sure, but I would start at the beginning…the digging of the I&M Canal. There is an old exhibit here at the Gaylord building that talks about those early days. Look for the old tool chest. I am sure you’ll find a clue there."
+        crystalHint: "Where is the Infernal Crystal, you ask? I’m not entirely sure, but I would start at the beginning…the digging of the I&M Canal. There is an old exhibit here at the Gaylord building that talks about those early days. Look for the old tool chest. I am sure you’ll find a clue there.",
+        youtubeVideoUrl: "https://youtu.be/Gx7IKQaCq58"
     },
     {
         id: 14,
@@ -424,7 +427,8 @@ const locationsData = [
         image1895SteampunkUrl: "https://i.postimg.cc/SQWYwT2p/Victorian-Thimbles.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
-        characterCardUrl: "https://i.postimg.cc/Pq3N8hr5/27-Card-Marie-Cook.jpg"
+        characterCardUrl: "https://i.postimg.cc/Pq3N8hr5/27-Card-Marie-Cook.jpg",
+        youtubeVideoUrl: "https://youtu.be/gxtGXM83uII"
     },
     {
         id: 28,
@@ -509,7 +513,8 @@ const locationsData = [
         image1895SteampunkUrl: "https://i.postimg.cc/Z5q9vJfT/Victorian-Submarine.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
-        characterCardUrl: "https://i.postimg.cc/sftQcVPB/32-Card-Haley-Augello.jpg"
+        characterCardUrl: "https://i.postimg.cc/sftQcVPB/32-Card-Haley-Augello.jpg",
+        youtubeVideoUrl: "https://youtu.be/w3k74RZ4ht8"
     },
     {
         id: 33,
@@ -543,7 +548,8 @@ const locationsData = [
         image1895SteampunkUrl: "https://i.postimg.cc/rscsVT02/Victorian-Mint-Salon.jpg",
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
-        characterCardUrl: "https://i.postimg.cc/26tmCSjn/34-Card-Minora-Paxson.jpg"
+        characterCardUrl: "https://i.postimg.cc/26tmCSjn/34-Card-Minora-Paxson.jpg",
+        youtubeVideoUrl: "https://youtu.be/9S3UxNj4Lvk"
     },
     {
         id: 35,
