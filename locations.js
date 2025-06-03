@@ -46,7 +46,7 @@ const locationsData = [
         image1895CharacterUrl: "https://i.postimg.cc/xd0QvvDg/Milo-Lock-Mule.jpg",
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/BQ4ssk4Y/03-Card-Milo-Perkins.jpg",
-        youtubeVideoUrl: "https://youtu.be/hdp4fAsjjrs"
+        youtubeVideoUrl: "https://www.youtube.com/embed/hdp4fAsjjrs?si=OLGZ86DnGzV9iKjs"
     },
     {
         id: 4,
@@ -110,7 +110,7 @@ const locationsData = [
         image1895CharacterUrl: "https://i.postimg.cc/5yFW4pL9/Jim-Stepenson-Coyle-Law.jpg",
         imageCharacterAnimatedUrl: "https://i.postimg.cc/0yShgNmT/CoyleLAw.gif",
         characterCardUrl: "https://i.postimg.cc/fLdZThVF/07-Card-Jim-Stephenson.jpg",
-        youtubeVideoUrl: "https://youtu.be/3Gsu8DM5MTA"
+        youtubeVideoUrl: "https://www.youtube.com/embed/3Gsu8DM5MTA?si=5Br7rwulWZfeoV82"
     },
     {
         id: 8,
@@ -204,7 +204,7 @@ const locationsData = [
         imageCharacterAnimatedUrl: "https://i.postimg.cc/7YdjQzC1/Gaylord-Building.gif",
         characterCardUrl: "https://i.postimg.cc/Y2gqtQg9/13-Card-George-Gaylord.jpg",
         crystalHint: "Where is the Infernal Crystal, you ask? I’m not entirely sure, but I would start at the beginning…the digging of the I&M Canal. There is an old exhibit here at the Gaylord building that talks about those early days. Look for the old tool chest. I am sure you’ll find a clue there.",
-        youtubeVideoUrl: "https://youtu.be/Gx7IKQaCq58"
+        youtubeVideoUrl: "https://www.youtube.com/embed/Gx7IKQaCq58?si=plj4ERU0hyxPgzIi"
     },
     {
         id: 14,
@@ -428,7 +428,7 @@ const locationsData = [
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/Pq3N8hr5/27-Card-Marie-Cook.jpg",
-        youtubeVideoUrl: "https://youtu.be/gxtGXM83uII"
+        youtubeVideoUrl: "https://www.youtube.com/embed/gxtGXM83uII?si=_Ys_ngVC9Z2Gi-eo"
     },
     {
         id: 28,
@@ -514,7 +514,7 @@ const locationsData = [
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/sftQcVPB/32-Card-Haley-Augello.jpg",
-        youtubeVideoUrl: "https://youtu.be/w3k74RZ4ht8"
+        youtubeVideoUrl: "https://www.youtube.com/embed/w3k74RZ4ht8?si=pbYnMJU_ndwkhjUC"
     },
     {
         id: 33,
@@ -549,7 +549,7 @@ const locationsData = [
         image1895CharacterUrl: null,
         imageCharacterAnimatedUrl: null,
         characterCardUrl: "https://i.postimg.cc/26tmCSjn/34-Card-Minora-Paxson.jpg",
-        youtubeVideoUrl: "https://youtu.be/9S3UxNj4Lvk"
+        youtubeVideoUrl: "https://www.youtube.com/embed/9S3UxNj4Lvk?si=lc0fNxrrjiqnvgyR"
     },
     {
         id: 35,
