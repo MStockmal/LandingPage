@@ -28,7 +28,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none; /* Allows clicks to pass through elements below */
-            z-index: -1; /* Places it below regular content but above the background */
+            z-index: 1; /* Changed from -1 to 1 to bring it above the background */
             display: flex; /* Use flexbox to distribute plumes */
             justify-content: space-around; /* Distribute horizontally */
             align-items: flex-end; /* Start plumes from the bottom */
@@ -81,7 +81,7 @@
             padding: 20px 0 0 0;
             box-sizing: border-box;
             position: relative;
-            z-index: 0; /* Ensure container content is above the smoke */
+            z-index: 2; /* Changed from 0 to 2 to ensure content is above the smoke */
         }
 
         .header {
@@ -197,7 +197,7 @@
     }
     50% {
         filter: drop-shadow(0 0 3px #fff)
-                drop-shadow(0 0 6px #E6E6FA)
+                drop_shadow(0 0 6px #E6E6FA)
                 drop_shadow(0 0 10px #9370DB)
                 drop-shadow(0 0 15px #A020F0); /* Peak glow */
     }
