@@ -20,31 +20,55 @@
             justify-content: center;
         }
 
-        /* New CSS for animated smoke haze */
-        .smoke-haze {
-            position: fixed; /* Fixed to viewport */
+        /* Styles for the smoke background container */
+        .smoke-background-container {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             pointer-events: none; /* Allows clicks to pass through elements below */
             z-index: -1; /* Places it below regular content but above the background */
-            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0) 70%); /* Very light white radial gradient for haze */
-            animation: smokeAnimation 20s infinite alternate ease-in-out;
+            display: flex; /* Use flexbox to distribute plumes */
+            justify-content: space-around; /* Distribute horizontally */
+            align-items: flex-end; /* Start plumes from the bottom */
+            overflow: hidden; /* Hide plumes when they go out of bounds */
         }
 
-        @keyframes smokeAnimation {
+        /* Styles for individual smoke plumes */
+        .smoke-background-container span {
+            position: relative; /* Relative to its flex container, allowing bottom property */
+            bottom: -50px; /* Start below the viewport to rise up */
+            display: block;
+            min-width: 20px; /* Base width for a haze element */
+            height: 150px; /* Base height for a haze element */
+            background: rgba(255, 255, 255, 0.1); /* Very light white for haze */
+            border-radius: 50%; /* Rounded shape */
+            animation: animateSmokePlume 20s linear infinite; /* Slower, smoother animation */
+            opacity: 0; /* Start invisible */
+            filter: blur(15px); /* More blur for haziness */
+            animation-delay: calc(var(--v) * -2s); /* Staggered animation for each plume */
+        }
+
+        /* Keyframes for the vertical smoke animation */
+        @keyframes animateSmokePlume {
             0% {
                 transform: translateY(0) scale(1);
-                opacity: 0.05;
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.15; /* Peak opacity for light haze */
             }
             50% {
-                transform: translateY(-15px) scale(1.02); /* Slight upward movement and scale */
+                transform: translateY(-500px) scale(1.5); /* Rise higher, expand slightly */
                 opacity: 0.1;
             }
+            95% {
+                opacity: 0;
+            }
             100% {
-                transform: translateY(0) scale(1);
-                opacity: 0.05;
+                transform: translateY(-800px) scale(2); /* Fully rise and expand out of view */
+                opacity: 0;
             }
         }
 
@@ -174,7 +198,7 @@
     50% {
         filter: drop-shadow(0 0 3px #fff)
                 drop-shadow(0 0 6px #E6E6FA)
-                drop-shadow(0 0 10px #9370DB)
+                drop_shadow(0 0 10px #9370DB)
                 drop-shadow(0 0 15px #A020F0); /* Peak glow */
     }
     100% {
@@ -358,7 +382,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="smoke-haze"></div> <div class="container">
+    <div class="smoke-background-container">
+        <span style="--v:1;"></span>
+        <span style="--v:2;"></span>
+        <span style="--v:3;"></span>
+        <span style="--v:4;"></span>
+        <span style="--v:5;"></span>
+        <span style="--v:6;"></span>
+        <span style="--v:7;"></span>
+        <span style="--v:8;"></span>
+        <span style="--v:9;"></span>
+        <span style="--v:10;"></span>
+    </div>
+
+    <div class="container">
         <header class="header">
             <img src="https://i.postimg.cc/JhVm4pB3/Title.png" alt="Mission 1895 Title" class="title-image">
         </header>
