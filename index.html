@@ -20,6 +20,34 @@
             justify-content: center;
         }
 
+        /* New CSS for animated smoke haze */
+        .smoke-haze {
+            position: fixed; /* Fixed to viewport */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Allows clicks to pass through elements below */
+            z-index: -1; /* Places it below regular content but above the background */
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0) 70%); /* Very light white radial gradient for haze */
+            animation: smokeAnimation 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes smokeAnimation {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.05;
+            }
+            50% {
+                transform: translateY(-15px) scale(1.02); /* Slight upward movement and scale */
+                opacity: 0.1;
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.05;
+            }
+        }
+
         .container {
             width: 100%;
             max-width: 900px;
@@ -29,6 +57,7 @@
             padding: 20px 0 0 0;
             box-sizing: border-box;
             position: relative;
+            z-index: 0; /* Ensure container content is above the smoke */
         }
 
         .header {
@@ -329,7 +358,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <div class="smoke-haze"></div> <div class="container">
         <header class="header">
             <img src="https://i.postimg.cc/JhVm4pB3/Title.png" alt="Mission 1895 Title" class="title-image">
         </header>
