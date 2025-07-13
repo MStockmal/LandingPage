@@ -167,21 +167,21 @@
         @keyframes gold-intro-effect { /* This keyframe is no longer actively used by .glowing-intro-text but kept for potential other uses */
             0% {
                 opacity: 0.7;
-                box-shadow: 0 0 0 2px #F0E68C,
-                            0 0 10px #DAA520,
-                            0 0 15px #DAA520;
+                box-shadow: 0 0 0 2px #F0E68C, 
+                            0 0 10px #DAA520,  
+                            0 0 15px #DAA520;  
             }
             50% {
                 opacity: 1;
-                box-shadow: 0 0 0 2px #F0E68C,
-                            0 0 15px #FFD700,
-                            0 0 25px #FFD700;
+                box-shadow: 0 0 0 2px #F0E68C, 
+                            0 0 15px #FFD700,  
+                            0 0 25px #FFD700;  
             }
             100% {
                 opacity: 0.7;
-                box-shadow: 0 0 0 2px #F0E68C,
-                            0 0 10px #DAA520,
-                            0 0 15px #DAA520;
+                box-shadow: 0 0 0 2px #F0E68C, 
+                            0 0 10px #DAA520,  
+                            0 0 15px #DAA520;  
             }
         }
 
@@ -196,7 +196,7 @@
                 text-shadow: 0 0 2px #fff, 0 0 4px #E6E6FA, 0 0 7px #9370DB;
             }
         }
-
+        
         /* ADDED new keyframes for image glow */
 @keyframes image-glow-violet {
     0% {
@@ -221,7 +221,7 @@
           left: 0;
           width: 100%;
           height: 100%;
-          background-color: rgba(0, 0, 0, 0.8); /* Keep a slight transparency for pop-up feel */
+          background-color: rgba(0, 0, 0, 0.8);
           display: flex;
           justify-content: center;
           align-items: center;
@@ -235,23 +235,15 @@
         }
 
         .trailer-content {
-          background-color: black; /* Matches origins-text-box background */
+          background-color: #f0f0f0; /* Similar to "origins" background */
           border-radius: 8px;
           padding: 20px;
-          /* Copied border and box-shadow from .origins-text-box */
-          border: 4px solid #CFB53B; /* Gold Primary Border */
-          box-shadow: 0 0 0 2px #F0E68C, /* Gold Highlight for 'emboss' */
-                      1px 1px 3px rgba(0,0,0,0.2) inset, /* Subtle inner shadow for depth */
-                      -1px -1px 3px rgba(255,255,255,0.1) inset, /* Subtle inner highlight for depth */
-                      0px 0px 10px rgba(218, 165, 32, 0.4); /* Soft outer gold glow */
-          max-width: 900px; /* Much larger size, matching container max-width */
-          width: 90%; /* Responsive width */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          max-width: 80%;
           text-align: center;
           position: relative;
           transform: translateY(-50px); /* Initial position for fade-in effect */
           transition: transform 0.5s ease-out;
-          color: white; /* Matches origins-text-box text color */
-          font-family: 'Merriweather', serif;
         }
 
         #trailer-popup.show .trailer-content {
@@ -259,10 +251,8 @@
         }
 
         .trailer-content h3 {
-          font-family: 'Cinzel Decorative', cursive; /* Matches origins-text-box h2/h3 font */
-          color: #f0f0f0; /* Lighter color for heading */
+          color: #333; /* Adjust as needed to match "origins" text color */
           margin-bottom: 15px;
-          font-size: 1.8em; /* Adjusted font size for prominence */
         }
 
         .video-container {
@@ -290,7 +280,6 @@
           border-radius: 5px;
           cursor: pointer;
           font-size: 16px;
-          font-family: 'Merriweather', serif; /* Consistent font */
         }
 
         #close-trailer:hover {
@@ -356,17 +345,17 @@
                         -1px -1px 3px rgba(255,255,255,0.1) inset, /* Subtle inner highlight for depth */
                         0px 0px 10px rgba(218, 165, 32, 0.4); /* Soft outer gold glow */
             border-radius: 8px;
-            max-height: 300px;
+            max-height: 300px; 
             overflow-y: auto;
             width: 85%;
             margin-left: auto;
             margin-right: auto;
             text-align: left;
-            font-family: 'Merriweather', serif;
+            font-family: 'Merriweather', serif; 
         }
 
         .origins-text-box h2 {
-            font-family: 'Cinzel Decorative', cursive;
+            font-family: 'Cinzel Decorative', cursive; 
             text-align: center;
             margin-top: 0;
             margin-bottom: 15px;
@@ -375,7 +364,7 @@
         }
 
         .origins-text-box h3 {
-            font-family: 'Cinzel Decorative', cursive;
+            font-family: 'Cinzel Decorative', cursive; 
             text-align: center;
             margin-top: 20px;
             margin-bottom: 10px;
@@ -395,17 +384,17 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); 
             z-index: 1;
         }
 
         .crystal-image {
-            max-width: 65%;
+            max-width: 65%; 
             height: auto;
             display: block;
             margin-left: auto;
             margin-right: auto;
-            opacity: 0.75;
+            opacity: 0.75; 
         }
 
         .footer {
@@ -434,7 +423,7 @@
                 max-height: 280px;
             }
             .crystal-section {
-                 transform: translate(-50%, -45%);
+                 transform: translate(-50%, -45%); 
             }
             .glowing-intro-text h2 { font-size: 1.8em; }
             .glowing-intro-text h3 { font-size: 1.3em; }
@@ -443,7 +432,7 @@
 
         @media (max-width: 480px) {
             .container { padding: 10px 0 0 0; }
-            .header, .map-button-section, .origins-section, .intro-mission-section {
+            .header, .map-button-section, .origins-section, .intro-mission-section { 
                 padding: 0 10px;
             }
             .title-image { max-width: 95%; }
@@ -460,7 +449,7 @@
                 font-size: 1.2em;
             }
             .crystal-section {
-                 transform: translate(-50%, -40%);
+                 transform: translate(-50%, -40%); 
             }
             .footer { padding: 15px 0; }
             .glowing-intro-text h2 { font-size: 1.5em; }
@@ -493,7 +482,7 @@
 
         <section class="intro-mission-section">
             <div class="glowing-intro-text">
-<p>The year is 1895 and the city finds itself under the dark influence of a mysterious crystal. In this dystopian world, oppression, corruption, and despair have slowly engulfed Lockport ever since 1830 when Milo Perkins, an I&M Canal laborer, accidentally released the ancient talisman from its limestone tomb. Perkins was immediately captivated by the Crystal’s alluring spell and believed that by posing it, wealth and power would be his, but the Infernal Crystal was only filled with lies. After destroying Perkins and his family, the Crystal passed through the years from one doomed soul to another until its dark influence held sway over the entire city.</p>
+<p>The year is 1895 and the city finds itself under the dark influence of a mysterious crystal. In this dystopian world, oppression, corruption, and despair have slowly engulfed Lockport ever since 1830 when Milo Perkins, an I&amp;M Canal laborer, accidentally released the ancient talisman from its limestone tomb. Perkins was immediately captivated by the Crystal’s alluring spell and believed that by posing it, wealth and power would be his, but the Infernal Crystal was only filled with lies. After destroying Perkins and his family, the Crystal passed through the years from one doomed soul to another until its dark influence held sway over the entire city.</p>
                 <p>Your mission, should you choose to accept it, is to find the Infernal Crystal and break its powerful hold over Lockport but fair warning - even if you have the tenacity and wit to find the Crystal, will you be strong enough to destroy it or will you be deceived by its false promises of wealth and power?</p>
                 <h3>M:1895 Adventure Begins Here:</h3>
                 <ul>
@@ -519,10 +508,11 @@
                 <div class="origins-text-box">
                     <h2>ORIGINS - The Hunt begins here</h2>
                     <p>In the early 1830’s, dreamy-eyed settlers from the east had arrived on the unbroken prairie of what would soon be known as Lockport. Because of a forty-foot drop in elevation along the Des Plaines River, men with vision saw that they could harness nature and supply hydro-electric power for all their needs. Terrain thus fated Lockport to be the headquarters of the great Illinois & Michigan Canal – an inland waterway linking New York to New Orleans. The great engineers and self-made visionaries of the day came to Lockport to transform the prairie into farms and the hillsides into a spectacular metropolis, a place where honest folk could make a living and enjoy the fruits of labor and invention.</p>
-                    <p>But by 1895, the once promising and hopeful city of Lockport had fallen into darkness. It seemed the more people tried to force Lockport’s utopian aspirations, the more clouded the dream became. Altruistic beginnings had turned into selfish ambition and in the midst of the Gilded Age, Lockport became a city run by a ruthless plutocracy. The divide between rich and poor was ever widening, and contention began to tear the fabric of the city. The driving force of this wickedness was not understood by those enslaved by it, for it had mysterious ancient origins.</p>
+                    <p>But by 1895, the once promising and hopeful city of Lockport had fallen into darkness.  It seemed the more people tried to force Lockport’s utopian aspirations, the more clouded the dream became. Altruistic beginnings had turned into selfish ambition and in the midst of the Gilded Age, Lockport became a city run by a ruthless plutocracy. The divide between rich and poor was ever widening, and contention began to tear the fabric of the city. The driving force of this wickedness was not understood by those enslaved by it, for it had mysterious ancient origins.</p>
                     <h3>100,000 BC</h3>
                     <p>Many millennium earlier there were people who lived and thrived in the region where Lockport now stood. Their history haslong been forgotten, and any traces of their existence has been engulfed by the Earth. Though small in numbers, these people, who called themselves the Anunnuki, advanced their technology even beyond that of today. At the height of their civilization, they learned how to control the elements and bend the physical world to their will at the quantum level. With this power, they found they could fold their very spirits into the quantum vibrations that govern the design of the universe. All knowledge and time could be accessed in an instant for those willing to leave the world behind. Indeed, for those willing to embrace this quantum technology, it was akin to becoming omniscient - to be like God. This paradigm shift in technology came so rapidly and was embraced by the Anunnuki with such enthusiasm, they never even paused to ask themselves if it was right.</p>
-                    <p>They believed this higher form of consciousness was an evolutionary step to greatness. One they controlled by their own hand. All rushed to integrate themselves into these quantum vibrations and left their physical bodies behind to exist eternally with the universe. Even his beloved wife fell prey to the promise of infinite knowledge and eternal life. She was the last Anunnuki to give her soul to the quantum world.</p>
+                    <p>They believed this higher form of consciousness was an evolutionary step to greatness. One they controlled by their own hand. All rushed to integrate themselves into these quantum vibrations and left their physical bodies behind to exist eternally with the universe. But the human soul was designed in that place. Within a short span their minds drifted and decayed into wraiths trapped in this subatomic world. Worse, and unbeknown to them, as they disrupted the quantum fields, they opened a window for Spirits from that world to enter our own. It was at this time, a terrible darkness entered our world.</p>
+                    <p>Of all the Anunnuki peoples there was only one who warned of the dangers of tampering with the quantum world, the Sentinel. He explained that humans were created to live and enjoy the world visible to their natural bodies. To try and be “like God” was to invite death and darkness. He was ridiculed for his archaic thinking and the Anunnaki, with their “advanced” technology, left their physical bodies behind. Even his beloved wife fell prey to the promise of infinite knowledge and eternal life. She was the last Anunnuki to give her soul to the quantum world.</p>
                 </div>
             </section>
 
@@ -536,9 +526,13 @@
         </footer>
     </div>
 
-    <div id="trailer-popup">
+    <div id="trailer-popup" style="display: none;">
       <div class="trailer-content">
-        <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;"><iframe src="https://www.youtube.com/embed/q3lX2p_Uy9I?rel=0" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen scrolling="no" allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;"></iframe></div>
+        <h3>Mission 1895 Trailer</h3>
+        <div class="video-container">
+          <iframe src="https://youtu.be/tIzaGL-bdkA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <button id="close-trailer">Close</button>
       </div>
     </div>
     <script>
