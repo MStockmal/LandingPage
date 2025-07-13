@@ -214,6 +214,79 @@
 }
         /* End of Updated styles for Intro Mission Section */
 
+        /* Styles for the trailer pop-up */
+        #trailer-popup {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 1000;
+          opacity: 0;
+          transition: opacity 1s ease-in-out;
+        }
+
+        #trailer-popup.show {
+          opacity: 1;
+        }
+
+        .trailer-content {
+          background-color: #f0f0f0; /* Similar to "origins" background */
+          border-radius: 8px;
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          max-width: 80%;
+          text-align: center;
+          position: relative;
+          transform: translateY(-50px); /* Initial position for fade-in effect */
+          transition: transform 0.5s ease-out;
+        }
+
+        #trailer-popup.show .trailer-content {
+          transform: translateY(0);
+        }
+
+        .trailer-content h3 {
+          color: #333; /* Adjust as needed to match "origins" text color */
+          margin-bottom: 15px;
+        }
+
+        .video-container {
+          position: relative;
+          padding-bottom: 56.25%; /* 16:9 aspect ratio */
+          height: 0;
+          overflow: hidden;
+          margin-bottom: 15px;
+          background-color: #000;
+        }
+
+        .video-container iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        #close-trailer {
+          background-color: #5cb85c; /* Example button color, adjust as needed */
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+        }
+
+        #close-trailer:hover {
+          background-color: #4cae4c;
+        }
+        /* End of trailer pop-up styles */
+
         .mission-description {
             display: none;
             width: 100%;
@@ -438,7 +511,7 @@
                     <p>But by 1895, the once promising and hopeful city of Lockport had fallen into darkness.  It seemed the more people tried to force Lockport’s utopian aspirations, the more clouded the dream became. Altruistic beginnings had turned into selfish ambition and in the midst of the Gilded Age, Lockport became a city run by a ruthless plutocracy. The divide between rich and poor was ever widening, and contention began to tear the fabric of the city. The driving force of this wickedness was not understood by those enslaved by it, for it had mysterious ancient origins.</p>
                     <h3>100,000 BC</h3>
                     <p>Many millennium earlier there were people who lived and thrived in the region where Lockport now stood. Their history haslong been forgotten, and any traces of their existence has been engulfed by the Earth. Though small in numbers, these people, who called themselves the Anunnuki, advanced their technology even beyond that of today. At the height of their civilization, they learned how to control the elements and bend the physical world to their will at the quantum level. With this power, they found they could fold their very spirits into the quantum vibrations that govern the design of the universe. All knowledge and time could be accessed in an instant for those willing to leave the world behind. Indeed, for those willing to embrace this quantum technology, it was akin to becoming omniscient - to be like God. This paradigm shift in technology came so rapidly and was embraced by the Anunnuki with such enthusiasm, they never even paused to ask themselves if it was right.</p>
-                    <p>They believed this higher form of consciousness was an evolutionary step to greatness. One they controlled by their own hand. All rushed to integrate themselves into these quantum vibrations and left their bodies behind to exist eternally with the universe. But the human soul was designed in that place. Within a short span their minds drifted and decayed into wraiths trapped in this subatomic world. Worse, and unbeknown to them, as they disrupted the quantum fields, they opened a window for Spirits from that world to enter our own. It was at this time, a terrible darkness entered our world.</p>
+                    <p>They believed this higher form of consciousness was an evolutionary step to greatness. One they controlled by their own hand. All rushed to integrate themselves into these quantum vibrations and left their physical bodies behind to exist eternally with the universe. But the human soul was designed in that place. Within a short span their minds drifted and decayed into wraiths trapped in this subatomic world. Worse, and unbeknown to them, as they disrupted the quantum fields, they opened a window for Spirits from that world to enter our own. It was at this time, a terrible darkness entered our world.</p>
                     <p>Of all the Anunnuki peoples there was only one who warned of the dangers of tampering with the quantum world, the Sentinel. He explained that humans were created to live and enjoy the world visible to their natural bodies. To try and be “like God” was to invite death and darkness. He was ridiculed for his archaic thinking and the Anunnaki, with their “advanced” technology, left their physical bodies behind. Even his beloved wife fell prey to the promise of infinite knowledge and eternal life. She was the last Anunnuki to give her soul to the quantum world.</p>
                 </div>
             </section>
@@ -452,5 +525,50 @@
             <img src="https://i.postimg.cc/JzBMLft4/Footersponsorlogos.png" alt="Sponsor Logos" class="sponsor-logos-image">
         </footer>
     </div>
+
+    <div id="trailer-popup" style="display: none;">
+      <div class="trailer-content">
+        <h3>Mission 1895 Trailer</h3>
+        <div class="video-container">
+          <iframe src="https://youtu.be/tIzaGL-bdkA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <button id="close-trailer">Close</button>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        const trailerPopup = document.getElementById('trailer-popup');
+        const closeTrailerButton = document.getElementById('close-trailer');
+        const hasVisited = localStorage.getItem('hasVisitedMission1895');
+
+        if (!hasVisited) {
+          setTimeout(() => {
+            trailerPopup.style.display = 'flex';
+            setTimeout(() => {
+              trailerPopup.classList.add('show');
+            }, 10); // Small delay to trigger transition
+          }, 1000); // 1 second delay before showing the popup
+
+          localStorage.setItem('hasVisitedMission1895', 'true'); // Mark as visited
+        }
+
+        closeTrailerButton.addEventListener('click', () => {
+          trailerPopup.classList.remove('show');
+          setTimeout(() => {
+            trailerPopup.style.display = 'none';
+          }, 1000); // Wait for fade-out to complete before hiding
+        });
+
+        // Optional: Close popup if clicked outside the content
+        trailerPopup.addEventListener('click', (e) => {
+          if (e.target === trailerPopup) {
+            trailerPopup.classList.remove('show');
+            setTimeout(() => {
+              trailerPopup.style.display = 'none';
+            }, 1000);
+          }
+        });
+      });
+    </script>
 </body>
 </html>
