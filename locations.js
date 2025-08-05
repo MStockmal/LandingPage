@@ -15,6 +15,7 @@
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/CxphZ5GN/01-Card-Evil-Buried.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/c47rxyvm/01-Card-Evil-Buried.jpg",
         "crystalHint": "I heard you were asking about the Infernal Crystal. Dangerous business that is. The Native people’s of this land may have some wisdom on the matter. Find them at the south end of the train station. But before you walk up the stairs, you should humble yourself and lay low."
     },
     {
@@ -30,7 +31,8 @@
         "image1895SteampunkUrl": "https://i.postimg.cc/Gh5TSphk/Public-Landing-Victorian.jpg",
         "image1895CharacterUrl": "https://i.postimg.cc/Vs3djV7R/IMCanal-Public-Landing.jpg",
         "imageCharacterAnimatedUrl": "https://i.postimg.cc/fWgPJdv4/Public-Landing.gif",
-        "characterCardUrl": "https://i.postimg.cc/wMcpLccQ/02-Card-Fate-Unleased.jpg"
+        "characterCardUrl": "https://i.postimg.cc/wMcpLccQ/02-Card-Fate-Unleased.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/kMb2Ht9L/02-Card-Fate-Unleased.jpg"
     },
     {
         "id": 3,
@@ -46,6 +48,7 @@
         "image1895CharacterUrl": "https://i.postimg.cc/xd0QvvDg/Milo-Lock-Mule.jpg",
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/BQ4ssk4Y/03-Card-Milo-Perkins.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/QdXVV45r/03-Card-Milo-Perkins.jpg",
         "youtubeVideoUrl": "https://www.youtube.com/embed/hdp4fAsjjrs?si=OLGZ86DnGzV9iKjs"
     },
     {
@@ -62,9 +65,10 @@
         "image1895CharacterUrl": "https://i.postimg.cc/5NLjpSTM/Hiram-Norton-Illinois-State-Museum.jpg",
         "imageCharacterAnimatedUrl": "https://i.postimg.cc/d0mX1S5n/Norton-Illninois.gif",
         "characterCardUrl": "https://i.postimg.cc/C5V0R6DK/04-Card-Hiram-Norton.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/htpvmLbQ/04-Card-Hiram-Norton.jpg",
         "trueStory": {
             "characterName": "Hiram Norton",
-            "story": "Hiram Norton (1799-1875) was an enterprising man who became a significant historical figure in Lockport. [cite_start]After being orphaned at 14, he moved to Canada and eventually invested in the stage company that employed him[cite: 114, 115]. [cite_start]He later moved to Lockport, where he received a contract to supply cement for the I&M Canal and built a mill to grind it[cite: 117]. [cite_start]After the canal's completion, he founded Norton & Co. with his sons, constructing the iconic Norton Building as a grain warehouse[cite: 118]. [cite_start]Norton & Co. became a major force in the region, owning the most canal boats and operating various mills and warehouses[cite: 120, 125, 127]. [cite_start]Norton & Co. was the first in the country to switch from moving grain in sacks to transporting it in bulk via an elevator into boats[cite: 128]."
+            "story": "Hiram Norton (1799-1875) was an enterprising man who became a significant historical figure in Lockport. After being orphaned at 14, he moved to Canada and eventually invested in the stage company that employed him. He later moved to Lockport, where he received a contract to supply cement for the I&M Canal and built a mill to grind it. After the canal's completion, he founded Norton & Co. with his sons, constructing the iconic Norton Building as a grain warehouse. Norton & Co. became a major force in the region, owning the most canal boats and operating various mills and warehouses. Norton & Co. was the first in the country to switch from moving grain in sacks to transporting it in bulk via an elevator into boats."
         }
     },
     {
@@ -83,6 +87,7 @@
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/sfpyksdG/05-Card-Camp-Dellwood.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/CK51sRmP/05-Card-Camp-Dellwood.jpg",
         "crystalHint": "The Infernal Crystal. That is a foolish pursuit. I suggest you go to Camp Dellwood and find the Canyons Pro-shop. You can sit under the porch there and contemplate the folly of your search."
     },
     {
@@ -99,9 +104,10 @@
         "image1895CharacterUrl": "https://i.postimg.cc/3xQYRMts/John-Sears-Realtopia.jpg",
         "imageCharacterAnimatedUrl": "https://i.postimg.cc/rmwhpy0F/Sears-Realtopia.gif",
         "characterCardUrl": "https://i.postimg.cc/Pq9Tjq5Y/06-Card-John-Sears.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/rpHpnqH8/06-Card-John-Sears.jpg",
         "trueStory": {
             "characterName": "John Sears, Jr.",
-            [cite_start]"story": "John Sears, Jr. (1813-1867) came to Lockport in 1836 due to health issues and stayed with the Gooding family[cite: 139]. [cite_start]He was a key figure in the completion of the I&M Canal's Summit division[cite: 147]. [cite_start]After the death of his first wife, he moved to Chicago and took over a lucrative drug business, which sold a wide range of products including chemicals, paints, oils, and medicines[cite: 152, 154, 155]. [cite_start]He later purchased an estate near Lockport from his cousin William Gooding, which he named 'Dellwood'[cite: 164]. [cite_start]His son, Joseph Sears, a Civil War veteran, went on to found the village of Kenilworth, Illinois[cite: 142]."
+            "story": "John Sears, Jr. (1813-1867) came to Lockport in 1836 due to health issues and stayed with the Gooding family. He was a key figure in the completion of the I&M Canal's Summit division. After the death of his first wife, he moved to Chicago and took over a lucrative drug business, which sold a wide range of products including chemicals, paints, oils, and medicines. He later purchased an estate near Lockport from his cousin William Gooding, which he named 'Dellwood'. His son, Joseph Sears, a Civil War veteran, went on to found the village of Kenilworth, Illinois."
         }
     },
     {
@@ -118,10 +124,11 @@
         "image1895CharacterUrl": "https://i.postimg.cc/5yFW4pL9/Jim-Stepenson-Coyle-Law.jpg",
         "imageCharacterAnimatedUrl": "https://i.postimg.cc/0yShgNmT/CoyleLAw.gif",
         "characterCardUrl": "https://i.postimg.cc/fLdZThVF/07-Card-Jim-Stephenson.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/4dhxjrCp/07-Card-Jim-Stephenson.jpg",
         "youtubeVideoUrl": "https://www.youtube.com/embed/3Gsu8DM5MTA?si=5Br7rwulWZfeoV82",
         "trueStory": {
             "characterName": "Jim Stephenson",
-            [cite_start]"story": "James 'Jim' Mitchell Stephenson (1936-2020) was a lifelong Lockport resident with a passion for music and engineering[cite: 339, 340]. [cite_start]He was a talented musician, playing the organ and piano for his church and in various bands from a young age[cite: 341, 346, 347]. [cite_start]He graduated from Purdue University with a degree in Electrical Engineering and worked at Hughes Aircraft, Argonne National Laboratory, and Fermi National Laboratory[cite: 342, 343, 344]. [cite_start]In 1970, he co-founded Kinetic Systems in Lockport, a successful company where he served as president and CEO until 1999[cite: 344]. [cite_start]Stephenson was also deeply committed to his community, serving on the LTHS Board of Education and the board of Silver Cross Hospital[cite: 348]."
+            "story": "James 'Jim' Mitchell Stephenson (1936-2020) was a lifelong Lockport resident with a passion for music and engineering. He was a talented musician, playing the organ and piano for his church and in various bands from a young age. He graduated from Purdue University with a degree in Electrical Engineering and worked at Hughes Aircraft, Argonne National Laboratory, and Fermi National Laboratory. In 1970, he co-founded Kinetic Systems in Lockport, a successful company where he served as president and CEO until 1999. Stephenson was also deeply committed to his community, serving on the LTHS Board of Education and the board of Silver Cross Hospital."
         }
     },
     {
@@ -139,7 +146,8 @@
         "image1895SteampunkUrl": "https://i.postimg.cc/rmGyYHhn/Victorian-Amazing-Fantasy-Comics.jpg",
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
-        "characterCardUrl": "https://i.postimg.cc/25VrMWrC/08-Card-Lorna-Arrival.jpg"
+        "characterCardUrl": "https://i.postimg.cc/25VrMWrC/08-Card-Lorna-Arrival.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/tJQ4b2yw/08-Card-Lorna-Arrival.jpg"
     },
     {
         "id": 9,
@@ -155,9 +163,10 @@
         "image1895CharacterUrl": "https://i.postimg.cc/jS6Kn89L/William-Gooding-Will-County-Historical.jpg",
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/qvmp1wfm/09-Card-William-Gooding.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/GtFhmGm2/09-Card-William-Gooding.jpg",
         "trueStory": {
             "characterName": "William Gooding",
-            [cite_start]"story": "William Gooding (1803-1878) was a pivotal figure in Lockport's history, serving as the Chief Engineer of the I&M Canal[cite: 399, 416]. [cite_start]Born in New York, he gained his engineering experience working on the Welland Canal and the Ohio canal system before moving to Illinois in 1833[cite: 401, 402, 404, 405, 407]. [cite_start]He was known for his expertise and was hired in 1836 to lead the I&M Canal project[cite: 416]. [cite_start]Gooding was also a pioneer in agriculture, credited with introducing fruit growing to Will County[cite: 410]. [cite_start]He was a respected community member, and his home, originally at 9th and Hamilton, was moved in the 1950s and still stands on Farrell Road[cite: 424]."
+            "story": "William Gooding (1803-1878) was a pivotal figure in Lockport's history, serving as the Chief Engineer of the I&M Canal. Born in New York, he gained his engineering experience working on the Welland Canal and the Ohio canal system before moving to Illinois in 1833. He was known for his expertise and was hired in 1836 to lead the I&M Canal project. Gooding was also a pioneer in agriculture, credited with introducing fruit growing to Will County. He was a respected community member, and his home, originally at 9th and Hamilton, was moved in the 1950s and still stands on Farrell Road."
         }
     },
     {
@@ -173,7 +182,8 @@
         "image1895SteampunkUrl": "https://i.postimg.cc/Fzh0mC23/Victorian-Taco-Heaven.jpg",
         "image1895CharacterUrl": "https://i.postimg.cc/tgSg7SZF/Another-Calling-Taco-Heaven.jpg",
         "imageCharacterAnimatedUrl": "https://i.postimg.cc/KYNqF3YH/Taco-Heaven.gif",
-        "characterCardUrl": "https://i.postimg.cc/Z5YTPgQB/10-Card-Another-Calling.jpg"
+        "characterCardUrl": "https://i.postimg.cc/Z5YTPgQB/10-Card-Another-Calling.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/zXNGPtxR/10-Card-Another-Calling.jpg"
     },
     {
         "id": 11,
@@ -189,9 +199,10 @@
         "image1895CharacterUrl": "https://i.postimg.cc/wBTvq8v6/Boyer-White-Oak.jpg",
         "imageCharacterAnimatedUrl": "https://i.postimg.cc/yNBQwy7R/White-Oak-Library.gif",
         "characterCardUrl": "https://i.postimg.cc/gkHzZdgb/11-Card-Charles-Boyer.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/nVBL2bGJ/11-Card-Charles-Boyer.jpg",
         "trueStory": {
             "characterName": "Charles Edward Boyer",
-            [cite_start]"story": "Charles Edward Boyer (1815-1868) was a prominent figure in Lockport's development[cite: 217]. [cite_start]Arriving in 1839, he took on a contract for the deepening of the I&M Canal[cite: 220]. [cite_start]He married Elizabeth Runyon, daughter of pioneer Armstead Runyon, and became the assistant superintendent of the I&M Canal in 1852[cite: 221, 222]. [cite_start]He also supervised the construction of the Jacksonville Division of the Alton & St. Louis Railroad[cite: 223]. [cite_start]Boyer was a representative in the Illinois State Legislature and was a candidate for the State Senate at the time of his death[cite: 224]. [cite_start]The 'Boyer House,' a local landmark, was originally built by I&M Canal engineer Edward B. Talcott and purchased by Boyer in 1856[cite: 226]."
+            "story": "Charles Edward Boyer (1815-1868) was a prominent figure in Lockport's development. Arriving in 1839, he took on a contract for the deepening of the I&M Canal. He married Elizabeth Runyon, daughter of pioneer Armstead Runyon, and became the assistant superintendent of the I&M Canal in 1852. He also supervised the construction of the Jacksonville Division of the Alton & St. Louis Railroad. Boyer was a representative in the Illinois State Legislature and was a candidate for the State Senate at the time of his death. The 'Boyer House,' a local landmark, was originally built by I&M Canal engineer Edward B. Talcott and purchased by Boyer in 1856."
         }
     },
     {
@@ -208,9 +219,10 @@
         "image1895CharacterUrl": "https://i.postimg.cc/2jq1LDxy/Ichabod-Nicola-Heavenly-Bakery.jpg",
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/7YkPhbMN/12-Card-Ichabod-Codding.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/QxqdLQzY/12-Card-Ichabod-Codding.jpg",
         "trueStory": {
             "characterName": "Ichabod Codding",
-            [cite_start]"story": "Ichabod Codding (1810-1866) was a prominent abolitionist and preacher who made a significant impact in Illinois[cite: 233, 239, 241]. [cite_start]A gifted orator, he was a key figure in the anti-slavery movement, traveling widely to give lectures and sermons[cite: 240, 262]. [cite_start]He was one of the founders of the Republican Party in Illinois and was known for his powerful debates, most notably against Stephen A. Douglas over the Kansas-Nebraska Act[cite: 264, 273]. [cite_start]Codding served as a minister to several congregations, including those in Lockport and Joliet, and was a passionate advocate for human rights and social justice[cite: 260, 242]."
+            "story": "Ichabod Codding (1810-1866) was a prominent abolitionist and preacher who made a significant impact in Illinois. A gifted orator, he was a key figure in the anti-slavery movement, traveling widely to give lectures and sermons. He was one of the founders of the Republican Party in Illinois and was known for his powerful debates, most notably against Stephen A. Douglas over the Kansas-Nebraska Act. Codding served as a minister to several congregations, including those in Lockport and Joliet, and was a passionate advocate for human rights and social justice."
         }
     },
     {
@@ -227,11 +239,12 @@
         "image1895CharacterUrl": "https://i.postimg.cc/fRsyP0QS/Gaylord-Gaylord-Building.jpg",
         "imageCharacterAnimatedUrl": "https://i.postimg.cc/7YdjQzC1/Gaylord-Building.gif",
         "characterCardUrl": "https://i.postimg.cc/Y2gqtQg9/13-Card-George-Gaylord.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/7ZYYqC8H/13-Card-George-Gaylord.jpg",
         "crystalHint": "Where is the Infernal Crystal, you ask? I’m not entirely sure, but I would start at the beginning…the digging of the I&M Canal. There is an old exhibit here at the Gaylord building that talks about those early days. Look for the old tool chest. I am sure you’ll find a clue there.",
         "youtubeVideoUrl": "https://www.youtube.com/embed/Gx7IKQaCq58?si=plj4ERU0hyxPgzIi",
         "trueStory": {
             "characterName": "George Gaylord",
-            [cite_start]"story": "George Gaylord (1820-1883) was an influential merchant and a key figure in Lockport's commercial history[cite: 307, 310]. [cite_start]He owned the historic Gaylord Building from 1878 until his death, operating a successful dry goods store and grain business from the location[cite: 312, 314, 315]. [cite_start]He was also instrumental in the development of the Village of New Lenox, laying out the town's plans in the 1850s[cite: 311]. [cite_start]The Gaylord Building, a National Trust Historic Site, was later renovated by his descendant, Gaylord Donnelley, and now houses a restaurant and the Illinois State Museum Lockport Gallery[cite: 318, 324, 326]."
+            "story": "George Gaylord (1820-1883) was an influential merchant and a key figure in Lockport's commercial history. He owned the historic Gaylord Building from 1878 until his death, operating a successful dry goods store and grain business from the location. He was also instrumental in the development of the Village of New Lenox, laying out the town's plans in the 1850s. The Gaylord Building, a National Trust Historic Site, was later renovated by his descendant, Gaylord Donnelley, and now houses a restaurant and the Illinois State Museum Lockport Gallery."
         }
     },
     {
@@ -247,7 +260,8 @@
         "image1895SteampunkUrl": "https://i.postimg.cc/286BwWmk/Victorian-Chris-Rose.jpg",
         "image1895CharacterUrl": "https://i.postimg.cc/LXJ8PtLw/Chris-Rose-Investigation.jpg",
         "imageCharacterAnimatedUrl": null,
-        "characterCardUrl": "https://i.postimg.cc/Fzj9GQmc/14-Card-Investigation.jpg"
+        "characterCardUrl": "https://i.postimg.cc/Fzj9GQmc/14-Card-Investigation.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/XYHNqV4w/14-Card-Investigation.jpg"
     },
     {
         "id": 15,
@@ -263,9 +277,10 @@
         "image1895CharacterUrl": "https://i.postimg.cc/RFYzx23b/John-Lamb-Cornolo.jpg",
         "imageCharacterAnimatedUrl": "https://i.postimg.cc/Vs7xnpmV/Cornolo-Travel.gif",
         "characterCardUrl": "https://i.postimg.cc/2ypk45pr/15-Card-John-Lamb.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/bvZy2Kw4/15-Card-John-Lamb.jpg",
         "trueStory": {
             "characterName": "John Lamb",
-            [cite_start]"story": "John Lamb (1926-2021) was a beloved Lockport resident, historian, and educator[cite: 330, 331]. [cite_start]A veteran of the Korean War, he was a Professor Emeritus at Lewis University, where he taught history for many years and founded the Adelmann Regional History Collection[cite: 331, 332]. [cite_start]Lamb was a renowned scholar of local history and the I&M Canal, serving on the board of the Illinois State Historical Society[cite: 333]. [cite_start]In 1972, he created 'Old Canal Days,' a festival that is still celebrated in Lockport today[cite: 334]. [cite_start]He was also a talented wood sculptor[cite: 335]."
+            "story": "John Lamb (1926-2021) was a beloved Lockport resident, historian, and educator. A veteran of the Korean War, he was a Professor Emeritus at Lewis University, where he taught history for many years and founded the Adelmann Regional History Collection. Lamb was a renowned scholar of local history and the I&M Canal, serving on the board of the Illinois State Historical Society. In 1972, he created 'Old Canal Days,' a festival that is still celebrated in Lockport today. He was also a talented wood sculptor."
         }
     },
     {
@@ -282,9 +297,10 @@
         "image1895CharacterUrl": "https://i.postimg.cc/rFrqMyNG/Runyon-Krema.jpg",
         "imageCharacterAnimatedUrl": "https://i.postimg.cc/c4p5cNjX/Krema-Coffee.gif",
         "characterCardUrl": "https://i.postimg.cc/wvRxymGw/16-Card-Armstead-Runyon.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/JhS13Py0/16-Card-Armstead-Runyon.jpg",
         "trueStory": {
             "characterName": "Armstead Runyon",
-            [cite_start]"story": "Armstead Runyon (1800-1875) was the first settler of Lockport, arriving in the area in the fall of 1830[cite: 197]. [cite_start]During the Black Hawk War, he moved his family to the safety of Fort Dearborn before returning to Lockport[cite: 198]. [cite_start]As the I&M Canal was being built, Runyon left his farm and opened a hotel in the growing town[cite: 199]. [cite_start]In 1849, he moved to California, where he lived in Sacramento and later Santa Rosa, passing away there in 1875[cite: 200]. [cite_start]His daughter, Elizabeth Runyon, married Charles Boyer, another prominent figure in Lockport's history[cite: 221]."
+            "story": "Armstead Runyon (1800-1875) was the first settler of Lockport, arriving in the area in the fall of 1830. During the Black Hawk War, he moved his family to the safety of Fort Dearborn before returning to Lockport. As the I&M Canal was being built, Runyon left his farm and opened a hotel in the growing town. In 1849, he moved to California, where he lived in Sacramento and later Santa Rosa, passing away there in 1875. His daughter, Elizabeth Runyon, married Charles Boyer, another prominent figure in Lockport's history."
         }
     },
     {
@@ -302,7 +318,8 @@
         "image1895SteampunkUrl": "https://i.postimg.cc/8CJjwtQ9/Victorian-Sopranos-Pizza.jpg",
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
-        "characterCardUrl": "https://i.postimg.cc/CKQLxNmZ/17-Change-of-Plans.jpg"
+        "characterCardUrl": "https://i.postimg.cc/CKQLxNmZ/17-Change-of-Plans.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/LXfmxLfT/17-Change-of-Plans.jpg"
     },
     {
         "id": 18,
@@ -318,10 +335,11 @@
         "image1895CharacterUrl": "https://i.postimg.cc/ZRXKxWLR/Boyer-Ember-Tap.jpg",
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/vmBZyjLF/18-Card-Dorothy-Dow.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/Znx4Smwv/18-Card-Dorothy-Dow.jpg",
         "crystalHint": "If you want to find the Crystal, you probably need to do a little research. Best place for that sort of thing is at the White Oak Library. I recommend you look for Mr. Dewy Decimal HIS205.2",
         "trueStory": {
             "characterName": "Dorothy Dow Fitzgerald",
-            [cite_start]"story": "Dorothy Dow (1897-1989) was a talented and versatile writer from Lockport, known for her poetry, plays, and fiction[cite: 352, 353, 357]. [cite_start]She began writing as a child and gained recognition in the 1920s with her volumes of verse, 'Black Babylon' and 'Will-o-the-Wisp'[cite: 357, 359]. [cite_start]Encouraged by prominent figures like poet Edgar Lee Masters, she became a notable figure in Chicago's literary scene[cite: 358]. [cite_start]In addition to her poetry, she wrote novels, short stories, biographies, and even a cookbook[cite: 361]. [cite_start]Her later work included a long biographical poem, 'Flowers of Time,' which reminisced about her youth in Lockport[cite: 364]. [cite_start]Her correspondence and writings are housed in Chicago's Newberry Library[cite: 369]."
+            "story": "Dorothy Dow (1897-1989) was a talented and versatile writer from Lockport, known for her poetry, plays, and fiction. She began writing as a child and gained recognition in the 1920s with her volumes of verse, 'Black Babylon' and 'Will-o-the-Wisp'. Encouraged by prominent figures like poet Edgar Lee Masters, she became a notable figure in Chicago's literary scene. In addition to her poetry, she wrote novels, short stories, biographies, and even a cookbook. Her later work included a long biographical poem, 'Flowers of Time,' which reminisced about her youth in Lockport. Her correspondence and writings are housed in Chicago's Newberry Library."
         }
     },
     {
@@ -338,9 +356,10 @@
         "image1895CharacterUrl": "https://i.postimg.cc/nh1rfcnR/Francis-Tully-Marchio.jpg",
         "imageCharacterAnimatedUrl": "https://i.postimg.cc/KvRdNfYv/Manchiro-Tile.gif",
         "characterCardUrl": "https://i.postimg.cc/qvQv90Kx/19-Card-Francis-Tully.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/prHR4rJt/19-Card-Francis-Tully.jpg",
         "trueStory": {
             "characterName": "Francis Tully",
-            [cite_start]"story": "Francis Tully (1912-1987) was a pipefitter and amateur paleontologist who made a remarkable discovery in 1955[cite: 373, 374, 375]. [cite_start]While searching for fossils along Mazon Creek, he found a unique creature preserved in a stone[cite: 375]. [cite_start]This fossil, which came to be known as the 'Tully Monster,' was unlike anything scientists had seen before[cite: 377]. [cite_start]The creature, officially named Tullimonstrum gregarium, had a tube-like body, a spade-shaped tail, and a long snout[cite: 379, 380, 382]. [cite_start]In 1989, the Tully Monster was designated as the official State Fossil of Illinois[cite: 383]."
+            "story": "Francis Tully (1912-1987) was a pipefitter and amateur paleontologist who made a remarkable discovery in 1955. While searching for fossils along Mazon Creek, he found a unique creature preserved in a stone. This fossil, which came to be known as the 'Tully Monster,' was unlike anything scientists had seen before. The creature, officially named Tullimonstrum gregarium, had a tube-like body, a spade-shaped tail, and a long snout. In 1989, the Tully Monster was designated as the official State Fossil of Illinois."
         }
     },
     {
@@ -357,9 +376,10 @@
         "image1895CharacterUrl": "https://i.postimg.cc/C5DMPwv4/Caneva-Mangia.jpg",
         "imageCharacterAnimatedUrl": "https://i.postimg.cc/bNDBbv6Z/Mangia-Pizzo.gif",
         "characterCardUrl": "https://i.postimg.cc/JzRh6tsh/20-Card-Ernest-Caneva.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/HWwp50TW/20-Card-Ernest-Caneva.jpg",
         "trueStory": {
             "characterName": "Ernie Caneva",
-            [cite_start]"story": "Ernest 'Ernie' Oreste Caneva (1907-1992) was a celebrated musician and educator in Lockport[cite: 386, 396]. [cite_start]He established the Lockport Township High School Band program in 1932, growing it from 32 students to a nationally acclaimed 100-member band[cite: 389]. [cite_start]Under his 40-year leadership, the band won numerous awards, including the national Music Man Marching Band Contest in 1962[cite: 390]. [cite_start]Caneva was also a talented composer, with approximately 70 of his works published, and a skilled multi-instrumentalist[cite: 393, 388]. [cite_start]The Ernest O. Caneva Performing Arts Center in Dellwood Park is named in his honor[cite: 395]."
+            "story": "Ernest 'Ernie' Oreste Caneva (1907-1992) was a celebrated musician and educator in Lockport. He established the Lockport Township High School Band program in 1932, growing it from 32 students to a nationally acclaimed 100-member band. Under his 40-year leadership, the band won numerous awards, including the national Music Man Marching Band Contest in 1962. Caneva was also a talented composer, with approximately 70 of his works published, and a skilled multi-instrumentalist. The Ernest O. Caneva Performing Arts Center in Dellwood Park is named in his honor."
         }
     },
     {
@@ -376,9 +396,10 @@
         "image1895CharacterUrl": "https://i.postimg.cc/YSbHbvt7/John-Lane-Canal-Trail.jpg",
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/GhwtDXrG/21-Card-John-Lane.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/28CCxq5Q/21-Card-John-Lane.jpg",
         "trueStory": {
             "characterName": "John Lane Sr.",
-            [cite_start]"story": "John Lane Sr. (1793-1857) was an innovative blacksmith and one of the early settlers of Homer Township, near Lockport[cite: 203, 204, 205]. [cite_start]He is credited with inventing the first steel plow, a groundbreaking innovation that revolutionized farming on the tough prairie soil[cite: 208, 213]. [cite_start]Using an old sawmill blade, he created a plow with a highly polished surface that prevented the rich soil from sticking[cite: 208]. [cite_start]His invention, which he initially produced on his farm and later in Lockport, became known as the 'Lockport Clipper' and 'Sod Breaker'[cite: 209, 210]. [cite_start]Lane's three-layered moldboard design was eventually adopted by nearly every steel plow manufacturer, transforming agriculture and the American landscape[cite: 211, 212, 214]."
+            "story": "John Lane Sr. (1793-1857) was an innovative blacksmith and one of the early settlers of Homer Township, near Lockport. He is credited with inventing the first steel plow, a groundbreaking innovation that revolutionized farming on the tough prairie soil. Using an old sawmill blade, he created a plow with a highly polished surface that prevented the rich soil from sticking. His invention, which he initially produced on his farm and later in Lockport, became known as the 'Lockport Clipper' and 'Sod Breaker'. Lane's three-layered moldboard design was eventually adopted by nearly every steel plow manufacturer, transforming agriculture and the American landscape."
         }
     },
     {
@@ -387,14 +408,15 @@
         "locationName": "Biteable/Blissful Brew",
         "address": "1022 S State St, Lockport, IL",
         "hours": "Thu: 8:00am - 2:00pm, Fri: 8:00am - 2:00pm, Sat: 8:00am - 2:00pm, Sun: 8:00am - Noon",
-        "description": "Jax was a Chrono-Keeper enforcer of the highest level. An unwavering believer in the mission of the Keepers, Jax was a “by the book” soldier who did his job with efficiency and precision. When Stephenson arrived at the Compound without Lorna, the bewildered scientist could offer no explanation as to why she pushed him away choosing not to return with him, the Keepers called Jax to go in for an extraction.  \nIn truth, Jax had a weak spot for Lorna. Her impulsive, often emotional personality oddly attracted him. As a naturally reserved man, Jax never shared his affection with her and kept his thoughts to himself. He eagerly suited up for a time-jump to Lockport and to help Lorna in whatever situation she found herself in.\nBecause Chrono-Keepers all have tracking chips, Jax easily caught up with Lorna at the Airship Café in Lockport.  Lorna anticipated the Keepers would send an Enforcer and she already had a phony story ready about a suspected second time traveler was the reason she stayed behind. When Lorna saw Jax walk into the Cafe, she was relieved. She knew she could level with Jax.\n“I can’t tell you exactly what is going on, Jax,” she said. “Because I don’t know what is going on.”She explained how there was a Dark Force holding the city hostage and that she was somehow connected to it. \n“Lorna,” said Jax. “You don’t have an evil bone in your body.”\n“The connection feels more of a calling to irradiate it,” she explained.\n”If you were anyone else, I would drag you back to the Compound by your collar,” he said then stared out the window and sipped his coffee.",
+        "description": "Jax was a Chrono-Keeper enforcer of the highest level. An unwavering believer in the mission of the Keepers, Jax was a “by the book” soldier who did his job with efficiency and precision. When Stephenson arrived at the Compound without Lorna, the bewildered scientist could offer no explanation as to why she pushed him away choosing not to return with him, the Keepers called Jax to go in for an extraction.  \nIn truth, Jax had a weak spot for Lorna. Her impulsive, often emotional personality oddly attracted him. As a naturally reserved man, Jax never shared his affection with her and kept his thoughts to himself. He eagerly suited up for a time-jump to Lockport and to help Lorna in whatever situation she found herself in.\nBecause Chrono-Keepers all have a tracking chip, Jax easily caught up with Lorna at the Airship Café in Lockport.  Lorna anticipated the Keepers would send an Enforcer and she already had a phony story ready about a suspected second time traveler was the reason she stayed behind. When Lorna saw Jax walk into the Cafe, she was relieved. She knew she could level with Jax.\n“I can’t tell you exactly what is going on, Jax,” she said. “Because I don’t know what is going on.”She explained how there was a Dark Force holding the city hostage and that she was somehow connected to it. \n“Lorna,” said Jax. “You don’t have an evil bone in your body.”\n“The connection feels more of a calling to irradiate it,” she explained.\n”If you were anyone else, I would drag you back to the Compound by your collar,” he said then stared out the window and sipped his coffee.",
         "lat": 41.58769,
         "lon": -88.058058,
         "imagePresentDayUrl": "https://i.postimg.cc/1zPmWx6G/Biteable-Real.jpg",
         "image1895SteampunkUrl": "https://i.postimg.cc/YScGMyF0/Victorian-Biteable.jpg",
         "image1895CharacterUrl": "https://i.postimg.cc/4nkkmtQ6/Jax-Biteable-Blissful.jpg",
         "imageCharacterAnimatedUrl": "https://i.postimg.cc/vZ52qNwM/Biteable-Blissful.gif",
-        "characterCardUrl": "https://i.postimg.cc/SN6sfcN5/22-Card-Urgent-Business.jpg"
+        "characterCardUrl": "https://i.postimg.cc/SN6sfcN5/22-Card-Urgent-Business.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/15Ms79gL/22-Card-Urgent-Business.jpg"
     },
     {
         "id": 23,
@@ -412,9 +434,10 @@
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/jqJCCpVR/23-Card-Hiram-Lawrence.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/nhzZ66BM/23-Card-Hiram-Lawrence.jpg",
         "trueStory": {
             "characterName": "Hiram Lawrence",
-            [cite_start]"story": "Hiram Lawrence (1841-1898) was a Lockport resident who served in the Civil War[cite: 629, 630]. [cite_start]He was a member of Company C of the 100th Illinois Infantry, a unit that included 54 men from Lockport[cite: 631]. [cite_start]After surviving the war and mustering out in 1865, he returned to Lockport[cite: 632]. [cite_start]His legacy lives on in the community, with Lawrence Avenue and the Hiram Lawrence Subdivision named in his honor[cite: 632]. [cite_start]His Civil War diaries and bible have been preserved by his descendants in Lockport[cite: 633]."
+            "story": "Hiram Lawrence (1841-1898) was a Lockport resident who served in the Civil War. He was a member of Company C of the 100th Illinois Infantry, a unit that included 54 men from Lockport. After surviving the war and mustering out in 1865, he returned to Lockport. His legacy lives on in the community, with Lawrence Avenue and the Hiram Lawrence Subdivision named in his honor. His Civil War diaries and bible have been preserved by his descendants in Lockport."
         }
     },
     {
@@ -427,15 +450,16 @@
         "lat": 41.587107,
         "lon": -88.058307,
         "imageSteampunkUrl": null,
-        "imageRealUrl": null,
+        "imageRealUrl": null,.
         "imagePresentDayUrl": null,
         "image1895SteampunkUrl": "https://i.postimg.cc/CMHdvRXh/Victorian-Mamma-Onesta.jpg",
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/KjLYVM71/24-Card-Robert-Burcenski.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/YCskkbzR/24-Card-Robert-Burcenski.jpg",
         "trueStory": {
             "characterName": "Robert 'Bob' Burcenski",
-            [cite_start]"story": "Robert 'Bob' Burcenski is a multi-talented Lockport native, known for his contributions to the arts, cuisine, and historic preservation[cite: 427, 428, 429]. [cite_start]A graduate of Northern Illinois University and Governors State University, he has been the Chef/Owner of the acclaimed Tallgrass restaurant for 42 years[cite: 428, 429]. [cite_start]His culinary skills, inspired by his time in France, have earned him honors in Chicago, New York, and France[cite: 434, 435]. [cite_start]In 1995, he received the Richard Driehaus Preservation Award for his restoration of several historic buildings in Lockport, including the Tallgrass restaurant, the McDonald Building, and the Norton Building[cite: 430, 431]."
+            "story": "Robert 'Bob' Burcenski is a multi-talented Lockport native, known for his contributions to the arts, cuisine, and historic preservation. A graduate of Northern Illinois University and Governors State University, he has been the Chef/Owner of the acclaimed Tallgrass restaurant for 42 years. His culinary skills, inspired by his time in France, have earned him honors in Chicago, New York, and France. In 1995, he received the Richard Driehaus Preservation Award for his restoration of several historic buildings in Lockport, including the Tallgrass restaurant, the McDonald Building, and the Norton Building."
         }
     },
     {
@@ -454,9 +478,10 @@
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/Qtvt0b7L/25-Card-Styx-Mc-Donald.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/3w0hwmLT/25-Card-Styx-Mc-Donald.jpg",
         "trueStory": {
             "characterName": "Jonathan Stickney 'Styx' McDonald",
-            [cite_start]"story": "Jonathan Stickney 'Styx' McDonald (1829-1916) was a notable figure in Will County, known for his diverse career and interests[cite: 438, 439]. [cite_start]After a successful trip to California during the Gold Rush, he returned to Lockport and later served in the Civil War, where he was seriously wounded[cite: 443, 445, 446]. [cite_start]After the war, he worked for the Michigan Southern Railroad, founded a regional newspaper chain, and opened Lockport's first lending library[cite: 448, 455]. [cite_start]A self-taught artist, he created oil paintings and drawings that are now considered important examples of 19th-century American 'folk art'[cite: 449, 450, 452]. [cite_start]In his later years, he delved into philosophical and metaphysical pursuits, publishing several books under the pseudonym 'Styx'[cite: 457, 461]."
+            "story": "Jonathan Stickney 'Styx' McDonald (1829-1916) was a notable figure in Will County, known for his diverse career and interests. After a successful trip to California during the Gold Rush, he returned to Lockport and later served in the Civil War, where he was seriously wounded. After the war, he worked for the Michigan Southern Railroad, founded a regional newspaper chain, and opened Lockport's first lending library. A self-taught artist, he created oil paintings and drawings that are now considered important examples of 19th-century American 'folk art'. In his later years, he delved into philosophical and metaphysical pursuits, publishing several books under the pseudonym 'Styx'."
         }
     },
     {
@@ -475,9 +500,10 @@
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/PxCJWcPz/26-Card-Gilbert-Bengston.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/V6y80vTb/26-Card-Gilbert-Bengston.jpg",
         "trueStory": {
             "characterName": "Rev. Gilbert C. Bengston",
-            "story": "Rev. [cite_start]Gilbert C. Bengston (1892-1966) was the pastor of Trinity Lutheran Church in Lockport and a veteran of World War I[cite: 466, 467, 468]. [cite_start]He was a dedicated community member, known for his 'Contact' newsletter, which he started during World War II to keep residents informed about Lockport's soldiers[cite: 470]. [cite_start]The newsletter continued into the 1960s, and he and other volunteers also sent birthday cards and Christmas care packages to soldiers from Lockport[cite: 471, 472, 473]. [cite_start]Rev. Bengston was also active in the American Legion and served as a chaplain for various veterans groups[cite: 474, 475]."
+            "story": "Rev. Gilbert C. Bengston (1892-1966) was the pastor of Trinity Lutheran Church in Lockport and a veteran of World War I. He was a dedicated community member, known for his 'Contact' newsletter, which he started during World War II to keep residents informed about Lockport's soldiers. The newsletter continued into the 1960s, and he and other volunteers also sent birthday cards and Christmas care packages to soldiers from Lockport. Rev. Bengston was also active in the American Legion and served as a chaplain for various veterans groups."
         }
     },
     {
@@ -496,10 +522,11 @@
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/Pq3N8hr5/27-Card-Marie-Cook.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/fLxhcZnq/27-Card-Marie-Cook.jpg",
         "youtubeVideoUrl": "https://www.youtube.com/embed/gxtGXM83uII?si=_Ys_ngVC9Z2Gi-eo",
         "trueStory": {
             "characterName": "Marie A. Cook",
-            [cite_start]"story": "Marie A. 'Cookie' Cook (1914-2017) was a prominent businesswoman and active community member in Lockport for over 50 years[cite: 478, 479, 483]. [cite_start]After marrying Farrell Cook, she became involved in the family businesses, eventually running five local enterprises, including the Voltz Newspaper Agency, a gift shop, a hotel, and two clothing boutiques[cite: 482, 483]. [cite_start]She was also a dedicated public servant, serving on the Lockport Planning and Zoning Commission for 42 years[cite: 484]. [cite_start]Cookie lived to be 103, celebrating her 101st birthday in 2015[cite: 486, 487]."
+            "story": "Marie A. 'Cookie' Cook (1914-2017) was a prominent businesswoman and active community member in Lockport for over 50 years. After marrying Farrell Cook, she became involved in the family businesses, eventually running five local enterprises, including the Voltz Newspaper Agency, a gift shop, a hotel, and two clothing boutiques. She was also a dedicated public servant, serving on the Lockport Planning and Zoning Commission for 42 years. Cookie lived to be 103, celebrating her 101st birthday in 2015."
         }
     },
     {
@@ -518,9 +545,10 @@
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/6Q5y3TKP/28-Card-HH-Carter.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/T1fvQSTd/28-Card-HH-Carter.jpg",
         "trueStory": {
             "characterName": "H. H. Carter",
-            [cite_start]"story": "Harden Hasten Carter (1875-1936) was a photographer who left a lasting legacy in Lockport[cite: 490]. [cite_start]In the early 1900s, he pioneered a new style of photography, capturing candid images of local people in their daily lives, a departure from the formal portraits of the time[cite: 494, 495]. [cite_start]His work provides a detailed and invaluable glimpse into the Lockport of the early 20th century[cite: 496]. [cite_start]A collection of his photographs is preserved at the Lewis University Library[cite: 496]. [cite_start]Carter also owned a pharmacy in Lockport before pursuing a business in photo finishing[cite: 492, 493]."
+            "story": "Harden Hasten Carter (1875-1936) was a photographer who left a lasting legacy in Lockport. In the early 1900s, he pioneered a new style of photography, capturing candid images of local people in their daily lives, a departure from the formal portraits of the time. His work provides a detailed and invaluable glimpse into the Lockport of the early 20th century. A collection of his photographs is preserved at the Lewis University Library. Carter also owned a pharmacy in Lockport before pursuing a business in photo finishing."
         }
     },
     {
@@ -539,9 +567,10 @@
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/jShDtPpN/29-Card-Gladys-Fox.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/ZnHtQcqr/29-Card-Gladys-Fox.jpg",
         "trueStory": {
             "characterName": "Gladys Fox",
-            [cite_start]"story": "Gladys Fox (1902-2002) was a dedicated and influential member of the Lockport community[cite: 514, 524]. [cite_start]After her husband's death, she took over his position as a Lockport Township Park District commissioner and went on to serve on the board for 39 years[cite: 517, 518]. [cite_start]She was a tireless volunteer, clocking in 38,000 hours of service at Silver Cross Hospital, and was also a former president of the Golden Agers and the Lockport Woman's Club[cite: 520, 521, 522]. [cite_start]In recognition of her many years of service, the Park District dedicated the Gladys Fox Museum in her honor in 1988[cite: 523]."
+            "story": "Gladys Fox (1902-2002) was a dedicated and influential member of the Lockport community. After her husband's death, she took over his position as a Lockport Township Park District commissioner and went on to serve on the board for 39 years. She was a tireless volunteer, clocking in 38,000 hours of service at Silver Cross Hospital, and was also a former president of the Golden Agers and the Lockport Woman's Club. In recognition of her many years of service, the Park District dedicated the Gladys Fox Museum in her honor in 1988."
         }
     },
     {
@@ -560,9 +589,10 @@
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/9Q2D6JnC/30-Card-Horace-Singer.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/3rFTWKZd/30-Card-Horace-Singer.jpg",
         "trueStory": {
             "characterName": "Horace Singer",
-            [cite_start]"story": "Horace Singer (1823-1896) was a significant figure in the development of the I&M Canal and the surrounding area[cite: 527, 542]. [cite_start]He worked on the canal construction, was appointed a canal engineer, and later served as superintendent of canal repairs[cite: 534]. He founded H.M. [cite_start]Singer & Company to develop a large dolomite quarry discovered near Lemont[cite: 537, 538]. [cite_start]Singer also had a political career, serving in the Illinois House of Representatives[cite: 541]. [cite_start]His final resting place is a mausoleum in the Lockport Cemetery, chosen due to lingering bitterness from the 1885 Lemont quarry strike[cite: 543, 544, 545]."
+            "story": "Horace Singer (1823-1896) was a significant figure in the development of the I&M Canal and the surrounding area. He worked on the canal construction, was appointed a canal engineer, and later served as superintendent of canal repairs. He founded H.M. Singer & Company to develop a large dolomite quarry discovered near Lemont. Singer also had a political career, serving in the Illinois House of Representatives. His final resting place is a mausoleum in the Lockport Cemetery, chosen due to lingering bitterness from the 1885 Lemont quarry strike."
         }
     },
     {
@@ -580,7 +610,8 @@
         "image1895SteampunkUrl": "https://i.postimg.cc/RhQ3Kh50/Victorian-Vegan-Cafe.jpg",
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
-        "characterCardUrl": "https://i.postimg.cc/BQH87dNm/31-Card-Restrained.jpg"
+        "characterCardUrl": "https://i.postimg.cc/BQH87dNm/31-Card-Restrained.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/hP4qdHCM/31-Card-Restrained.jpg"
     },
     {
         "id": 32,
@@ -598,6 +629,7 @@
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/sftQcVPB/32-Card-Haley-Augello.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/Qx6Zk0wD/32-Card-Haley-Augello.jpg",
         "youtubeVideoUrl": "https://www.youtube.com/embed/w3k74RZ4ht8?si=pbYnMJU_ndwkhjUC"
     },
     {
@@ -616,9 +648,10 @@
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/gcwL8whF/33-Card-Robert-Carr.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/y8k4f0CZ/33-Card-Robert-Carr.jpg",
         "trueStory": {
             "characterName": "Robert Carr",
-            [cite_start]"story": "Bob Carr is a successful entrepreneur and philanthropist with deep roots in Lockport[cite: 565, 566]. [cite_start]A 1963 graduate of Lockport Township High School, he attended the University of Illinois on a scholarship, earning both a bachelor's and a master's degree in computer science[cite: 566]. [cite_start]He has generously given back to his hometown, with donations to the Lockport Woman's Club and the creation of the Give Something Back Foundation, which provides college scholarships to local students[cite: 567, 568]. [cite_start]The foundation also funded the construction of Lincoln Landing in downtown Lockport[cite: 569]."
+            "story": "Bob Carr is a successful entrepreneur and philanthropist with deep roots in Lockport. A 1963 graduate of Lockport Township High School, he attended the University of Illinois on a scholarship, earning both a bachelor's and a master's degree in computer science. He has generously given back to his hometown, with donations to the Lockport Woman's Club and the creation of the Give Something Back Foundation, which provides college scholarships to local students. The foundation also funded the construction of Lincoln Landing in downtown Lockport."
         }
     },
     {
@@ -637,10 +670,11 @@
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/26tmCSjn/34-Card-Minora-Paxson.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/wjZKn39b/34-Card-Minora-Paxson.jpg",
         "youtubeVideoUrl": "https://www.youtube.com/embed/9S3UxNj4Lvk?si=lc0fNxrrjiqnvgyR",
         "trueStory": {
             "characterName": "Minora C. Paxson",
-            [cite_start]"story": "Minora C. Paxson (1855-1950) was a pioneering figure in the field of chiropractic, believed to be the first chiropractor to be licensed under the Illinois Medical Practice Act[cite: 572, 573, 578]. After graduating from D.D. [cite_start]Palmer's Chiropractic School, she co-founded the American School of Chiropractic and co-authored the first chiropractic textbook, 'Modernized Chiropractic,' in 1906[cite: 578, 580, 582]. [cite_start]Dr. Paxson was also the first chiropractor to be licensed to practice obstetrics in accordance with chiropractic principles[cite: 585]. [cite_start]Later in her life, she and her husband moved to Texas, where she established a medical practice in Houston and was involved in the founding of the town of Excelsior[cite: 588, 590, 591, 594]."
+            "story": "Minora C. Paxson (1855-1950) was a pioneering figure in the field of chiropractic, believed to be the first chiropractor to be licensed under the Illinois Medical Practice Act. After graduating from D.D. Palmer's Chiropractic School, she co-founded the American School of Chiropractic and co-authored the first chiropractic textbook, 'Modernized Chiropractic,' in 1906. Dr. Paxson was also the first chiropractor to be licensed to practice obstetrics in accordance with chiropractic principles. Later in her life, she and her husband moved to Texas, where she established a medical practice in Houston and was involved in the founding of the town of Excelsior."
         }
     },
     {
@@ -658,7 +692,8 @@
         "image1895SteampunkUrl": "https://i.postimg.cc/zGMfLKbj/Victorian-Blue-Collar-Supply.jpg",
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
-        "characterCardUrl": "https://i.postimg.cc/3NDhNQWV/35-Card-Labor-and-Innovation.jpg"
+        "characterCardUrl": "https://i.postimg.cc/3NDhNQWV/35-Card-Labor-and-Innovation.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/nLm8xZzV/35-Card-Labor-and-Innovation.jpg"
     },
     {
         "id": 36,
@@ -676,9 +711,10 @@
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/9z5hqg7M/36-Card-Dorothy-Worst.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/bJf7NMDx/36-Card-Dorothy-Worst.jpg",
         "trueStory": {
             "characterName": "Dorothy Worst",
-            [cite_start]"story": "Dorothy Worst (1916-2015) was a decorated World War II veteran and a dedicated nurse[cite: 596, 597, 626]. [cite_start]She enlisted in the military in 1941 and served as a surgical nurse in the 11th Evacuation Hospital, a mobile unit that saw action in five major campaigns, including North Africa, Italy, and France[cite: 599, 602, 607]. [cite_start]She was present at the Battle of the Bulge, the D-Day Invasion, and Anzio, earning seven battle stars for her service[cite: 603, 610]. [cite_start]After the war, she used the GI Bill to complete her degree in public health nursing and worked at Silver Cross Hospital from 1956 to 1982[cite: 617, 621, 622]. [cite_start]She remained an active volunteer and member of the Lockport VFW Post No. 5788 into her 90s[cite: 623, 624]."
+            "story": "Dorothy Worst (1916-2015) was a decorated World War II veteran and a dedicated nurse. She enlisted in the military in 1941 and served as a surgical nurse in the 11th Evacuation Hospital, a mobile unit that saw action in five major campaigns, including North Africa, Italy, and France. She was present at the Battle of the Bulge, the D-Day Invasion, and Anzio, earning seven battle stars for her service. After the war, she used the GI Bill to complete her degree in public health nursing and worked at Silver Cross Hospital from 1956 to 1982. She remained an active volunteer and member of the Lockport VFW Post No. 5788 into her 90s."
         }
     },
     {
@@ -696,7 +732,8 @@
         "image1895SteampunkUrl": "https://i.postimg.cc/X74B3fdB/Victorian-Victory-Leather.jpg",
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
-        "characterCardUrl": "https://i.postimg.cc/C15Syq0F/37-Card-Transference.jpg"
+        "characterCardUrl": "https://i.postimg.cc/C15Syq0F/37-Card-Transference.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/ydhwJPcw/37-Card-Transference.jpg"
     },
     {
         "id": 38,
@@ -714,6 +751,7 @@
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
         "characterCardUrl": "https://i.postimg.cc/9fJCNBv8/38-Card-Press-Gang.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/90Wsy7Bz/38-Card-Press-Gang.jpg",
         "crystalHint": "What!? You’re looking for the Infernal Crystal? I would take Canal Road south, past the junk yard, to the land of Adventure. I am sure you will find a sign that gives you a clue."
     },
     {
@@ -731,7 +769,8 @@
         "image1895SteampunkUrl": "https://i.postimg.cc/Zqd56n6h/Victorian-Beanies-Candy.jpg",
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
-        "characterCardUrl": "https://i.postimg.cc/sgPV5zKR/39-Card-Common-Destiny.jpg"
+        "characterCardUrl": "https://i.postimg.cc/sgPV5zKR/39-Card-Common-Destiny.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/0jcFnytn/39-Card-Common-Destiny.jpg"
     },
     {
         "id": 40,
@@ -748,6 +787,7 @@
         "image1895SteampunkUrl": "https://i.postimg.cc/vB5DwTmv/Victorian-Nik-Ivy-Brewing.jpg",
         "image1895CharacterUrl": null,
         "imageCharacterAnimatedUrl": null,
-        "characterCardUrl": "https://i.postimg.cc/Jh1RqFdH/40-Card-Jax-and-Lorna.jpg"
+        "characterCardUrl": "https://i.postimg.cc/Jh1RqFdH/40-Card-Jax-and-Lorna.jpg",
+        "thumbnailUrl": "https://i.postimg.cc/KcN6x0ZT/40-Card-Jax-and-Lorna.jpg"
     }
 ]
