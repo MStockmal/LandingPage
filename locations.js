@@ -450,7 +450,7 @@
         "lat": 41.587107,
         "lon": -88.058307,
         "imageSteampunkUrl": null,
-        "imageRealUrl": null,.
+        "imageRealUrl": null,
         "imagePresentDayUrl": null,
         "image1895SteampunkUrl": "https://i.postimg.cc/CMHdvRXh/Victorian-Mamma-Onesta.jpg",
         "image1895CharacterUrl": null,
