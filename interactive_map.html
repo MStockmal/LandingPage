@@ -403,33 +403,31 @@
      crossorigin=""></script>
      <script src="locations.js"></script>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
     <script>
         // --- MAP INITIALIZATION ---
-        // Define the boundaries for the map to keep it focused on the fantasy area
         const corner1 = L.latLng(41.592, -88.054);
         const corner2 = L.latLng(41.560, -88.072);
         const bounds = L.latLngBounds(corner1, corner2);
 
         const map = L.map('map', {
-            zoomControl: false, // Disable zoom control to keep the view clean
-            attributionControl: false, // To remove the attribution
-            minZoom: 17, // Prevent zooming out too far
-            maxBounds: bounds, // Restrict panning to the fantasy map area
-            maxBoundsViscosity: 1.0 // Makes the bounds completely solid
-        }).setView([41.589631, -88.057953], 19); // Centered on the intersection of 9th and State St
+            zoomControl: false,
+            attributionControl: false,
+            minZoom: 17,
+            maxBounds: bounds,
+            maxBoundsViscosity: 1.0
+        }).setView([41.589631, -88.057953], 19);
 
-
-        // Satellite Base Layer (can be removed if you ONLY want the fantasy map)
         const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-            // The attribution for this layer will not be displayed if attributionControl is false on the map
             maxZoom: 19
         }).addTo(map).bringToBack();
 
-        // Fantasy Map Overlay from MapWarper
-        const fantasyMapUrl = 'https://mapwarper.net/maps/tile/93417/{z}/{x}/{y}.png'; // Updated URL
+        const fantasyMapUrl = 'https://mapwarper.net/maps/tile/93417/{z}/{x}/{y}.png';
         const fantasyMapLayer = L.tileLayer(fantasyMapUrl, {
-             // The attribution for this layer will not be displayed if attributionControl is false on the map
-            opacity: 0.99, // Initial opacity
+            opacity: 0.99,
             minZoom: 13,
             maxZoom: 19,
             tms: false
@@ -451,64 +449,103 @@
         const modalVideoContainer = document.getElementById('modalVideoContainer');
         const modalYouTubeVideo = document.getElementById('modalYouTubeVideo');
 
-
         let currentModalLocation = null;
+        const allMarkers = [];
 
-        const allMarkers = []; // Array to store all markers
+        // --- FETCH DATA and INITIALIZE MAP ---
+        fetch('locations.js')
+            .then(response => response.json())
+            .then(locationsData => {
 
-        // --- ADD MARKERS TO MAP ---
-        locationsData.forEach(location => {
-            const thumbnailUrl = location.thumbnailUrl; // Correctly use the thumbnailUrl from the location object
+                // --- ADD MARKERS TO MAP ---
+                locationsData.forEach(location => {
+                    const thumbnailUrl = location.thumbnailUrl;
 
-            const cardIcon = L.icon({
-                iconUrl: thumbnailUrl,
-                iconSize: [40, 60],
-                iconAnchor: [20, 60],
-                popupAnchor: [0, -60],
-                className: 'card-thumbnail-icon'
-            });
+                    const cardIcon = L.icon({
+                        iconUrl: thumbnailUrl,
+                        iconSize: [40, 60],
+                        iconAnchor: [20, 60],
+                        popupAnchor: [0, -60],
+                        className: 'card-thumbnail-icon'
+                    });
 
-            const marker = L.marker([location.lat, location.lon], { icon: cardIcon }).addTo(map);
+                    const marker = L.marker([location.lat, location.lon], { icon: cardIcon }).addTo(map);
 
-            if (marker.getElement()) {
-                marker.getElement().style.opacity = fantasyMapLayer.options.opacity;
-            }
-            allMarkers.push(marker);
-
-            const popupContent = `
-                <h3 class="title-font">${location.locationName}</h3>
-                <p><strong>Address:</strong> ${location.address}</p>
-                <p><strong>Card Name:</strong> ${location.characterName}: Card #${location.id}</p>
-                <button class="popup-button" onclick="showDetails(${location.id})">View Details</button>
-            `;
-            marker.bindPopup(popupContent);
-        });
-
-        // Opacity Slider Event Listener
-        const opacitySlider = document.getElementById('opacitySlider');
-        opacitySlider.addEventListener('input', function (e) {
-            const newOpacity = parseFloat(e.target.value);
-            fantasyMapLayer.setOpacity(newOpacity);
-
-            allMarkers.forEach(marker => {
-                const markerElement = marker.getElement();
-                if (markerElement) {
-                    // Check if the marker's popup is open, if so, don't change opacity
-                    if (marker.isPopupOpen()) {
-                         // markerElement.style.opacity = 1; // Keep it fully opaque if popup is open
-                    } else {
-                        markerElement.style.opacity = newOpacity;
+                    if (marker.getElement()) {
+                        marker.getElement().style.opacity = fantasyMapLayer.options.opacity;
                     }
+                    allMarkers.push(marker);
+
+                    const popupContent = `
+                        <h3 class="title-font">${location.locationName}</h3>
+                        <p><strong>Address:</strong> ${location.address}</p>
+                        <p><strong>Card Name:</strong> ${location.characterName}: Card #${location.id}</p>
+                        <button class="popup-button" onclick="showDetails(${location.id})">View Details</button>
+                    `;
+                    marker.bindPopup(popupContent);
+                });
+
+                // Opacity Slider Event Listener
+                const opacitySlider = document.getElementById('opacitySlider');
+                opacitySlider.addEventListener('input', function (e) {
+                    const newOpacity = parseFloat(e.target.value);
+                    fantasyMapLayer.setOpacity(newOpacity);
+
+                    allMarkers.forEach(marker => {
+                        const markerElement = marker.getElement();
+                        if (markerElement) {
+                            if (!marker.isPopupOpen()) {
+                                markerElement.style.opacity = newOpacity;
+                            }
+                        }
+                    });
+                });
+
+                // --- MODAL FUNCTIONS ---
+                window.showDetails = function(locationId) {
+                    currentModalLocation = locationsData.find(loc => loc.id === locationId);
+                    if (!currentModalLocation) return;
+
+                    modalTitle.textContent = currentModalLocation.locationName;
+                    modalAddress.textContent = currentModalLocation.address;
+                    modalAddressLink.href = `https://maps.google.com/?q=${encodeURIComponent(currentModalLocation.address)}`;
+
+                    const openingHours = getOpeningHours(currentModalLocation.hours);
+                    const openStatus = checkIfOpen(openingHours);
+                    modalOpenStatus.textContent = openStatus.isOpen;
+                    modalTodaysHours.textContent = openStatus.todaysHours;
+
+                    let steampunkImageSource = currentModalLocation.image1895SteampunkUrl || currentModalLocation.imageSteampunkUrl;
+                    if (isValidImageUrl(steampunkImageSource)) {
+                        modalSteampunkImage.src = steampunkImageSource;
+                        modalSteampunkImage.alt = `1895 Steampunk view of ${currentModalLocation.locationName}`;
+                        modalSteampunkImage.style.display = 'block';
+                        modalSteampunkImage.onerror = function() { this.style.display = 'none'; };
+                    } else {
+                        modalSteampunkImage.style.display = 'none';
+                    }
+                    
+                    const trueStorySection = document.getElementById('trueStorySection');
+                    const trueStoryCharacterName = document.getElementById('trueStoryCharacterName');
+                    const trueStory = document.getElementById('trueStory');
+
+                    if (currentModalLocation.trueStory) {
+                        trueStoryCharacterName.textContent = currentModalLocation.trueStory.characterName;
+                        trueStory.textContent = currentModalLocation.trueStory.story;
+                        trueStorySection.style.display = 'block';
+                    } else {
+                        trueStorySection.style.display = 'none';
+                    }
+
+                    modal.style.display = "block";
                 }
             });
-        });
 
-        // --- VALIDATION FUNCTION FOR IMAGE URLS ---
+        // --- UTILITY FUNCTIONS ---
         function isValidImageUrl(url) {
             return url && typeof url === 'string' && !url.includes('placehold.co') && url.startsWith('http');
         }
 
-       // --- BUSINESS HOURS FUNCTIONS ---
         function getOpeningHours(hoursString) {
             const hours = {};
             if (!hoursString || hoursString.toLowerCase() === 'hours not listed' || hoursString.toLowerCase() === 'hours not available') {
@@ -516,7 +553,6 @@
             }
             const dayRanges = hoursString.split(/, (?=[A-Z][a-z]{2}:)/);
             const dayAbbrs = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
 
             dayRanges.forEach(rangeInfo => {
                 const [daysPart, timesPart] = rangeInfo.split(/: /);
@@ -529,7 +565,6 @@
                     let endIndex = dayAbbrs.indexOf(endDay);
                     if (startIndex !== -1 && endIndex !== -1) {
                         if (endIndex < startIndex) endIndex += 7;
-
                         for (let i = startIndex; i <= endIndex; i++) {
                              hours[dayAbbrs[i % 7]] = { start: startTimeStr, end: endTimeStr };
                         }
@@ -542,7 +577,6 @@
             });
             return hours;
         }
-
 
         function checkIfOpen(openingHours) {
             if (!openingHours) {
@@ -561,24 +595,18 @@
             const parseTime = (timeStr, currentDate) => {
                 if (!timeStr) return null;
                 const normalizedTime = timeStr.toLowerCase().replace(/\s*:\s*/g, ':').replace(/(\d)(am|pm)/, '$1:00$2');
-
                 let [timePart, modifier] = normalizedTime.split(/(am|pm)/);
-
                 if (timePart.trim() === 'noon') {
                     const date = new Date(currentDate.getTime());
                     date.setHours(12, 0, 0, 0);
                     return date;
                 }
-
                 let [hours, minutes] = timePart.split(':');
                 hours = parseInt(hours, 10);
                 minutes = minutes ? parseInt(minutes, 10) : 0;
-
                 if (isNaN(hours) || isNaN(minutes)) return null;
-
                 if (modifier === 'pm' && hours < 12) hours += 12;
                 if (modifier === 'am' && hours === 12) hours = 0;
-
                 const date = new Date(currentDate.getTime());
                 date.setHours(hours, minutes, 0, 0);
                 return date;
@@ -594,62 +622,19 @@
             let adjustedNow = new Date(now.getTime());
 
             if (endTime < startTime) { // Handles overnight
-                if (adjustedNow >= startTime) { // Current time is on the "start day" (e.g. 10 PM for 10PM-2AM)
-                    endTime.setDate(endTime.getDate() + 1); // End time is on the next calendar day
-                } else { // Current time is on the "next day" (e.g. 1 AM for 10PM-2AM)
-                    startTime.setDate(startTime.getDate() -1); // Start time was on the previous calendar day
+                if (adjustedNow >= startTime) {
+                    endTime.setDate(endTime.getDate() + 1);
+                } else {
+                    startTime.setDate(startTime.getDate() -1);
                 }
             }
-
             const isOpen = adjustedNow >= startTime && adjustedNow <= endTime;
             const statusString = isOpen ? "Open Now" : "Closed";
 
             return { isOpen: statusString, todaysHours: `${todaysHoursData.start} - ${todaysHoursData.end}` };
         }
-
-
-        // --- MODAL FUNCTIONS ---
-        function showDetails(locationId) {
-            currentModalLocation = locationsData.find(loc => loc.id === locationId);
-            if (!currentModalLocation) return;
-
-            modalTitle.textContent = currentModalLocation.locationName;
-            modalAddress.textContent = currentModalLocation.address;
-            modalAddressLink.href = `https://maps.google.com/?q=${encodeURIComponent(currentModalLocation.address)}`; // Standard Google Maps link
-
-            const openingHours = getOpeningHours(currentModalLocation.hours);
-            const openStatus = checkIfOpen(openingHours);
-            modalOpenStatus.textContent = openStatus.isOpen;
-            modalTodaysHours.textContent = openStatus.todaysHours;
-
-            let steampunkImageSource = currentModalLocation.image1895SteampunkUrl || currentModalLocation.imageSteampunkUrl;
-            if (isValidImageUrl(steampunkImageSource)) {
-                modalSteampunkImage.src = steampunkImageSource;
-                modalSteampunkImage.alt = `1895 Steampunk view of ${currentModalLocation.locationName}`;
-                modalSteampunkImage.style.display = 'block';
-                modalSteampunkImage.onerror = function() { this.style.display = 'none'; };
-            } else {
-                modalSteampunkImage.style.display = 'none';
-            }
-
-            const trueStorySection = document.getElementById('trueStorySection');
-            const trueStoryCharacterName = document.getElementById('trueStoryCharacterName');
-            const trueStory = document.getElementById('trueStory');
-
-            if (currentModalLocation.trueStory) {
-                trueStoryCharacterName.textContent = currentModalLocation.trueStory.characterName;
-                trueStory.textContent = currentModalLocation.trueStory.story;
-                trueStorySection.style.display = 'block';
-            } else {
-                trueStorySection.style.display = 'none';
-            }
-
-
-            modal.style.display = "block";
-        }
-
-
-        function closeModal() {
+        
+        window.closeModal = function() {
             modal.style.display = "none";
             currentModalLocation = null;
             modalTitle.textContent = '';
@@ -660,17 +645,13 @@
             modalDescription.innerHTML = '';
             modalSteampunkImage.src = '';
             modalSteampunkImage.style.display = 'none';
-
             const trueStorySection = document.getElementById('trueStorySection');
             trueStorySection.style.display = 'none';
             document.getElementById('trueStoryCharacterName').textContent = '';
             document.getElementById('trueStory').textContent = '';
-
-            // Clear video and hide container
             modalYouTubeVideo.src = '';
             modalVideoContainer.style.display = 'none';
         }
-
 
         window.onclick = function(event) {
             if (event.target == modal) {
@@ -683,7 +664,6 @@
                 closeModal();
             }
         });
-
     </script>
 </body>
 </html>
