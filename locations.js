@@ -1,4 +1,4 @@
-[
+const locationsData = [
     {
         "id": 1,
         "characterName": "Evil Buried: Soul Survivor",
@@ -790,4 +790,4 @@
         "characterCardUrl": "https://i.postimg.cc/Jh1RqFdH/40-Card-Jax-and-Lorna.jpg",
         "thumbnailUrl": "https://i.postimg.cc/KcN6x0ZT/40-Card-Jax-and-Lorna.jpg"
     }
-]
+];
