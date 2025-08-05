@@ -397,273 +397,263 @@
     <div class="page-footer">
         <img src="https://i.postimg.cc/YCgZ8gdb/Logos-Clear.png" alt="Sponsor Logos">
     </div>
-
+    
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
      <script src="locations.js"></script>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
+<script>
+    // --- MAP INITIALIZATION ---
+    const corner1 = L.latLng(41.592, -88.054);
+    const corner2 = L.latLng(41.560, -88.072);
+    const bounds = L.latLngBounds(corner1, corner2);
 
-    <script>
-        // --- MAP INITIALIZATION ---
-        const corner1 = L.latLng(41.592, -88.054);
-        const corner2 = L.latLng(41.560, -88.072);
-        const bounds = L.latLngBounds(corner1, corner2);
+    const map = L.map('map', {
+        zoomControl: false,
+        attributionControl: false,
+        minZoom: 17,
+        maxBounds: bounds,
+        maxBoundsViscosity: 1.0
+    }).setView([41.589631, -88.057953], 19);
 
-        const map = L.map('map', {
-            zoomControl: false,
-            attributionControl: false,
-            minZoom: 17,
-            maxBounds: bounds,
-            maxBoundsViscosity: 1.0
-        }).setView([41.589631, -88.057953], 19);
+    const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 19
+    }).addTo(map).bringToBack();
 
-        const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-            maxZoom: 19
-        }).addTo(map).bringToBack();
+    const fantasyMapUrl = 'https://mapwarper.net/maps/tile/93417/{z}/{x}/{y}.png';
+    const fantasyMapLayer = L.tileLayer(fantasyMapUrl, {
+        opacity: 0.99,
+        minZoom: 13,
+        maxZoom: 19,
+        tms: false
+    }).addTo(map);
 
-        const fantasyMapUrl = 'https://mapwarper.net/maps/tile/93417/{z}/{x}/{y}.png';
-        const fantasyMapLayer = L.tileLayer(fantasyMapUrl, {
-            opacity: 0.99,
-            minZoom: 13,
-            maxZoom: 19,
-            tms: false
-        }).addTo(map);
+    fantasyMapLayer.on('tileerror', function(event) {
+        console.error('Fantasy map tile failed to load:', event.tile, event.url);
+    });
 
-        fantasyMapLayer.on('tileerror', function(event) {
-            console.error('Fantasy map tile failed to load:', event.tile, event.url);
+    // --- MODAL GLOBALS ---
+    const modal = document.getElementById('detailsModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalAddress = document.getElementById('modalAddress');
+    const modalAddressLink = document.getElementById('modalAddressLink');
+    const modalOpenStatus = document.getElementById('modalOpenStatus');
+    const modalTodaysHours = document.getElementById('modalTodaysHours');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalSteampunkImage = document.getElementById('modalSteampunkImage');
+    const modalVideoContainer = document.getElementById('modalVideoContainer');
+    const modalYouTubeVideo = document.getElementById('modalYouTubeVideo');
+
+    let currentModalLocation = null;
+    const allMarkers = [];
+
+    // --- ADD MARKERS TO MAP ---
+    locationsData.forEach(location => {
+        const thumbnailUrl = location.thumbnailUrl;
+
+        const cardIcon = L.icon({
+            iconUrl: thumbnailUrl,
+            iconSize: [40, 60],
+            iconAnchor: [20, 60],
+            popupAnchor: [0, -60],
+            className: 'card-thumbnail-icon'
         });
 
-        // --- MODAL GLOBALS ---
-        const modal = document.getElementById('detailsModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalAddress = document.getElementById('modalAddress');
-        const modalAddressLink = document.getElementById('modalAddressLink');
-        const modalOpenStatus = document.getElementById('modalOpenStatus');
-        const modalTodaysHours = document.getElementById('modalTodaysHours');
-        const modalDescription = document.getElementById('modalDescription');
-        const modalSteampunkImage = document.getElementById('modalSteampunkImage');
-        const modalVideoContainer = document.getElementById('modalVideoContainer');
-        const modalYouTubeVideo = document.getElementById('modalYouTubeVideo');
+        const marker = L.marker([location.lat, location.lon], { icon: cardIcon }).addTo(map);
 
-        let currentModalLocation = null;
-        const allMarkers = [];
-
-        // --- FETCH DATA and INITIALIZE MAP ---
-        fetch('locations.js')
-            .then(response => response.json())
-            .then(locationsData => {
-
-                // --- ADD MARKERS TO MAP ---
-                locationsData.forEach(location => {
-                    const thumbnailUrl = location.thumbnailUrl;
-
-                    const cardIcon = L.icon({
-                        iconUrl: thumbnailUrl,
-                        iconSize: [40, 60],
-                        iconAnchor: [20, 60],
-                        popupAnchor: [0, -60],
-                        className: 'card-thumbnail-icon'
-                    });
-
-                    const marker = L.marker([location.lat, location.lon], { icon: cardIcon }).addTo(map);
-
-                    if (marker.getElement()) {
-                        marker.getElement().style.opacity = fantasyMapLayer.options.opacity;
-                    }
-                    allMarkers.push(marker);
-
-                    const popupContent = `
-                        <h3 class="title-font">${location.locationName}</h3>
-                        <p><strong>Address:</strong> ${location.address}</p>
-                        <p><strong>Card Name:</strong> ${location.characterName}: Card #${location.id}</p>
-                        <button class="popup-button" onclick="showDetails(${location.id})">View Details</button>
-                    `;
-                    marker.bindPopup(popupContent);
-                });
-
-                // Opacity Slider Event Listener
-                const opacitySlider = document.getElementById('opacitySlider');
-                opacitySlider.addEventListener('input', function (e) {
-                    const newOpacity = parseFloat(e.target.value);
-                    fantasyMapLayer.setOpacity(newOpacity);
-
-                    allMarkers.forEach(marker => {
-                        const markerElement = marker.getElement();
-                        if (markerElement) {
-                            if (!marker.isPopupOpen()) {
-                                markerElement.style.opacity = newOpacity;
-                            }
-                        }
-                    });
-                });
-
-                // --- MODAL FUNCTIONS ---
-                window.showDetails = function(locationId) {
-                    currentModalLocation = locationsData.find(loc => loc.id === locationId);
-                    if (!currentModalLocation) return;
-
-                    modalTitle.textContent = currentModalLocation.locationName;
-                    modalAddress.textContent = currentModalLocation.address;
-                    modalAddressLink.href = `https://maps.google.com/?q=${encodeURIComponent(currentModalLocation.address)}`;
-
-                    const openingHours = getOpeningHours(currentModalLocation.hours);
-                    const openStatus = checkIfOpen(openingHours);
-                    modalOpenStatus.textContent = openStatus.isOpen;
-                    modalTodaysHours.textContent = openStatus.todaysHours;
-
-                    let steampunkImageSource = currentModalLocation.image1895SteampunkUrl || currentModalLocation.imageSteampunkUrl;
-                    if (isValidImageUrl(steampunkImageSource)) {
-                        modalSteampunkImage.src = steampunkImageSource;
-                        modalSteampunkImage.alt = `1895 Steampunk view of ${currentModalLocation.locationName}`;
-                        modalSteampunkImage.style.display = 'block';
-                        modalSteampunkImage.onerror = function() { this.style.display = 'none'; };
-                    } else {
-                        modalSteampunkImage.style.display = 'none';
-                    }
-                    
-                    const trueStorySection = document.getElementById('trueStorySection');
-                    const trueStoryCharacterName = document.getElementById('trueStoryCharacterName');
-                    const trueStory = document.getElementById('trueStory');
-
-                    if (currentModalLocation.trueStory) {
-                        trueStoryCharacterName.textContent = currentModalLocation.trueStory.characterName;
-                        trueStory.textContent = currentModalLocation.trueStory.story;
-                        trueStorySection.style.display = 'block';
-                    } else {
-                        trueStorySection.style.display = 'none';
-                    }
-
-                    modal.style.display = "block";
-                }
-            });
-
-        // --- UTILITY FUNCTIONS ---
-        function isValidImageUrl(url) {
-            return url && typeof url === 'string' && !url.includes('placehold.co') && url.startsWith('http');
+        if (marker.getElement()) {
+            marker.getElement().style.opacity = fantasyMapLayer.options.opacity;
         }
+        allMarkers.push(marker);
 
-        function getOpeningHours(hoursString) {
-            const hours = {};
-            if (!hoursString || hoursString.toLowerCase() === 'hours not listed' || hoursString.toLowerCase() === 'hours not available') {
-                return null;
-            }
-            const dayRanges = hoursString.split(/, (?=[A-Z][a-z]{2}:)/);
-            const dayAbbrs = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const popupContent = `
+            <h3 class="title-font">${location.locationName}</h3>
+            <p><strong>Address:</strong> ${location.address}</p>
+            <p><strong>Card Name:</strong> ${location.characterName}: Card #${location.id}</p>
+            <button class="popup-button" onclick="showDetails(${location.id})">View Details</button>
+        `;
+        marker.bindPopup(popupContent);
+    });
 
-            dayRanges.forEach(rangeInfo => {
-                const [daysPart, timesPart] = rangeInfo.split(/: /);
-                if (!timesPart) return;
-                const [startTimeStr, endTimeStr] = timesPart.split(' - ');
+    // Opacity Slider Event Listener
+    const opacitySlider = document.getElementById('opacitySlider');
+    opacitySlider.addEventListener('input', function (e) {
+        const newOpacity = parseFloat(e.target.value);
+        fantasyMapLayer.setOpacity(newOpacity);
 
-                if (daysPart.includes('-')) {
-                    const [startDay, endDay] = daysPart.split('-');
-                    let startIndex = dayAbbrs.indexOf(startDay);
-                    let endIndex = dayAbbrs.indexOf(endDay);
-                    if (startIndex !== -1 && endIndex !== -1) {
-                        if (endIndex < startIndex) endIndex += 7;
-                        for (let i = startIndex; i <= endIndex; i++) {
-                             hours[dayAbbrs[i % 7]] = { start: startTimeStr, end: endTimeStr };
-                        }
-                    }
-                } else {
-                    if (dayAbbrs.includes(daysPart)) {
-                        hours[daysPart] = { start: startTimeStr, end: endTimeStr };
-                    }
-                }
-            });
-            return hours;
-        }
-
-        function checkIfOpen(openingHours) {
-            if (!openingHours) {
-                return { isOpen: "N/A", todaysHours: "Not available" };
-            }
-
-            let now = new Date();
-            const dayOfWeek = now.toLocaleString('en-US', { weekday: 'short' });
-
-            const todaysHoursData = openingHours[dayOfWeek];
-
-            if (!todaysHoursData) {
-                return { isOpen: "Closed", todaysHours: "Closed Today" };
-            }
-
-            const parseTime = (timeStr, currentDate) => {
-                if (!timeStr) return null;
-                const normalizedTime = timeStr.toLowerCase().replace(/\s*:\s*/g, ':').replace(/(\d)(am|pm)/, '$1:00$2');
-                let [timePart, modifier] = normalizedTime.split(/(am|pm)/);
-                if (timePart.trim() === 'noon') {
-                    const date = new Date(currentDate.getTime());
-                    date.setHours(12, 0, 0, 0);
-                    return date;
-                }
-                let [hours, minutes] = timePart.split(':');
-                hours = parseInt(hours, 10);
-                minutes = minutes ? parseInt(minutes, 10) : 0;
-                if (isNaN(hours) || isNaN(minutes)) return null;
-                if (modifier === 'pm' && hours < 12) hours += 12;
-                if (modifier === 'am' && hours === 12) hours = 0;
-                const date = new Date(currentDate.getTime());
-                date.setHours(hours, minutes, 0, 0);
-                return date;
-            };
-
-            const startTime = parseTime(todaysHoursData.start, now);
-            let endTime = parseTime(todaysHoursData.end, now);
-
-            if (!startTime || !endTime) {
-                 return { isOpen: "N/A", todaysHours: "Invalid time format" };
-            }
-
-            let adjustedNow = new Date(now.getTime());
-
-            if (endTime < startTime) { // Handles overnight
-                if (adjustedNow >= startTime) {
-                    endTime.setDate(endTime.getDate() + 1);
-                } else {
-                    startTime.setDate(startTime.getDate() -1);
+        allMarkers.forEach(marker => {
+            const markerElement = marker.getElement();
+            if (markerElement) {
+                if (!marker.isPopupOpen()) {
+                    markerElement.style.opacity = newOpacity;
                 }
             }
-            const isOpen = adjustedNow >= startTime && adjustedNow <= endTime;
-            const statusString = isOpen ? "Open Now" : "Closed";
+        });
+    });
 
-            return { isOpen: statusString, todaysHours: `${todaysHoursData.start} - ${todaysHoursData.end}` };
+    // --- MODAL FUNCTIONS ---
+    window.showDetails = function(locationId) {
+        currentModalLocation = locationsData.find(loc => loc.id === locationId);
+        if (!currentModalLocation) return;
+
+        modalTitle.textContent = currentModalLocation.locationName;
+        modalAddress.textContent = currentModalLocation.address;
+        modalAddressLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(currentModalLocation.address)}`;
+
+        const openingHours = getOpeningHours(currentModalLocation.hours);
+        const openStatus = checkIfOpen(openingHours);
+        modalOpenStatus.textContent = openStatus.isOpen;
+        modalTodaysHours.textContent = openStatus.todaysHours;
+
+        let steampunkImageSource = currentModalLocation.image1895SteampunkUrl || currentModalLocation.imageSteampunkUrl;
+        if (isValidImageUrl(steampunkImageSource)) {
+            modalSteampunkImage.src = steampunkImageSource;
+            modalSteampunkImage.alt = `1895 Steampunk view of ${currentModalLocation.locationName}`;
+            modalSteampunkImage.style.display = 'block';
+            modalSteampunkImage.onerror = function() { this.style.display = 'none'; };
+        } else {
+            modalSteampunkImage.style.display = 'none';
         }
         
-        window.closeModal = function() {
-            modal.style.display = "none";
-            currentModalLocation = null;
-            modalTitle.textContent = '';
-            modalAddress.textContent = '';
-            modalAddressLink.href = '#';
-            modalOpenStatus.textContent = '';
-            modalTodaysHours.textContent = '';
-            modalDescription.innerHTML = '';
-            modalSteampunkImage.src = '';
-            modalSteampunkImage.style.display = 'none';
-            const trueStorySection = document.getElementById('trueStorySection');
+        const trueStorySection = document.getElementById('trueStorySection');
+        const trueStoryCharacterName = document.getElementById('trueStoryCharacterName');
+        const trueStory = document.getElementById('trueStory');
+
+        if (currentModalLocation.trueStory) {
+            trueStoryCharacterName.textContent = currentModalLocation.trueStory.characterName;
+            trueStory.textContent = currentModalLocation.trueStory.story;
+            trueStorySection.style.display = 'block';
+        } else {
             trueStorySection.style.display = 'none';
-            document.getElementById('trueStoryCharacterName').textContent = '';
-            document.getElementById('trueStory').textContent = '';
-            modalYouTubeVideo.src = '';
-            modalVideoContainer.style.display = 'none';
         }
 
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
+        modal.style.display = "block";
+    }
 
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape") {
-                closeModal();
+    // --- UTILITY FUNCTIONS ---
+    function isValidImageUrl(url) {
+        return url && typeof url === 'string' && !url.includes('placehold.co') && url.startsWith('http');
+    }
+
+    function getOpeningHours(hoursString) {
+        const hours = {};
+        if (!hoursString || hoursString.toLowerCase() === 'hours not listed' || hoursString.toLowerCase() === 'hours not available') {
+            return null;
+        }
+        const dayRanges = hoursString.split(/, (?=[A-Z][a-z]{2}:)/);
+        const dayAbbrs = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+        dayRanges.forEach(rangeInfo => {
+            const [daysPart, timesPart] = rangeInfo.split(/: /);
+            if (!timesPart) return;
+            const [startTimeStr, endTimeStr] = timesPart.split(' - ');
+
+            if (daysPart.includes('-')) {
+                const [startDay, endDay] = daysPart.split('-');
+                let startIndex = dayAbbrs.indexOf(startDay);
+                let endIndex = dayAbbrs.indexOf(endDay);
+                if (startIndex !== -1 && endIndex !== -1) {
+                    if (endIndex < startIndex) endIndex += 7;
+                    for (let i = startIndex; i <= endIndex; i++) {
+                         hours[dayAbbrs[i % 7]] = { start: startTimeStr, end: endTimeStr };
+                    }
+                }
+            } else {
+                if (dayAbbrs.includes(daysPart)) {
+                    hours[daysPart] = { start: startTimeStr, end: endTimeStr };
+                }
             }
         });
-    </script>
+        return hours;
+    }
+
+    function checkIfOpen(openingHours) {
+        if (!openingHours) {
+            return { isOpen: "N/A", todaysHours: "Not available" };
+        }
+
+        let now = new Date();
+        const dayOfWeek = now.toLocaleString('en-US', { weekday: 'short' });
+
+        const todaysHoursData = openingHours[dayOfWeek];
+
+        if (!todaysHoursData) {
+            return { isOpen: "Closed", todaysHours: "Closed Today" };
+        }
+
+        const parseTime = (timeStr, currentDate) => {
+            if (!timeStr) return null;
+            const normalizedTime = timeStr.toLowerCase().replace(/\s*:\s*/g, ':').replace(/(\d)(am|pm)/, '$1:00$2');
+            let [timePart, modifier] = normalizedTime.split(/(am|pm)/);
+            if (timePart.trim() === 'noon') {
+                const date = new Date(currentDate.getTime());
+                date.setHours(12, 0, 0, 0);
+                return date;
+            }
+            let [hours, minutes] = timePart.split(':');
+            hours = parseInt(hours, 10);
+            minutes = minutes ? parseInt(minutes, 10) : 0;
+            if (isNaN(hours) || isNaN(minutes)) return null;
+            if (modifier === 'pm' && hours < 12) hours += 12;
+            if (modifier === 'am' && hours === 12) hours = 0;
+            const date = new Date(currentDate.getTime());
+            date.setHours(hours, minutes, 0, 0);
+            return date;
+        };
+
+        const startTime = parseTime(todaysHoursData.start, now);
+        let endTime = parseTime(todaysHoursData.end, now);
+
+        if (!startTime || !endTime) {
+             return { isOpen: "N/A", todaysHours: "Invalid time format" };
+        }
+
+        let adjustedNow = new Date(now.getTime());
+
+        if (endTime < startTime) { // Handles overnight
+            if (adjustedNow >= startTime) {
+                endTime.setDate(endTime.getDate() + 1);
+            } else {
+                startTime.setDate(startTime.getDate() -1);
+            }
+        }
+        const isOpen = adjustedNow >= startTime && adjustedNow <= endTime;
+        const statusString = isOpen ? "Open Now" : "Closed";
+
+        return { isOpen: statusString, todaysHours: `${todaysHoursData.start} - ${todaysHoursData.end}` };
+    }
+    
+    window.closeModal = function() {
+        modal.style.display = "none";
+        currentModalLocation = null;
+        modalTitle.textContent = '';
+        modalAddress.textContent = '';
+        modalAddressLink.href = '#';
+        modalOpenStatus.textContent = '';
+        modalTodaysHours.textContent = '';
+        modalDescription.innerHTML = '';
+        modalSteampunkImage.src = '';
+        modalSteampunkImage.style.display = 'none';
+        const trueStorySection = document.getElementById('trueStorySection');
+        trueStorySection.style.display = 'none';
+        document.getElementById('trueStoryCharacterName').textContent = '';
+        document.getElementById('trueStory').textContent = '';
+        modalYouTubeVideo.src = '';
+        modalVideoContainer.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+            closeModal();
+        }
+    });
+</script>
 </body>
 </html>
