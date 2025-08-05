@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -323,13 +322,13 @@
         /* --- HOVER EFFECTS FOR CARD THUMBNAILS --- */
         .card-thumbnail-icon {
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, opacity 0.1s linear; /* Added opacity transition */
-            border-radius: 3px; 
+            border-radius: 3px;
         }
 
         .card-thumbnail-icon:hover {
-            transform: scale(1.15); 
-            box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.75); 
-            z-index: 1000; 
+            transform: scale(1.15);
+            box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.75);
+            z-index: 1000;
             opacity: 1 !important; /* Ensure hover makes it fully visible regardless of slider */
         }
 
@@ -375,7 +374,7 @@
         <p><strong>Today's Hours:</strong> <span id="modalTodaysHours"></span></p>
 
         <img id="modalSteampunkImage" src="" alt="1895 Steampunk View" style="display: none; width: 100%; max-width: 400px; object-fit: contain; margin-top: 15px; border: 2px solid #8B4513; border-radius: 5px; display: block; margin-left: auto; margin-right: auto;">
-        
+
         <div id="trueStorySection" style="display: none;" class="mt-4">
             <h3 class="text-xl mt-4 mb-2" style="font-family: 'IM Fell English SC', serif; color: #5a3b2b;">The True Story of <span id="trueStoryCharacterName"></span></h3>
             <p id="trueStory" class="text-sm leading-relaxed max-h-60 overflow-y-auto pr-2"></p>
@@ -389,8 +388,8 @@
         <div id="modalDescription" style="display: none;" class="text-sm leading-relaxed max-h-60 overflow-y-auto pr-2"></div>
       </div>
     </div>
-    
-    <div class="map-controls"> 
+
+    <div class="map-controls">
         <label for="opacitySlider">Chronovisor Level:</label>
         <input type="range" id="opacitySlider" min="0" max="1" step="0.01" value="0.99">
     </div>
@@ -455,70 +454,26 @@
 
         let currentModalLocation = null;
 
-        // --- NEW THUMBNAIL URLS ---
-        const newThumbnailUrls = [
-            "https://i.postimg.cc/c47rxyvm/01-Card-Evil-Buried.jpg",          // ID 1
-            "https://i.postimg.cc/kMb2Ht9L/02-Card-Fate-Unleased.jpg",        // ID 2
-            "https://i.postimg.cc/QdXVV45r/03-Card-Milo-Perkins.jpg",         // ID 3
-            "https://i.postimg.cc/htpvmLbQ/04-Card-Hiram-Norton.jpg",         // ID 4
-            "https://i.postimg.cc/CK51sRmP/05-Card-Camp-Dellwood.jpg",        // ID 5
-            "https://i.postimg.cc/rpHpnqH8/06-Card-John-Sears.jpg",           // ID 6
-            "https://i.postimg.cc/4dhxjrCp/07-Card-Jim-Stephenson.jpg",       // ID 7
-            "https://i.postimg.cc/tJQ4b2yw/08-Card-Lorna-Arrival.jpg",        // ID 8
-            "https://i.postimg.cc/GtFhmGm2/09-Card-William-Gooding.jpg",      // ID 9
-            "https://i.postimg.cc/zXNGPtxR/10-Card-Another-Calling.jpg",      // ID 10
-            "https://i.postimg.cc/nVBL2bGJ/11-Card-Charles-Boyer.jpg",        // ID 11
-            "https://i.postimg.cc/QxqdLQzY/12-Card-Ichabod-Codding.jpg",       // ID 12
-            "https://i.postimg.cc/7ZYYqC8H/13-Card-George-Gaylord.jpg",       // ID 13
-            "https://i.postimg.cc/XYHNqV4w/14-Card-Investigation.jpg",        // ID 14
-            "https://i.postimg.cc/bvZy2Kw4/15-Card-John-Lamb.jpg",            // ID 15
-            "https://i.postimg.cc/JhS13Py0/16-Card-Armstead-Runyon.jpg",       // ID 16
-            "https://i.postimg.cc/LXfmxLfT/17-Change-of-Plans.jpg",           // ID 17
-            "https://i.postimg.cc/Znx4Smwv/18-Card-Dorothy-Dow.jpg",          // ID 18
-            "https://i.postimg.cc/prHR4rJt/19-Card-Francis-Tully.jpg",        // ID 19
-            "https://i.postimg.cc/HWwp50TW/20-Card-Ernest-Caneva.jpg",        // ID 20
-            "https://i.postimg.cc/28CCxq5Q/21-Card-John-Lane.jpg",            // ID 21
-            "https://i.postimg.cc/15Ms79gL/22-Card-Urgent-Business.jpg",      // ID 22
-            "https://i.postimg.cc/nhzZ66BM/23-Card-Hiram-Lawrence.jpg",       // ID 23
-            "https://i.postimg.cc/YCskkbzR/24-Card-Robert-Burcenski.jpg",     // ID 24
-            "https://i.postimg.cc/3w0hwmLT/25-Card-Styx-Mc-Donald.jpg",       // ID 25
-            "https://i.postimg.cc/V6y80vTb/26-Card-Gilbert-Bengston.jpg",     // ID 26
-            "https://i.postimg.cc/fLxhcZnq/27-Card-Marie-Cook.jpg",           // ID 27
-            "https://i.postimg.cc/T1fvQSTd/28-Card-HH-Carter.jpg",            // ID 28
-            "https://i.postimg.cc/ZnHtQcqr/29-Card-Gladys-Fox.jpg",           // ID 29
-            "https://i.postimg.cc/3rFTWKZd/30-Card-Horace-Singer.jpg",        // ID 30
-            "https://i.postimg.cc/hP4qdHCM/31-Card-Restrained.jpg",           // ID 31
-            "https://i.postimg.cc/Qx6Zk0wD/32-Card-Haley-Augello.jpg",        // ID 32
-            "https://i.postimg.cc/y8k4f0CZ/33-Card-Robert-Carr.jpg",          // ID 33
-            "https://i.postimg.cc/wjZKn39b/34-Card-Minora-Paxson.jpg",        // ID 34
-            "https://i.postimg.cc/nLm8xZzV/35-Card-Labor-and-Innovation.jpg", // ID 35
-            "https://i.postimg.cc/bJf7NMDx/36-Card-Dorothy-Worst.jpg",        // ID 36
-            "https://i.postimg.cc/ydhwJPcw/37-Card-Transference.jpg",         // ID 37
-            "https://i.postimg.cc/90Wsy7Bz/38-Card-Press-Gang.jpg",           // ID 38
-            "https://i.postimg.cc/0jcFnytn/39-Card-Common-Destiny.jpg",       // ID 39
-            "https://i.postimg.cc/KcN6x0ZT/40-Card-Jax-and-Lorna.jpg"         // ID 40
-        ];
-
         const allMarkers = []; // Array to store all markers
 
         // --- ADD MARKERS TO MAP ---
         locationsData.forEach(location => {
-            const thumbnailUrl = newThumbnailUrls[location.id - 1]; 
+            const thumbnailUrl = location.thumbnailUrl; // Correctly use the thumbnailUrl from the location object
 
             const cardIcon = L.icon({
                 iconUrl: thumbnailUrl,
-                iconSize: [40, 60], 
-                iconAnchor: [20, 60], 
+                iconSize: [40, 60],
+                iconAnchor: [20, 60],
                 popupAnchor: [0, -60],
                 className: 'card-thumbnail-icon'
             });
 
             const marker = L.marker([location.lat, location.lon], { icon: cardIcon }).addTo(map);
-            
+
             if (marker.getElement()) {
                 marker.getElement().style.opacity = fantasyMapLayer.options.opacity;
             }
-            allMarkers.push(marker); 
+            allMarkers.push(marker);
 
             const popupContent = `
                 <h3 class="title-font">${location.locationName}</h3>
@@ -572,15 +527,15 @@
                     const [startDay, endDay] = daysPart.split('-');
                     let startIndex = dayAbbrs.indexOf(startDay);
                     let endIndex = dayAbbrs.indexOf(endDay);
-                    if (startIndex !== -1 && endIndex !== -1) { 
-                        if (endIndex < startIndex) endIndex += 7; 
+                    if (startIndex !== -1 && endIndex !== -1) {
+                        if (endIndex < startIndex) endIndex += 7;
 
                         for (let i = startIndex; i <= endIndex; i++) {
-                             hours[dayAbbrs[i % 7]] = { start: startTimeStr, end: endTimeStr }; 
+                             hours[dayAbbrs[i % 7]] = { start: startTimeStr, end: endTimeStr };
                         }
                     }
                 } else {
-                    if (dayAbbrs.includes(daysPart)) { 
+                    if (dayAbbrs.includes(daysPart)) {
                         hours[daysPart] = { start: startTimeStr, end: endTimeStr };
                     }
                 }
@@ -595,7 +550,7 @@
             }
 
             let now = new Date();
-            const dayOfWeek = now.toLocaleString('en-US', { weekday: 'short' }); 
+            const dayOfWeek = now.toLocaleString('en-US', { weekday: 'short' });
 
             const todaysHoursData = openingHours[dayOfWeek];
 
@@ -608,21 +563,21 @@
                 const normalizedTime = timeStr.toLowerCase().replace(/\s*:\s*/g, ':').replace(/(\d)(am|pm)/, '$1:00$2');
 
                 let [timePart, modifier] = normalizedTime.split(/(am|pm)/);
-                
+
                 if (timePart.trim() === 'noon') {
                     const date = new Date(currentDate.getTime());
                     date.setHours(12, 0, 0, 0);
                     return date;
                 }
-                
+
                 let [hours, minutes] = timePart.split(':');
                 hours = parseInt(hours, 10);
                 minutes = minutes ? parseInt(minutes, 10) : 0;
 
-                if (isNaN(hours) || isNaN(minutes)) return null; 
+                if (isNaN(hours) || isNaN(minutes)) return null;
 
                 if (modifier === 'pm' && hours < 12) hours += 12;
-                if (modifier === 'am' && hours === 12) hours = 0; 
+                if (modifier === 'am' && hours === 12) hours = 0;
 
                 const date = new Date(currentDate.getTime());
                 date.setHours(hours, minutes, 0, 0);
@@ -631,13 +586,13 @@
 
             const startTime = parseTime(todaysHoursData.start, now);
             let endTime = parseTime(todaysHoursData.end, now);
-            
+
             if (!startTime || !endTime) {
                  return { isOpen: "N/A", todaysHours: "Invalid time format" };
             }
 
             let adjustedNow = new Date(now.getTime());
-            
+
             if (endTime < startTime) { // Handles overnight
                 if (adjustedNow >= startTime) { // Current time is on the "start day" (e.g. 10 PM for 10PM-2AM)
                     endTime.setDate(endTime.getDate() + 1); // End time is on the next calendar day
@@ -661,7 +616,7 @@
             modalTitle.textContent = currentModalLocation.locationName;
             modalAddress.textContent = currentModalLocation.address;
             modalAddressLink.href = `https://maps.google.com/?q=${encodeURIComponent(currentModalLocation.address)}`; // Standard Google Maps link
-            
+
             const openingHours = getOpeningHours(currentModalLocation.hours);
             const openStatus = checkIfOpen(openingHours);
             modalOpenStatus.textContent = openStatus.isOpen;
@@ -688,7 +643,7 @@
             } else {
                 trueStorySection.style.display = 'none';
             }
-            
+
 
             modal.style.display = "block";
         }
@@ -702,10 +657,10 @@
             modalAddressLink.href = '#';
             modalOpenStatus.textContent = '';
             modalTodaysHours.textContent = '';
-            modalDescription.innerHTML = ''; 
+            modalDescription.innerHTML = '';
             modalSteampunkImage.src = '';
             modalSteampunkImage.style.display = 'none';
-            
+
             const trueStorySection = document.getElementById('trueStorySection');
             trueStorySection.style.display = 'none';
             document.getElementById('trueStoryCharacterName').textContent = '';
